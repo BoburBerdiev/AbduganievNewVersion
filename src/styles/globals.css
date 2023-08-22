@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.glow-on-hover {
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #00FF78, #001EFF , #00FF78, #001EFF , #00FF78, #001EFF, #00FF78, #001EFF);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  transition: all .3s ease;
+
+}
+
+
+.glow-on-hover:hover::after{
+  background: linear-gradient(90deg, #00FF78 0%, #001EFF 100%);
+  transition: all .3s ease;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+.gradient-background {
+  background: linear-gradient(90deg, #00FF78 0%, #001EFF 100%);
+  background-size: 200%;
+  /* Background Text Clip */
+  /* webkit vendor prefix start */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* webkit vendor prefix end */
+  background-clip: text;
+  animation: gradient-text-animation 5s alternate infinite;
+  
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-text-animation {
+  from {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}  
+
+.swiper  {
+  overflow: visible !important;
+  overflow-x: hidden ;
+  overflow-y: visible !important;
+}
+
+.service .mySwiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 50px;
+}
+
+.service .swiper-pagination-bullet-active {
+  background-color: #E4E4E7 !important;
+}
+
+.service .swiper-pagination-bullet  {
+  padding: 4px;
+  background-color: #6a6a6b;
+  margin-right: 10px;
+}
+
+.service .swiper-button-next {
+  top: 100% !important;
+  right: 50px;
+}
