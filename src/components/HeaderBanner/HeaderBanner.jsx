@@ -7,7 +7,7 @@ const HeaderBanner = () => {
     <header className="py-8 md:py-24 ">
       <div className="container grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-12">
         <div className="order-2 space-y-5 text-center text-white md:space-y-8 md:text-start md:order-1">
-          <h1 className="text-6xl font-medium break-all md:text-7xl">
+          <h1 className="text-6xl font-semibold break-all md:text-7xl">
             Поможем осуществить 
              <span className="gradient-background">вашу мечту</span>
           </h1>
