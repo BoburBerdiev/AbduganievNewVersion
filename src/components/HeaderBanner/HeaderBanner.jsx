@@ -4,7 +4,7 @@ import { CurrentWhiteBtn, ImageUl } from "..";
 
 const HeaderBanner = () => {
   return (
-    <header className="py-8 md:py-24 ">
+    <header className="py-8 md:py-24 bg-neutral-950 ">
       <div className="container grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-12">
         <div className="order-2 space-y-5 text-center text-white md:space-y-8 md:text-start md:order-1">
           <h1 className="text-6xl font-semibold break-all md:text-7xl">

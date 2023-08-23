@@ -5,7 +5,7 @@ const about = () => {
   return (
     <main className='py-24'>
       <div className="container ">
-        <PageSectionTItle title={'О нас'} subTitle={'Каждая крупная компания должна благодарить не только себя, но и тех, кто стоял рядом с ней и верил в нее. Ведь самый главный принцип в нашей работе – доверие.'} />      
+      <PageSectionTItle title={'О нас'} row={true} subTitle={'Каждая крупная компания должна благодарить не только себя, но и тех, кто стоял рядом с ней и верил в нее. Ведь самый главный принцип в нашей работе – доверие.'} />      
         <section className='relative w-full  aspect-video my-20 md:my-[50px] lg:my-[75px]'>
           <ImageUl src={'/team-min.jpg'} alt={'team'} imgStyle={'object-cover'} />
         </section>
