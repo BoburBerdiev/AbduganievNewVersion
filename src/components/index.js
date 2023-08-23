@@ -1,5 +1,5 @@
-export {default as Navbar} from './navbar/Navbar'
-export {default as Footer} from './footer/Footer'
+export {default as Navbar} from './Navbar/Navbar'
+export {default as Footer} from './Footer/Footer'
 export {default as CurrentBtn} from './CurrentBtn/CurrentBtn'
 export {default as HeaderBanner} from './HeaderBanner/HeaderBanner'
 export {default as AboutIndex} from './AboutIndex/AboutIndex'
