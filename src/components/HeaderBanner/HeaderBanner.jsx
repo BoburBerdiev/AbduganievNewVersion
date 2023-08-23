@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logoA from "public/abduganiev-logoA.png";
-import { CurrentWhiteBtn } from "..";
+import { CurrentWhiteBtn, ImageUl } from "..";
 
 const HeaderBanner = () => {
   return (
@@ -20,7 +20,7 @@ const HeaderBanner = () => {
         </div>
         <div className="order-1 md:h-full md:order-2 aspect-square">
           <div className="relative h-full ">
-          <Image className="object-contain w-full h-full " fill src={logoA} />
+            <ImageUl src={logoA} imgStyle={'object-contain'} alt={'Abduganiev icon'} />
           </div>
         </div>
       </div>

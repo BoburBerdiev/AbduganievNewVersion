@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between">
         <Link
           className="relative w-[130px] h-[80px] block flex-shrink-0"
-          href={"#"}
+          href={"/"}
         >
           <Image fill className="object-contain w-full h-full " src={logo} />
         </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <li className="flex items-center justify-center">
               <Link
                 className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                href={"#"}
+                href={"/"}
               >
                 Главная
               </Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <li className="flex items-center justify-center">
               <Link
                 className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                href={"#"}
+                href={"/about"}
               >
                 О нас
               </Link>
