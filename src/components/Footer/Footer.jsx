@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <footer className="py-20 md:py-20 xl:py-24 bg-neutral-900">
         <div className="container flex flex-col space-y-10 md:space-y-0 md:flex-row md:justify-between">
-          <div className="flex flex-col items-center md:items-start space-y-2.5  ">
+        <div className="flex flex-col items-center md:items-start space-y-2.5  ">
             <Link
               href={"#"}
               className="space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"

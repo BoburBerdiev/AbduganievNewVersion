@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay } from "swiper";
 
-import { SectionTitle, ServiceCard } from "..";
+import {  SectionTitle } from "..";
 import Image from "next/image";
 import {RiDoubleQuotesR} from 'react-icons/ri'
 

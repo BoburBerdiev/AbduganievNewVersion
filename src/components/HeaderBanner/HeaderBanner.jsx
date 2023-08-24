@@ -1,4 +1,3 @@
-import Image from "next/image";
 import logoA from "public/abduganiev-logoA.png";
 import { CurrentWhiteBtn, ImageUl } from "..";
 

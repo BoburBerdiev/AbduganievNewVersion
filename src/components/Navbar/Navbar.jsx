@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "public/abduganiev-min.png";
-import { CurrentBtn } from "@/components/";
+import { Contact, CurrentBtn } from "@/components/";
 import {HiOutlineMenuAlt1} from 'react-icons/hi'
 import {AiOutlineClose} from 'react-icons/ai'
 import { useState } from "react";
@@ -11,7 +11,11 @@ const Navbar = () => {
   const [menu , setMenu] = useState(true);
 
   return (
+
+
     <nav className=" py-5 bg-neutral-950 z-[100] fixed top-0 left-0 w-full">
+      <Contact />
+
       <div className="container flex items-center justify-between">
         <Link
           className="relative w-[130px] h-[80px] block flex-shrink-0"
@@ -40,7 +44,7 @@ const Navbar = () => {
             <li className="flex items-center justify-center">
               <Link
                 className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                href={"#"}
+                href={"/service"}
               >
                 Услуги
               </Link>
