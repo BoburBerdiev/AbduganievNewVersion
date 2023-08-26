@@ -5,7 +5,7 @@ const StartProject = () => {
     <>
       <ContactForm  />
 
-      <section className="py-20 md:py-[50px] lg:py-[75px] bg-neutral-950 ">
+      <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-950 ">
         <div className="container relative">
           <div className='w-[10%] top-5 left-0 absolute aspect-square rounded-full z-[2] animate-spin-slow bg-gradient-to-r from-[rgba(0,255,126,0.50)] blur-3xl to-[rgba(0,30,255,0.50)] '>
                 

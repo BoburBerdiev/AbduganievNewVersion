@@ -16,7 +16,7 @@ const ServiceCard = ({bg ,  title, subTitle}) => {
       <Image
         src={bg}
         fill
-        className={`z-[9] rounded-xl duration-200 ${
+        className={`z-[9] rounded-xl duration-200 object-cover ${
           hoverCard ? "opacity-100" : "opacity-0"
         } `}
       />

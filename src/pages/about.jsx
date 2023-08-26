@@ -1,15 +1,15 @@
 
-import {ImageUl, PageSectionTItle, SectionTitle } from '@/components'
+import {ImageUl, PageSectionTItle, SectionTitle, TeamCard } from '@/components'
 
 const about = () => {
   return (
     <main className='py-24'>
       <div className="container ">
       <PageSectionTItle title={'О нас'} row={true} subTitle={'Каждая крупная компания должна благодарить не только себя, но и тех, кто стоял рядом с ней и верил в нее. Ведь самый главный принцип в нашей работе – доверие.'} />      
-        <section className='relative w-full  aspect-video my-20 md:my-[50px] lg:my-[75px]'>
+        <section className='relative w-full  aspect-video my-20 md:my-[100px] lg:my-[150px]'>
           <ImageUl src={'/team-min.jpg'} alt={'team'} imgStyle={'object-cover'} />
         </section>
-        <section className='text-zinc-200 my-20 md:my-[50px] lg:my-[75px]'>
+        <section className='text-zinc-200 my-20 md:my-[100px] lg:my-[150px]'>
           <div className='w-full text-center md:text-start md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]'>
             <h3 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>
             Почему Мы?
@@ -42,25 +42,31 @@ const about = () => {
 
           </div>
         </section>
+        <section className='my-20 md:my-[100px] lg:my-[150px]' >
+          <SectionTitle text={'Они доверяют нам '} className='' />
+          <div className="grid grid-cols-4 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
+            <TeamCard />
+          </div>
+        </section>
         <section>
-            <SectionTitle text={'Они доверяют нам '} className='' />
+        <SectionTitle text={'Они доверяют нам '} className='' />
             <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
-              <div className='relative aspect-video'>
-                <ImageUl src={'/partnor/santek.png'} imgStyle={'object-contain'} alt={'partnor'} />
+              <div className=' relative  w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
+                <ImageUl src={'/partnor/santek.png'} imgStyle={'object-contain '} alt={'partnor'} />
               </div>
-              <div className='relative aspect-video'>
+              <div className=' relative w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
                 <ImageUl src={'/partnor/export-uz.png'} imgStyle={'object-contain'} alt={'partnor'} />
               </div>
-              <div className='relative aspect-video'>
+              <div className=' relative w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
                 <ImageUl src={'/partnor/fond-bozor.png'} imgStyle={'object-contain'} alt={'partnor'} />
               </div>
-              <div className='relative aspect-video'>
+              <div className=' relative w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
                 <ImageUl src={'/partnor/export-uz.png'} imgStyle={'object-contain'} alt={'partnor'} />
               </div>
-              <div className='relative aspect-video'>
+              <div className=' relative w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
                 <ImageUl src={'/partnor/real-house.png'} imgStyle={'object-contain'} alt={'partnor'} />
               </div>
-              <div className='relative aspect-video'>
+              <div className=' relative w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500'>
                 <ImageUl src={'/partnor/santek.png'} imgStyle={'object-contain'} alt={'partnor'} />
               </div>
             </div>

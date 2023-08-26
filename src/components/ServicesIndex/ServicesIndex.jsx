@@ -4,7 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore,  {Pagination,   Autoplay} from "swiper";
 
 import { SectionTitle , ServiceCard } from "..";
-import bgService from 'public/laptop-min.jpg'
+import bgService from 'public/service-bg/CRM-система-min.jpg'
+import bgService1 from 'public/service-bg/SMM-min.jpg'
+import bgService2 from 'public/service-bg/Брендинг-min.jpg'
+import bgService3 from 'public/service-bg/Кибербезопасность-min.jpg'
+import bgService4 from 'public/service-bg/Медиа-min.jpg'
 
 
 
@@ -54,13 +58,16 @@ const ServicesIndex = () => {
               <ServiceCard bg={bgService} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
             </SwiperSlide>
             <SwiperSlide>
-              <ServiceCard bg={bgService} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
+              <ServiceCard bg={bgService1} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
             </SwiperSlide>
             <SwiperSlide>
-              <ServiceCard bg={bgService} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
+              <ServiceCard bg={bgService2} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
             </SwiperSlide>
             <SwiperSlide>
-              <ServiceCard bg={bgService} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
+              <ServiceCard bg={bgService3} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ServiceCard bg={bgService4} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
             </SwiperSlide>
           </Swiper>
         </div>

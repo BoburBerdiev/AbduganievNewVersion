@@ -13,7 +13,7 @@ const Feedback = () => {
   return (
     <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-950 service  ">
       <div className="container">
-        <div className="mb-5 md:mb-10 lg:mb-14">
+        <div className="mb-8 md:mb-14 lg:mb-14">
           <SectionTitle text={"Отзывы клиентов"} />
         </div>
 
