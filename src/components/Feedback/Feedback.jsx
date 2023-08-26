@@ -1,15 +1,17 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay } from "swiper";
+import SwiperCore, {  Autoplay , EffectCoverflow, Pagination } from "swiper";
 
-import {  SectionTitle } from "..";
-import Image from "next/image";
-import {RiDoubleQuotesR} from 'react-icons/ri'
+import {  SectionTitle , FeedbackCard } from "..";
+
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
 
 const Feedback = () => {
   return (
-    <section className="py-20 md:py-[50px] lg:py-[75px] bg-neutral-950 service  ">
+    <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-950 service  ">
       <div className="container">
         <div className="mb-5 md:mb-10 lg:mb-14">
           <SectionTitle text={"Отзывы клиентов"} />
@@ -29,97 +31,34 @@ const Feedback = () => {
               slidesPerView: 2,
             },
           }}
-          slidesPerView={4}
-          centeredSlides={false}
-          spaceBetween={20}
-          grabCursor={true}
-          autoplay={{
-            delay: 3000,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mt-10 mySwiper"
+          effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
         >
           <SwiperSlide >
-            <div className="relative px-8 pt-20 space-y-5 rounded-lg py-9 text-zinc-200 bg-neutral-900 md:space-y-7">
-              <RiDoubleQuotesR  className="absolute gradient-background text-9xl right-5 -top-[60px]"/>
-              <div>
-                <h6 className="mb-2 text-lg font-semibold md:mb-2.5 md:text-xl lg:text-2xl">Великолепно!</h6>
-                <p className="text-sm md:text-base lg:text-xl">
-                  Оперативная работа, креативные идеи и море эмоций. Вот как бы
-                  я описал нашу совместную работу. Хотелось бы предложить
-                  сотрудничество.
-                </p>
-              </div>
-              <div className='flex items-center space-x-7'>
-                <div className="relative w-20 h-20 rounded-full">
-                  <Image src={'/feedback-1.jpg'} alt="feedback" className="object-cover w-full" fill />
-                </div>
-                <div className="space-y-2 font-semibold">
-                  <h6 className="text-sm md:text-base lg:text-xl ">
-                  Кадыров Сарвар
-                  </h6>
-                  <p className="text-xs gradient-background md:text-sm lg:text-base">
-                  Директор Rewolt Ventures
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
           </SwiperSlide>
           <SwiperSlide >
-            <div className="relative px-8 pt-20 space-y-5 rounded-lg py-9 text-zinc-200 bg-neutral-900 md:space-y-7">
-              <RiDoubleQuotesR  className="absolute gradient-background text-9xl right-5 -top-[60px]"/>
-              <div>
-                <h6 className="mb-2 text-lg font-semibold md:mb-2.5 md:text-xl lg:text-2xl">Великолепно!</h6>
-                <p className="text-sm md:text-base lg:text-xl">
-                  Оперативная работа, креативные идеи и море эмоций. Вот как бы
-                  я описал нашу совместную работу. Хотелось бы предложить
-                  сотрудничество.
-                </p>
-              </div>
-              <div className='flex items-center space-x-7'>
-                <div className="relative w-20 h-20 rounded-full">
-                  <Image src={'/feedback-1.jpg'} alt="feedback" className="object-cover w-full" fill />
-                </div>
-                <div className="space-y-2 font-semibold">
-                  <h6 className="text-sm md:text-base lg:text-xl ">
-                  Кадыров Сарвар
-                  </h6>
-                  <p className="text-xs gradient-background md:text-sm lg:text-base">
-                  Директор Rewolt Ventures
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
           </SwiperSlide>
           <SwiperSlide >
-            <div className="relative px-8 pt-20 space-y-5 rounded-lg py-9 text-zinc-200 bg-neutral-900 md:space-y-7">
-              <RiDoubleQuotesR  className="absolute gradient-background text-9xl right-5 -top-[60px]"/>
-              <div>
-                <h6 className="mb-2 text-lg font-semibold md:mb-2.5 md:text-xl lg:text-2xl">Великолепно!</h6>
-                <p className="text-sm md:text-base lg:text-xl">
-                  Оперативная работа, креативные идеи и море эмоций. Вот как бы
-                  я описал нашу совместную работу. Хотелось бы предложить
-                  сотрудничество.
-                </p>
-              </div>
-              <div className='flex items-center space-x-7'>
-                <div className="relative w-20 h-20 rounded-full">
-                  <Image src={'/feedback-1.jpg'} alt="feedback" className="object-cover w-full" fill />
-                </div>
-                <div className="space-y-2 font-semibold">
-                  <h6 className="text-sm md:text-base lg:text-xl ">
-                  Кадыров Сарвар
-                  </h6>
-                  <p className="text-xs gradient-background md:text-sm lg:text-base">
-                  Директор Rewolt Ventures
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
           </SwiperSlide>
+      
+          
+        
+          
         </Swiper>
       </div>
     </section>

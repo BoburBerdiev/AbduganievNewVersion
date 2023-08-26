@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay } from "swiper";
+import SwiperCore, { Pagination, Autoplay  } from "swiper";
+
 import { ImageUl } from "..";
 
 
@@ -24,6 +25,9 @@ const PartnorList = () => {
               slidesPerView: 5
             }
           }}
+
+          
+
           slidesPerView={4}
           centeredSlides={false}
           spaceBetween={40}

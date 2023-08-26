@@ -3,7 +3,7 @@ import { CurrentWhiteBtn, ImageUl , PartnorList } from "..";
 
 const HeaderBanner = () => {
   return (
-    <header className="py-8 md:py-24 bg-neutral-950 ">
+    <header className="py-8 md:py-[150px] bg-neutral-950 ">
       <div className="container grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-12">
         <div className="order-2 space-y-5 text-center text-white md:space-y-8 md:text-start md:order-1">
           <h1 className="text-6xl font-semibold break-all md:text-7xl">
@@ -17,13 +17,11 @@ const HeaderBanner = () => {
           </p>
           <CurrentWhiteBtn text={'Начать работу'} />
         </div>
-        <div className="order-1 md:h-full md:order-2 aspect-square">
-          <div className="relative h-full ">
-            <ImageUl src={logoA} imgStyle={'object-contain'} alt={'Abduganiev icon'} />
-          </div>
+        <div className="order-1 relative md:h-full md:order-2 aspect-video flex items-center justify-center  rotate-[60deg] hover:rotate-0 duration-500">
+                <ImageUl src={logoA} imgStyle={'object-contain'} alt={'Abduganiev icon'} />
         </div>
       </div>
-      <div className="container">
+      <div className="container overflow-hidden pt-8 md:pt-[100px]">
         <PartnorList />
       </div>
     </header>
