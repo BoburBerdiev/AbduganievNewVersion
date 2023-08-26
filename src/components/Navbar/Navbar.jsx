@@ -52,7 +52,7 @@ const Navbar = () => {
             <li className="flex items-center justify-center">
               <Link
                 className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                href={"#"}
+                href={"/portfolio"}
               >
                 Портфолио
               </Link>

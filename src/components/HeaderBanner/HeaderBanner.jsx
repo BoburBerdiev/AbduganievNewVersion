@@ -1,5 +1,5 @@
 import logoA from "public/abduganiev-logoA.png";
-import { CurrentWhiteBtn, ImageUl } from "..";
+import { CurrentWhiteBtn, ImageUl , PartnorList } from "..";
 
 const HeaderBanner = () => {
   return (
@@ -22,6 +22,9 @@ const HeaderBanner = () => {
             <ImageUl src={logoA} imgStyle={'object-contain'} alt={'Abduganiev icon'} />
           </div>
         </div>
+      </div>
+      <div className="container">
+        <PartnorList />
       </div>
     </header>
   );

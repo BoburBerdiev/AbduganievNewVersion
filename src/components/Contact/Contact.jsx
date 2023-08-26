@@ -5,7 +5,7 @@ import { BsInstagram } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <main className="fixed   top-0 w-full md:py-0 flex justify-center items-center left-0 z-[101] min-h-screen bg-neutral-950">
+    <main className="fixed hidden  top-0 w-full md:py-0 flex justify-center items-center left-0 z-[101] min-h-screen bg-neutral-950">
     <section className="relative w-full h-full">
       <div className="container relative  md:px-[10%] ">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 gap-y-20 xl:gap-20">

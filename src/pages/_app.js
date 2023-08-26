@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import Layout from "@/layout/layout";
 // import { HydrationProvider, Server, Client } from "react-hydration-provider";
+import store from "@/store";
+import { Provider } from "react-redux";
 
 
 // import '../localization/i18n'
@@ -25,9 +27,13 @@ export default function App({ Component, pageProps }) {
   return (
       <div>
         <main className={montserrat.className} >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+
+          <Provider store={store} >
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+
+          </Provider>
         </main>
       </div>
   );
