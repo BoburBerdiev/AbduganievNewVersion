@@ -22,7 +22,7 @@ const AboutIndex = () => {
               </div>
             </div>
             <div>
-            <iframe className="w-full rounded-xl aspect-video" src="https://www.youtube.com/embed/zOGyVZuFHhs" title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe className="w-full rounded-xl  aspect-square sm:aspect-[16/12] md:aspect-video" src="https://www.youtube.com/embed/zOGyVZuFHhs" title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
         </div>

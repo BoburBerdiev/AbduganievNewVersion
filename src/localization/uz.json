@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "navbar": {
+      "dealersCenter": "do'kon",
+      "about": "Leapmotor haqida",
+      "news": "yangiliklar xonasi",
+      "dealers": "Dilerlar",
+      "service": "Xizmat",
+      "testDrive": "Test-drayv",
+      "accessories": "Aksessuarlar"
+    },
+    "footer": {
+      "privacy": "Maxfiylik va huquqiy ma'lumotlar",
+      "investor": "Dillerlar bilan aloqa",
+      "cooking": "Cookie sozlamalari",
+      "createdBy": "Sayt tayyorlovchi",
+      "address": "Oloy bozori avtoturargohi"
+    },
+    "more": "Batafsil ma'lumot"
+  }
+}

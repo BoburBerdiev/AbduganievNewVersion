@@ -1,9 +1,7 @@
-
-
-const CurrentBtn = ({style , text }) => {
+const CurrentBtn = ({style , text  , onClick }) => {
   return (
     <div>
-      <button className={`  glow-on-hover ${style ? style : ''}`} type="button"> {text} </button>
+      <button onClick={onClick} className={`  glow-on-hover ${style ? style : ''}`} type="button"> {text} </button>
     </div>
   )
 }

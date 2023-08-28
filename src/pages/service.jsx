@@ -30,7 +30,7 @@ const service = () => {
               <ImageUl
                 src={"/ux-ui-min.jpg"}
                 alt={"UX/UI Design"}
-                imgStyle={"object-cover"}
+                imgStyle={"object-cover rounded-lg"}
               />
             </div>
           </div>
@@ -43,7 +43,7 @@ const service = () => {
             <ImageUl
               src={"/ux-ui-min.jpg"}
               alt={"UX/UI Design"}
-              imgStyle={"object-cover"}
+              imgStyle={"object-cover rounded-lg"}
             />
           </div>
           <div className="">
@@ -73,7 +73,7 @@ const service = () => {
               <ImageUl
                 src={"/ux-ui-min.jpg"}
                 alt={"UX/UI Design"}
-                imgStyle={"object-cover"}
+                imgStyle={"object-cover rounded-lg"}
               />
             </div>
           </div>

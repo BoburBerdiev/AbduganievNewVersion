@@ -2,12 +2,18 @@ import Link from "next/link";
 import { CircleBg, InputUl } from "..";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import { useSelector ,useDispatch } from "react-redux";
+import { btnForm } from "@/slice/formSlice";
 
 const ContactForm = ({}) => {
   const [closeModal , setCloseModal] = useState(false)
+
+  const {form} = useSelector(state => state.formSlice)
+  const dispatch = useDispatch()
+  
   return (
 
-    <main className={`fixed ${closeModal ? 'block' : 'hidden'}  top-0   py-14 md:py-0 flex justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
+    <main className={`fixed ${form ? 'hidden' : 'flex'}  top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
       <section className="relative ">
         <div className="container relative ">
           <div className="grid items-center grid-cols-1 md:grid-cols-2 space-y-[70px] md:space-y-[90px] xl:gap-20">
@@ -37,7 +43,7 @@ const ContactForm = ({}) => {
               </div>
             </div>
             <form className="px-6 static md:relative py-10 lg:px-[70px] space-y-[23px] md:space-y-[30px]  rounded-xl md:py-[50px] bg-neutral-900">
-              <button onClick={() => (setCloseModal(false))} className="absolute right-0 p-1 text-3xl rounded-lg -top-10 hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
+              <button onClick={() => (dispatch(btnForm))} className="absolute right-0 p-1 text-3xl rounded-lg -top-10 hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
                 <AiOutlineClose />
               </button>
               <InputUl type={"text"} placeholder={"Ваше имя"} />

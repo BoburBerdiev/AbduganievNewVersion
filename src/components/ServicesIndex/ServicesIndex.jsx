@@ -22,10 +22,10 @@ const ServicesIndex = () => {
   
   return (
     <>
-      <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-950 service">
+      <section className="pt-20 md:pt-[100px] lg:pt-[150px] pb-10 md:pb-[50px] lg:pb-[75px] bg-neutral-950 service">
         <div className="container">
         <div className="mb-5 md:mb-10 lg:mb-14">
-            <SectionTitle text={"Наши услуги"} />
+            <SectionTitle text={"Наши услуги"}  />
             </div>
           <Swiper
           breakpoints={{

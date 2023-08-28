@@ -1,11 +1,19 @@
+import { btnForm } from "@/slice/formSlice";
 import {  CurrentBtn  , ContactForm} from "..";
+import { useDispatch } from "react-redux"
 
 const StartProject = () => {
+  const dispatch = useDispatch()
+  
+      const openForm = () => {
+        dispatch(btnForm())
+      }
+      
   return (
     <>
       <ContactForm  />
 
-      <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-950 ">
+      <section className="py-10 md:py-[50px] lg:py-[75px] bg-neutral-950 ">
         <div className="container relative">
           <div className='w-[10%] top-5 left-0 absolute aspect-square rounded-full z-[2] animate-spin-slow bg-gradient-to-r from-[rgba(0,255,126,0.50)] blur-3xl to-[rgba(0,30,255,0.50)] '>
                 
@@ -18,7 +26,7 @@ const StartProject = () => {
                 </span>
               </h1>
               <div className="flex items-center justify-center md:justify-start">
-                <CurrentBtn 
+                <CurrentBtn  onClick={openForm}
                   style={"py-4 px-9 after:rounded-[50px] before:rounded-[50px]"}
                   text={"Связаться"}
                 />

@@ -5,10 +5,17 @@ import { Contact, CurrentBtn } from "@/components/";
 import {HiOutlineMenuAlt1} from 'react-icons/hi'
 import {AiOutlineClose} from 'react-icons/ai'
 import { useState } from "react";
+import { useDispatch } from "react-redux"
+import { btnContact } from "@/slice/contactSlice"
 
 const Navbar = () => {
 
   const [menu , setMenu] = useState(true);
+  const dispatch = useDispatch()
+
+  const openContact = () => {
+    dispatch(btnContact())
+  }
 
   return (
 
@@ -18,7 +25,7 @@ const Navbar = () => {
 
       <div className="container flex items-center justify-between">
         <Link
-          className="relative w-[130px] h-[80px] block flex-shrink-0"
+          className="relative w-[120px] h-[60px] block flex-shrink-0"
           href={"/"}
         >
           <Image fill className="object-contain w-full h-full " src={logo} />
@@ -66,7 +73,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-center justify-center">
-              <CurrentBtn style={"py-3 px-7 rounded-[50px]"} text={"Контакты"} />
+              <CurrentBtn  onClick={openContact}  style={"py-3 px-7 rounded-[50px]"} text={"Контакты"} />
 
             </li>
           </ul>
