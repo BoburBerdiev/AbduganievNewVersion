@@ -32,38 +32,38 @@ const PartnorList = () => {
           centeredSlides={false}
           spaceBetween={40}
           grabCursor={true}
-          autoplay={{
-            delay: 3000,
-          }}
+         
+          freeMode={true}
+          speed={800}
          
           className="mt-10 mySwiper partnor-swipper"
         >
           <SwiperSlide >
-            <div className=" h-[60px] ">
+            <div className="h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
               <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/bank-ipak-yoli.png'} />
               
             </div>
           </SwiperSlide>
           <SwiperSlide >
-            <div className=" h-[60px] ">
+            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
               <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/export-uz.png'} />
               
             </div>
           </SwiperSlide>
           <SwiperSlide >
-            <div className=" h-[60px] ">
+            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
               <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/fond-bozor.png'} />
               
             </div>
           </SwiperSlide>
           <SwiperSlide >
-            <div className=" h-[60px] ">
+            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
               <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/santek.png'} />
               
             </div>
           </SwiperSlide>
           <SwiperSlide >
-            <div className=" h-[60px] ">
+            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
               <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/orgres.png'} />
               
             </div>

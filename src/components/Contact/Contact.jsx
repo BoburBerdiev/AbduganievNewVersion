@@ -9,7 +9,6 @@ import { useSelector ,useDispatch } from "react-redux";
 const Contact = () => {
 
   const {contact} = useSelector(state => state.contactSlice)
-  console.log(contact);
   const dispatch = useDispatch()
 
   return (

@@ -4,8 +4,24 @@ import {
   SectionTitle,
   TeamCard,
 } from "@/components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Autoplay } from "swiper";
+import apiService from "@/service/api";
+import { useQuery } from "react-query";
+
+SwiperCore.use([Autoplay]);
 
 const about = () => {
+  const { data: partnor } = useQuery("get-partnor", () =>
+    apiService.getData("/partners/")
+  );
+
+  const {data: team } = useQuery("get-team", () =>
+  apiService.getData("/team/")
+);
+
+
+
   return (
     <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px]">
       <div className="container ">
@@ -54,75 +70,76 @@ const about = () => {
             </div>
           </div>
         </section>
-        <section className="my-20 md:my-[100px] lg:my-[150px]">
+        <section className="my-20 md:my-[100px] lg:my-[150px] service">
           <SectionTitle text={"Они доверяют нам "} className="" />
-          <div className="grid grid-cols-1 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
-            <TeamCard />
+
+          <div className=" lg:pt-[60px] md:pt-10 pt-5">
+            <Swiper
+              breakpoints={{
+                // when window width is >= 640px
+                0: {
+                  slidesPerView: 1.5,
+                },
+                // when window width is >= 768px
+                768: {
+                  slidesPerView: 2.5,
+                },
+                1024: {
+                  slidesPerView: 3.5,
+                },
+                1100: {
+                  slidesPerView: 4.5,
+                },
+              }}
+              slidesPerView={4.5}
+              centeredSlides={false}
+              spaceBetween={10}
+              grabCursor={true}
+              autoplay={{
+                delay: 3000,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="py-4 mySwiper"
+            >
+              {
+                team?.data.map(item => {
+                <SwiperSlide key={item.id}>
+                <TeamCard person={item} />
+              </SwiperSlide>
+                })
+              }
+              
+              
+            </Swiper>
           </div>
         </section>
+        {/* {
+                            about[0]?.aboutSystems?.systems.map((system) => (
+                                <HoverCard key={system?._id} image={`${process.env.NEXT_PUBLIC_API_URL}/${system?.image?.path}`}
+                                           title={lang === 'ru' ? system?.titleRu : system?.titleUz}
+                                           text={lang === 'ru' ? system?.descriptionRu : system?.descriptionUz}/>
+                            ))
+                        } */}
         <section>
           <SectionTitle text={"Они доверяют нам "} className="" />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
-            <div className="flex items-center justify-center">
-            <div className=" relative  w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/santek.png"}
-                imgStyle={"object-contain "}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
-            <div className="flex items-center justify-center">
-            <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/export-uz.png"}
-                imgStyle={"object-contain"}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
-            <div className="flex items-center justify-center">
-            <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/fond-bozor.png"}
-                imgStyle={"object-contain"}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
-            <div className="flex items-center justify-center">
-            <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/export-uz.png"}
-                imgStyle={"object-contain"}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
-            <div className="flex items-center justify-center">
-            <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/real-house.png"}
-                imgStyle={"object-contain"}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
-            <div className="flex items-center justify-center">
-            <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
-              <ImageUl
-                src={"/partnor/santek.png"}
-                imgStyle={"object-contain"}
-                alt={"partnor"}
-              />
-            </div>
-              
-            </div>
+          
+            {partnor?.data?.map((item) => (
+              <div key={item?.id} className="flex items-center justify-center">
+                <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
+                  <ImageUl
+                    src={item?.image}
+                    imgStyle={"object-contain"}
+                    alt={item?.image}
+                  />
+                </div>
+              </div>
+            ))}
+
+           
           </div>
         </section>
       </div>

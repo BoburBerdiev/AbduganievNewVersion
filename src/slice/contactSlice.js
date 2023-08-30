@@ -8,7 +8,6 @@ const contactSlice = createSlice({
   reducers: {
     btnContact: (state ) =>{
       state.contact = !state.contact
-      console.log(state.contact);
     }
   }
 })

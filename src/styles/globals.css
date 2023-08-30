@@ -8,9 +8,54 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.partnor-swipper {
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background: #171717;
+
+	border-radius: 10px;
 }
 
+::-webkit-scrollbar
+{
+	width: 10px;
+  background: linear-gradient(45deg, #00FF78, #001EFF , #00FF78, #001EFF , #00FF78, #001EFF, #00FF78, #001EFF);
+	background: #171717;
+
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: linear-gradient(45deg, #00FF78, #001EFF);
+
+	border-radius: 10px;
+
+
+}
+
+
+.border-line::after {
+  content: '';
+  background: linear-gradient(45deg, #00FF78, #001EFF , #00FF78, #001EFF , #00FF78, #001EFF, #00FF78, #001EFF);
+  position: absolute;
+  top: -1px;
+  left:0;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(2px);
+  width: calc(100% );
+  height: calc(100% + 1px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+}
+.border-line {
+  background-color: #0a0a0a !important;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  
+}
 
 .glow-on-hover {
   outline: none;
@@ -160,3 +205,6 @@
     background-size: 600px;
 }
 
+.partnor-swipper {
+  transition-timing-function: linear;
+}

@@ -39,9 +39,12 @@ const ServicesIndex = () => {
             },
             1024: {
               slidesPerView: 3.5,
+            },
+            1100 :{ 
+              slidesPerView:4.5,
             }
           }}
-            slidesPerView={4}
+            slidesPerView={4.5}
             centeredSlides={false}
             spaceBetween={10}
             grabCursor={true}

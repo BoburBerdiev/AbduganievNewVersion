@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <div className="relative">
       <Navbar />
-      <div className={"min-h-screen pt-[120px] bg-black overflow-hidden" }>{children}</div>
+      <div className={"min-h-screen pt-[100px] bg-black overflow-hidden" }>{children}</div>
       <StartProject />
       <Footer />
     </div>

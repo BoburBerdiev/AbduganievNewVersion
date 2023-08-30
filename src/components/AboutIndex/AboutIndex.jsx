@@ -16,9 +16,9 @@ const AboutIndex = () => {
                 
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] ">
-                <NumberCount number1={5} text={'Лет Опыта'}/>
-                <NumberCount number1={'30+'} text={'Проектов'}/>
-                <NumberCount number1={3} text={'Офиса'}/>
+                <NumberCount number={5} text={'Лет Опыта'}/>
+                <NumberCount number={30} text={'Проектов'}/>
+                <NumberCount number={3} text={'Офиса'}/>
               </div>
             </div>
             <div>
