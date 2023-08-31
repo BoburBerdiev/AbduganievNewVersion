@@ -1,8 +1,10 @@
-import React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const ServiceTextCard = ({ title, text }) => {
+const ServiceTextCard = ({ description_ru ,description_uz , name_ru , name_uz }) => {
   const [hover, setHover] = useState(false);
+  const {lang} = useSelector(state => state.LanguageSlice)
+
 
   return (
     <div
@@ -15,9 +17,15 @@ const ServiceTextCard = ({ title, text }) => {
           hover ? "gradient-background" : ""
         } lg:text-4xl md:text-3xl text-2xl font-semibold `}
       >
-        {title}
+        {
+                lang === 'ru' ? name_ru : name_uz
+        }
       </h2>
-      <p className="text-base lg:text-xl md:text-lg text-zinc-200">{text}</p>
+      <p className="text-base lg:text-xl md:text-lg text-zinc-200">
+      {
+                lang === 'ru' ? description_ru : description_uz
+        }
+      </p>
     </div>
   );
 };

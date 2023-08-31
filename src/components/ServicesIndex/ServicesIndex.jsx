@@ -17,9 +17,9 @@ import bgService4 from 'public/service-bg/Медиа-min.jpg'
 // import required modules
 SwiperCore.use([Autoplay]);
 
-const ServicesIndex = () => {
+const ServicesIndex = ({serviceIndex}) => {
 
-  
+
   return (
     <>
       <section className="pt-20 md:pt-[100px] lg:pt-[150px] pb-10 md:pb-[50px] lg:pb-[75px] bg-neutral-950 service">
@@ -57,21 +57,13 @@ const ServicesIndex = () => {
             modules={[Pagination]}
             className="py-4 mySwiper"
           >
-            <SwiperSlide>
-              <ServiceCard bg={bgService} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ServiceCard bg={bgService1} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ServiceCard bg={bgService2} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ServiceCard bg={bgService3} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ServiceCard bg={bgService4} title={'ERP cистемы'} subTitle={'IT Системы любого уровня сложности в удобные для вас сроки.'} />
-            </SwiperSlide>
+            {
+              serviceIndex?.map(item => (
+                <SwiperSlide key={item.id}>
+                <ServiceCard bg={item.image} title_ru={item.title_ru} title_uz={item.title_uz} description_uz={item.description_uz} description_ru={item.description_ru} />
+              </SwiperSlide>
+              ))
+            }
           </Swiper>
         </div>
       </section>

@@ -4,9 +4,7 @@ import { useSelector } from "react-redux";
 
 const TeamCard = ({person}) => {
 
-  console.log('team' + person);
-  
-const {lang} = useSelector(state => state.LanguageSlice)
+  const {lang} = useSelector(state => state.LanguageSlice)
   return (
     <div>
       <div className={`relative flex items-center  justify-center p-3 pt-2 duration-1000 bg-black border-white rounded-lg card card-img group `}

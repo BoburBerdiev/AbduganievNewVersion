@@ -5,7 +5,8 @@ import { ImageUl } from "..";
 
 
 
-const PartnorList = () => {
+const PartnorList = ({partners}) => {
+
   return (
     <>
       <Swiper
@@ -26,8 +27,6 @@ const PartnorList = () => {
             }
           }}
 
-          
-
           slidesPerView={4}
           centeredSlides={false}
           spaceBetween={40}
@@ -38,48 +37,18 @@ const PartnorList = () => {
          
           className="mt-10 mySwiper partnor-swipper"
         >
-          <SwiperSlide >
-            <div className="h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/bank-ipak-yoli.png'} />
+
+          {
+            partners?.map(item => (
+              <SwiperSlide key={item.id}>
+                <a href={item.link}  className="block h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
+                  <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={item.image} />
+                </a>
+              </SwiperSlide>
               
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/export-uz.png'} />
-              
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/fond-bozor.png'} />
-              
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/santek.png'} />
-              
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0 ">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/orgres.png'} />
-              
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] ">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/real-house.png'} />
-              
-            </div>
-          </SwiperSlide>
-          <SwiperSlide >
-            <div className=" h-[60px] ">
-              <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={'/partnor/fond-bozor.png'} />
-              
-            </div>
-          </SwiperSlide>
+            ))
+          }
+         
         </Swiper>
     </>
   )

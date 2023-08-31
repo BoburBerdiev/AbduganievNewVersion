@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const ImageUl = ({src , alt , imgStyle}) => {
+const ImageUl = ({src , alt , imgStyle ,priority}) => {
 
   const [loading , setLoading] = useState(true)
 
@@ -12,6 +12,7 @@ const ImageUl = ({src , alt , imgStyle}) => {
         loading ? 'scale-110 blur-2xl grayscale':
         'scale-100  blur-0 grayscale-0'
       } `}
+      priority={priority || false}
       onLoadingComplete={() => setLoading(false)}
       />
     </>

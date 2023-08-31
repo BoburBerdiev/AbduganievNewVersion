@@ -8,10 +8,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay } from "swiper";
 import apiService from "@/service/api";
 import { useQuery } from "react-query";
+import { useSelector } from "react-redux";
+import axios from "axios";
+
 
 SwiperCore.use([Autoplay]);
 
-const about = () => {
+const about = ({about}) => {
   const { data: partnor } = useQuery("get-partnor", () =>
     apiService.getData("/partners/")
   );
@@ -20,20 +23,24 @@ const about = () => {
   apiService.getData("/team/")
 );
 
-
-
+const {data: whyWe } = useQuery("get-whyWe", () =>
+apiService.getData("/why-we/1")
+);
+const {lang} = useSelector(state => state.LanguageSlice)
   return (
     <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px]">
       <div className="container ">
         <PageSectionTItle
-          title={"О нас"}
+          title_ru={about[0]?.title_ru}
+          title_uz={about[0]?.title_uz}
+          subTitle_ru={about[0]?.description_ru}
+          subTitle_uz={about[0]?.description_uz}
           row={true}
-          subTitle={
-            "Каждая крупная компания должна благодарить не только себя, но и тех, кто стоял рядом с ней и верил в нее. Ведь самый главный принцип в нашей работе – доверие."
-          }
+          
         />
         <section className="relative w-full  aspect-video my-20 md:my-[100px] lg:my-[150px]">
           <ImageUl
+          priority={true}
             src={"/team-min.jpg"}
             alt={"team"}
             imgStyle={"object-cover"}
@@ -41,13 +48,19 @@ const about = () => {
         </section>
         <section className="text-zinc-200 my-20 md:my-[100px] lg:my-[150px]">
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
+            {
+            }
+            
             <h3 className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl">
-              Почему Мы?
+              {
+                lang === 'ru' ? whyWe?.data?.title_ru : whyWe?.data?.title_uz
+              }
             </h3>
             <p className="text-start">
-              Центр ориентирован на обучение студентов по следующим
-              направлениям: Advanced Front-end, Basic Front-end, Back-end,
-              UX/UI, Мобильная разработка.
+              {
+                lang === 'uz' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
+              }
+             
             </p>
           </div>
           <div className="grid grid-cols-3 gap-5 md:grid-cols-5">
@@ -56,14 +69,10 @@ const about = () => {
             </div>
             <div className="col-span-3 ">
               <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg">
-                {Array(4)
-                  .fill("")
-                  .map((_, ind) => (
-                    <li key={ind} className="">
-                      <span className="font-semibold">Совместность.</span>
-                      Мы слушаем, придумываем и поддерживаем друг друга на пути
-                      к созданию чего-то действительно уникального в наших
-                      совместных усилиях.
+                {whyWe?.data?.why_we_childs?.map(item => (
+                    <li key={item.id} className="">
+                      <span className="font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
+                      {lang === 'ru' ? item.text_uz : item.text_uz}
                     </li>
                   ))}
               </ol>
@@ -105,11 +114,11 @@ const about = () => {
               className="py-4 mySwiper"
             >
               {
-                team?.data.map(item => {
+                team?.data.map(item => (
                 <SwiperSlide key={item.id}>
                 <TeamCard person={item} />
               </SwiperSlide>
-                })
+                ))
               }
               
               
@@ -148,3 +157,22 @@ const about = () => {
 };
 
 export default about;
+
+
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+  // Fetch data from external API
+  const [about] = await Promise.all([
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/about`),
+])
+
+  // Pass data to the page via props
+  return {
+    props: {
+      about: about.data,
+    },
+  };
+}

@@ -1,15 +1,15 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {  Autoplay , EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
-import {  SectionTitle , FeedbackCard } from "..";
+import { SectionTitle, FeedbackCard } from "..";
 
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
-
-const Feedback = () => {
+const Feedback = ({ feedback }) => {
+  console.log(feedback);
   return (
     <section className="py-10 md:py-[50px] lg:py-[75px] bg-neutral-950 service  ">
       <div className="container">
@@ -31,34 +31,36 @@ const Feedback = () => {
               slidesPerView: 2,
             },
           }}
-          effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className="mySwiper"
         >
-          <SwiperSlide >
-            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
-          </SwiperSlide>
-          <SwiperSlide >
-            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
-          </SwiperSlide>
-          <SwiperSlide >
-            <FeedbackCard img={'/feedback-1.jpg'} title={'Кадыров Сарвар'} subTitle={'Директор Rewolt Ventures'} content={'Оперативная работа, креативные идеи и море эмоций. Вот как бы я описал нашу совместную работу. Хотелось бы предложить сотрудничество.'} />
-          </SwiperSlide>
-      
-          
-        
-          
+          {feedback.map((item) => (
+            <SwiperSlide key={item.id}>
+              <FeedbackCard
+                img={item.author_image}
+                title_ru={item?.title_ru}
+                title_uz={item?.title_uz}
+                job_ru={item?.job_ru}
+                job_uz={item?.job_uz}
+                author_ru={item?.author_ru}
+                author_uz={item?.author_uz}
+                description_ru={item?.description_ru}
+                description_uz={item?.description_uz}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

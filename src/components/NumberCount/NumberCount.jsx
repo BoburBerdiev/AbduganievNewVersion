@@ -1,10 +1,10 @@
 import { useState } from "react"
 import CountUp from "react-countup"
+import { useSelector } from "react-redux"
 import ScrollTrigger from "react-scroll-trigger"
 
-
-// import {Num} from '../num'
-const NumberCount = ({ number, text}) => {
+const NumberCount = ({ number, text_uz , text_ru}) => {
+  const {lang} = useSelector(state => state.LanguageSlice)
 
   const [counterOn , setCounterOn] = useState(false)
 
@@ -14,12 +14,14 @@ const NumberCount = ({ number, text}) => {
         <h5 className="font-extrabold text-7xl gradient-background">
           {
             counterOn &&
-          <CountUp start={0} end={number} duration={5} delay={0} />
+          <CountUp start={0} end={number} duration={5} delay={0} />  
           }
         </h5>
       </ScrollTrigger>
     <p className="text-3xl font-bold text-zinc-200">
-      {text}
+      {
+        lang === 'ru' ? text_ru : text_uz
+      }
     </p>
   </div>
   )
