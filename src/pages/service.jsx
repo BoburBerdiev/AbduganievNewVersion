@@ -4,21 +4,19 @@ import { useSelector } from "react-redux";
 
 
 const service = ({ service , serviceTitle }) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
 
-console.log(serviceTitle);
 
   return (
     <main className="py-10 md:py-14 xl:py-24 bg-neutral-950">
       <div className="container">
-      {/* <PageSectionTItle
+      <PageSectionTItle
           title_ru={serviceTitle[0]?.title_ru}
           title_uz={serviceTitle[0]?.title_uz}
           subTitle_ru={serviceTitle[0]?.description_ru}
           subTitle_uz={serviceTitle[0]?.description_uz}
           row={true}
           
-        /> */}
+        />
 
         {service?.map((item) => 
         <>
@@ -85,6 +83,7 @@ export async function getServerSideProps({ req, res }) {
   return {
     props: {
       service: service.data,
+      serviceTitle: serviceTitle.data,
     },
   };
 }

@@ -1,15 +1,7 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore,  {Pagination,   Autoplay} from "swiper";
-
 import { SectionTitle , ServiceCard } from "..";
-import bgService from 'public/service-bg/CRM-система-min.jpg'
-import bgService1 from 'public/service-bg/SMM-min.jpg'
-import bgService2 from 'public/service-bg/Брендинг-min.jpg'
-import bgService3 from 'public/service-bg/Кибербезопасность-min.jpg'
-import bgService4 from 'public/service-bg/Медиа-min.jpg'
-
+import { useTranslation } from "react-i18next";
 
 
 //
@@ -18,22 +10,20 @@ import bgService4 from 'public/service-bg/Медиа-min.jpg'
 SwiperCore.use([Autoplay]);
 
 const ServicesIndex = ({serviceIndex}) => {
-
+  const {t, i18n} = useTranslation()
 
   return (
     <>
       <section className="pt-20 md:pt-[100px] lg:pt-[150px] pb-10 md:pb-[50px] lg:pb-[75px] bg-neutral-950 service">
         <div className="container">
         <div className="mb-5 md:mb-10 lg:mb-14">
-            <SectionTitle text={"Наши услуги"}  />
+            <SectionTitle text={t('home.service')}  />
             </div>
           <Swiper
           breakpoints={{
-            // when window width is >= 640px
             0: {
               slidesPerView: 1.5,
             },
-            // when window width is >= 768px
             768: {
               slidesPerView: 2.5,
             },

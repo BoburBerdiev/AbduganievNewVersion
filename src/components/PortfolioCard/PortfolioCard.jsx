@@ -8,7 +8,7 @@ const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,description_
     <>
       <Link
         href={href}
-        className="relative duration-300 rounded-lg overflow-clip aspect-video group "
+        className="relative duration-300 rounded-lg overflow-clip aspect-square md:aspect-video pgroup "
       >
         <div className="border-2 rounded-lg ">
           <ImageUl imgStyle={'object-cover z-[2]'} src={img} alt={

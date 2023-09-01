@@ -22,7 +22,7 @@ const projects = ({projects , projectTitle}) => {
             {
               projects?.map(item => (
                 <PortfolioCard
-                key={item?.id}
+                key={item.id}
                 img={item.image}
                 name_uz={item.name_uz}
                 name_ru={item.name_ru}
@@ -61,7 +61,6 @@ export async function getServerSideProps({ req, res }) {
 ])
 
 
-  // Pass data to the page via props
   return {
     props: {
       projects: projects.data,

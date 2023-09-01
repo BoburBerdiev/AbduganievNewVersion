@@ -1,11 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { CurrentWhiteBtn, ImageUl , PartnorList } from "..";
 import { useSelector } from "react-redux";
 
 const HeaderBanner = ({header, partners }) => {
 const {lang} = useSelector(state => state.LanguageSlice)
 
-console.log(header);
-
+const {t} = useTranslation()
   return (  
     <header className="py-8 md:pt-20 pb-[150px] bg-neutral-950 ">
       <div className="container grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-12">
@@ -22,7 +22,7 @@ console.log(header);
             }
             
           </p>
-          <CurrentWhiteBtn text={'Начать работу'} />
+          <CurrentWhiteBtn text={t('button.start')} />
         </div>
         <div className="order-1 relative md:h-full md:order-2 aspect-video flex items-center justify-center  rotate-[60deg] hover:rotate-0 duration-500">
                 <ImageUl src={header[0]?.image} imgStyle={'object-contain'} alt={'Abduganiev icon'} />

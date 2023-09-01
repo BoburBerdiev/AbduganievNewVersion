@@ -1,6 +1,7 @@
 import { btnForm } from "@/slice/formSlice";
 import {  CurrentBtn  , ContactForm} from "..";
 import { useDispatch } from "react-redux"
+import { useTranslation } from "react-i18next";
 
 const StartProject = () => {
   const dispatch = useDispatch()
@@ -8,8 +9,8 @@ const StartProject = () => {
       const openForm = () => {
         dispatch(btnForm())
       }
-      
-  return (
+      const {t} = useTranslation()
+      return (
     <>
       <ContactForm  />
 
@@ -19,16 +20,18 @@ const StartProject = () => {
                 
           </div>
           <div className="relative z-10 grid grid-cols-5 mb-5 md:mb-10 lg:mb-16">
-            <div className="col-span-4 space-y-10 md:space-y-20 md:col-span-4">
+            <div className="col-span-5 space-y-10 md:space-y-20 md:col-span-4">
               <h1 className="text-5xl font-extrabold text-center md:text-start md:text-7xl">
                 <span className="gradient-background">
-                  Есть проект ? <br />  Давайте начинать
+                 {
+                  t('home.startProject')
+                 }
                 </span>
               </h1>
               <div className="flex items-center justify-center md:justify-start">
                 <CurrentBtn  onClick={openForm}
                   style={"py-4 px-9 after:rounded-[50px] before:rounded-[50px]"}
-                  text={"Связаться"}
+                  text={t('button.start')}
                 />
               </div>
             </div>

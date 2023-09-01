@@ -1,20 +1,35 @@
 {
   "translation": {
     "navbar": {
-      "dealersCenter": "do'kon",
-      "about": "Leapmotor haqida",
-      "news": "yangiliklar xonasi",
-      "dealers": "Dilerlar",
-      "service": "Xizmat",
-      "testDrive": "Test-drayv",
-      "accessories": "Aksessuarlar"
+      "home": "Asosiy",
+      "about": "Biz haqimizda",
+      "service": "Xizmatlar",
+      "portfolio": "Portfolio",
+      "lang": "Til",
+      "uz":"Uz",
+      "ru": "Ru",
+      "contact":"Aloqa"
+    },
+    "button": {
+      "start":"Boshlash",
+      "project":"Barcha Loyihalar"
+    },
+     "home": {
+      "service":"Bizning Hizmatlar",
+      "client":"Mijozlarning sharhlari",
+      "startProject": "Loyihangiz bormi? Boshlaylik"
+    },
+     "about": {
+      "team": "Bizning jamoamiz",
+      "trust":"Ular bizga ishonishadi "
     },
     "footer": {
-      "privacy": "Maxfiylik va huquqiy ma'lumotlar",
-      "investor": "Dillerlar bilan aloqa",
-      "cooking": "Cookie sozlamalari",
-      "createdBy": "Sayt tayyorlovchi",
-      "address": "Oloy bozori avtoturargohi"
+      "workTime":"Ish tartibi",
+      "messenger": "Biz ijtimoiy tarmoqlardamiz",
+      "email":"Elektron pochta",
+      "address": "Manzil",
+      "phone": "Telfon",
+      "reserved":"Barcha huquqlar himoyalangan"
     },
     "more": "Batafsil ma'lumot"
   }

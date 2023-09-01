@@ -205,3 +205,9 @@
 .partnor-swipper {
   transition-timing-function: linear;
 }
+@media (max-width: 500px) {
+
+  .card{
+    height: 280px;
+  }
+}

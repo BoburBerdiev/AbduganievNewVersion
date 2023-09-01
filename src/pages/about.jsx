@@ -10,6 +10,7 @@ import apiService from "@/service/api";
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 
 SwiperCore.use([Autoplay]);
@@ -19,6 +20,7 @@ const about = ({about}) => {
     apiService.getData("/partners/")
   );
 
+
   const {data: team } = useQuery("get-team", () =>
   apiService.getData("/team/")
 );
@@ -26,7 +28,11 @@ const about = ({about}) => {
 const {data: whyWe } = useQuery("get-whyWe", () =>
 apiService.getData("/why-we/1")
 );
+
+console.log(whyWe?.data);
+
 const {lang} = useSelector(state => state.LanguageSlice)
+const {t} = useTranslation()
   return (
     <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
       <div className="container ">
@@ -41,16 +47,13 @@ const {lang} = useSelector(state => state.LanguageSlice)
         <section className="relative w-full  aspect-video my-20 md:my-[100px] lg:my-[150px]">
           <ImageUl
           priority={true}
-            src={"/team-min.jpg"}
+            src={about[0]?.image}
             alt={"team"}
             imgStyle={"object-cover"}
           />
         </section>
         <section className="text-zinc-200 my-20 md:my-[100px] lg:my-[150px]">
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
-            {
-            }
-            
             <h3 className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl">
               {
                 lang === 'ru' ? whyWe?.data?.title_ru : whyWe?.data?.title_uz
@@ -80,7 +83,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
           </div>
         </section>
         <section className="my-20 md:my-[100px] lg:my-[150px] service">
-          <SectionTitle text={"Они доверяют нам "}  />
+          <SectionTitle text={t('about.team')}  />
 
           <div className=" lg:pt-[60px] md:pt-10 pt-5">
             <Swiper
@@ -126,11 +129,11 @@ const {lang} = useSelector(state => state.LanguageSlice)
           </div>
         </section>
         <section>
-          <SectionTitle text={"Они доверяют нам "}  />
+          <SectionTitle text={t('about.trust')}  />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
           
             {partnor?.data?.map((item) => (
-              <div key={item?.id} className="flex items-center justify-center">
+              <a href={item.link} target="_blank" key={item?.id} className="flex items-center justify-center block">
                 <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
                   <ImageUl
                     src={item?.image}
@@ -138,7 +141,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
                     alt={item?.image}
                   />
                 </div>
-              </div>
+              </a>
             ))}
 
            

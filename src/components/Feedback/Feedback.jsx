@@ -1,20 +1,18 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from "swiper";
-
+import  {  EffectCoverflow, Pagination } from "swiper";
 import { SectionTitle, FeedbackCard } from "..";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 const Feedback = ({ feedback }) => {
-  console.log(feedback);
+  const {t} = useTranslation()
   return (
     <section className="py-10 md:py-[50px] lg:py-[75px] bg-neutral-950 service  ">
       <div className="container">
         <div className="mb-8 md:mb-14 lg:mb-14">
-          <SectionTitle text={"Отзывы клиентов"} />
+          <SectionTitle text={t('home.client')} />
         </div>
 
         <Swiper

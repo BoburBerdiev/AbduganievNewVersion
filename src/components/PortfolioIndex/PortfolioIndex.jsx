@@ -1,13 +1,15 @@
+import { useTranslation } from 'react-i18next'
 import {SectionTitle , PortfolioCard ,CurrentWhiteBtn } from '..'
 
 
 const PortfolioIndex = ({projects}) => {
+  const {t} = useTranslation()
   return (
     <>
     <section className="py-10 md:py-[50px] lg:py-[75px] bg-neutral-950 service">
       <div className="container">
         <div className="mb-5 md:mb-10 lg:mb-16">
-          <SectionTitle text={"Портфолио"} />
+          <SectionTitle text={t('navbar.portfolio')} />
         </div>
         <div className="grid grid-cols-1 gap-3 py-5 md:py-10 md:grid-cols-2 ">
         {
@@ -27,7 +29,7 @@ const PortfolioIndex = ({projects}) => {
             }
         </div>
           <div className="flex items-center justify-center ">
-            <CurrentWhiteBtn text={'Все проекты'}/>
+            <CurrentWhiteBtn text={t('button.project')}/>
           </div>
       </div>
     </section>

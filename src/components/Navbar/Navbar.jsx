@@ -14,13 +14,7 @@ import { navItems } from "@/config/routerConfig";
 
 
 const Navbar = () => {
-
   
-  
- 
-
-  const [navLang , setNavLang] = useState(true)
-
   const [menu , setMenu] = useState(true);
   const {t, i18n} = useTranslation()
   const dispatch = useDispatch()
@@ -30,6 +24,10 @@ const Navbar = () => {
     dispatch(btnContact())
   }
 
+  const openMenu = () => {
+    setMenu(!menu)
+  }
+  
 
   useEffect(() => {
     if (isChangeLang) {
@@ -39,9 +37,8 @@ const Navbar = () => {
     }
 }, [checkLang]);
 const changLang = (lang) => {
-    setIsChangeLang(true)
+    setIsChangeLang(!isChangeLang)
     setCheckLang(lang)
-    // setOpenNavbar(false)
 }
 
 
@@ -52,7 +49,7 @@ const changLang = (lang) => {
       <div className="h-full py-5 border-line bg-neutral-950">
             <div className="container flex items-center justify-between bg-neutral-950 ">
               <Link
-                className="relative w-[120px] h-[60px] block flex-shrink-0"
+                className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0"
                 href={"/"}
               >
                 <Image fill className="object-contain w-full h-full " src={logo} />
@@ -65,6 +62,8 @@ const changLang = (lang) => {
                         <Link
                           className="relative duration-700 after:w-full "
                           href={item.link}
+                          onClick={(e) => setMenu(e ,!menu)}
+
                         >
                           {t(item.navName)}
                         </Link>
@@ -72,26 +71,26 @@ const changLang = (lang) => {
                     ))
                   }
                  
-                  <li className="flex items-center ">
+                  <li className="flex flex-col items-center justify-center ">
             <button
               type="button"
-              onClick={() => setNavLang(!navLang)}
-              className="cursor-pointer hover:text-white"
+              onClick={(e) => setIsChangeLang(!isChangeLang)}
+              className="block cursor-pointer hover:text-white"
             >
-              Язык
+              {t('navbar.lang')}
             </button>
-            <div className={`z-50   my-4 text-base absolute list-none top-[85%] border border-white ${navLang ? 'hidden' : 'block'}  bg-neutral-950  divide-y divide-neutral-900 rounded-lg shadow `}>
+            <div className={`z-50   my-4 text-base relative md:absolute list-none md:top-[85%]   ${isChangeLang ? 'hidden' : 'block'}  bg-neutral-950  divide-y divide-neutral-900 rounded-lg shadow `}>
               <ul className="py-2 " >
                 <li>
                   <button
                     className="block px-4 py-2 text-sm "
                   >
-                    <div className="" onClick={() => changLang('ru')}>Ru</div>
+                    <div className="" onClick={() => changLang('ru') }>{t('navbar.ru')}</div>
                   </button>
                   <button
                     className="block px-4 py-2 text-sm "
                   >
-                    <div className="" onClick={() => changLang('uz')}>Uz</div>
+                    <div className="" onClick={() => changLang('uz')}>{t('navbar.uz')}</div>
                   </button>
                  
                 </li>
@@ -100,16 +99,16 @@ const changLang = (lang) => {
            
           </li>
                   <li className="flex items-center justify-center">
-                    <CurrentBtn  onClick={openContact}  style={"py-3 px-7 rounded-[50px]"} text={"Контакты"} />
+                    <CurrentBtn  onClick={openContact}  style={"py-3 px-7 rounded-[50px]"} text={t('navbar.contact')} />
 
                   </li>
                 </ul>
                   
-                  <button onClick={() => (setMenu(!menu))} className="block p-3 glow-on-hover md:hidden">
+                  <button onClick={openMenu} className="block p-2 md:p-3 glow-on-hover md:hidden">
                       {
                         menu ?
-                      <AiOutlineClose  className="flex-shrink-0 text-2xl text-white"  />:
-                      <HiOutlineMenuAlt1  className="flex-shrink-0 text-2xl text-white"  />
+                      <AiOutlineClose  className="flex-shrink-0 text-xl text-white md:text-2xl"  />:
+                      <HiOutlineMenuAlt1  className="flex-shrink-0 text-xl text-white md:text-2xl"  />
                       }
                   </button>
                 
