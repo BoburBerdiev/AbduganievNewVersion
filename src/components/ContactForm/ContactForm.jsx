@@ -6,14 +6,13 @@ import { useSelector ,useDispatch } from "react-redux";
 import { btnForm } from "@/slice/formSlice";
 
 const ContactForm = ({}) => {
-  const [closeModal , setCloseModal] = useState(false)
 
   const {form} = useSelector(state => state.formSlice)
   const dispatch = useDispatch()
   
   return (
 
-    <main className={`fixed ${form ? 'hidden' : 'flex'}  top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
+    <main className={`fixed ${form ? 'flex' : 'hidden'}  top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
       <section className="relative ">
         <div className="container relative ">
           <div className="grid items-center grid-cols-1 md:grid-cols-2 space-y-[70px] md:space-y-[90px] xl:gap-20">

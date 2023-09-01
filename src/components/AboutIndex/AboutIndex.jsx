@@ -12,12 +12,12 @@ const AboutIndex = ({numberCount , about}) => {
 
       <section className="py-20 md:py-[100px] lg:py-[150px] bg-neutral-900">
         <div className="container">
-          <div className="grid grid-cols-1  xl:grid-cols-2 gap-[50px]">
+          <div className="grid grid-cols-1  lg:grid-cols-2 gap-[50px] xl:gap-[100px]">
             <div className="text-center space-y-[70px] md:text-start text-zinc-200">
               <div className="space-y-5">
               <SectionTitle text_uz={about[0]?.title_uz} text_ru={about[0]?.title_ru}/>
               
-              <p className="text-xl text-justify lg:text-2xl ">
+              <p className="text-xl lg:text-2xl ">
                 {
                   lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }

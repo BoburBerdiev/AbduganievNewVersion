@@ -1,13 +1,11 @@
 {
   "translation": {
     "navbar": {
-      "dealersCenter": "Дилерские центры",
-      "about": "О Leapmotor",
-      "news": "Новости",
-      "dealers": "Стать дилерам",
-      "service": "Сервис",
-      "testDrive": "Тест драйв",
-      "accessories": "Аксессуары"
+      "home": "Главная",
+      "about": " О нас",
+      "service": "Услуги",
+      "portfolio": "Портфолио",
+      "lang": "Язык"
     },
     "footer": {
       "privacy": "Конфиденциальность и юридическая информация",

@@ -28,7 +28,7 @@ apiService.getData("/why-we/1")
 );
 const {lang} = useSelector(state => state.LanguageSlice)
   return (
-    <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px]">
+    <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
       <div className="container ">
         <PageSectionTItle
           title_ru={about[0]?.title_ru}
@@ -56,7 +56,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
                 lang === 'ru' ? whyWe?.data?.title_ru : whyWe?.data?.title_uz
               }
             </h3>
-            <p className="text-start">
+            <p className="text-start md:text-md lg:text-lg xl:text-xl">
               {
                 lang === 'uz' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
               }
@@ -68,9 +68,9 @@ const {lang} = useSelector(state => state.LanguageSlice)
               <div className="w-[60%] aspect-square rounded-full animate-spin-slow bg-gradient-to-r from-[rgba(0,255,126,0.50)] blur-3xl to-[rgba(0,30,255,0.50)] "></div>
             </div>
             <div className="col-span-3 ">
-              <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg">
+              <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
                 {whyWe?.data?.why_we_childs?.map(item => (
-                    <li key={item.id} className="">
+                    <li key={item.id} >
                       <span className="font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
                       {lang === 'ru' ? item.text_uz : item.text_uz}
                     </li>
@@ -80,7 +80,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
           </div>
         </section>
         <section className="my-20 md:my-[100px] lg:my-[150px] service">
-          <SectionTitle text={"Они доверяют нам "} className="" />
+          <SectionTitle text={"Они доверяют нам "}  />
 
           <div className=" lg:pt-[60px] md:pt-10 pt-5">
             <Swiper
@@ -125,15 +125,8 @@ const {lang} = useSelector(state => state.LanguageSlice)
             </Swiper>
           </div>
         </section>
-        {/* {
-                            about[0]?.aboutSystems?.systems.map((system) => (
-                                <HoverCard key={system?._id} image={`${process.env.NEXT_PUBLIC_API_URL}/${system?.image?.path}`}
-                                           title={lang === 'ru' ? system?.titleRu : system?.titleUz}
-                                           text={lang === 'ru' ? system?.descriptionRu : system?.descriptionUz}/>
-                            ))
-                        } */}
         <section>
-          <SectionTitle text={"Они доверяют нам "} className="" />
+          <SectionTitle text={"Они доверяют нам "}  />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
           
             {partnor?.data?.map((item) => (

@@ -9,7 +9,7 @@ const service = ({ service , serviceTitle }) => {
 console.log(serviceTitle);
 
   return (
-    <main className="py-10 md:py-14 xl:py-24">
+    <main className="py-10 md:py-14 xl:py-24 bg-neutral-950">
       <div className="container">
       {/* <PageSectionTItle
           title_ru={serviceTitle[0]?.title_ru}

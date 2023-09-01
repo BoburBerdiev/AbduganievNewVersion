@@ -6,7 +6,7 @@ const projects = ({projects , projectTitle}) => {
 
   return (
     <>
-      <main className="py-10 md:py-14 xl:py-24">
+      <main className="py-10 md:py-14 xl:py-24 bg-neutral-950">
         <div className="container">
          <PageSectionTItle
           title_ru={projectTitle[0]?.title_ru}

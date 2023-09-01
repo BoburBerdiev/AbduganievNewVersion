@@ -10,8 +10,15 @@ import { useDispatch } from "react-redux"
 import { btnContact } from "@/slice/contactSlice"
 import {useTranslation} from "react-i18next";
 import { checkLanguageAction } from "@/slice/LanguageSlice";
+import { navItems } from "@/config/routerConfig";
+
 
 const Navbar = () => {
+
+  
+  
+ 
+
   const [navLang , setNavLang] = useState(true)
 
   const [menu , setMenu] = useState(true);
@@ -52,46 +59,19 @@ const changLang = (lang) => {
               </Link>
               <aside className="flex space-x-9">
                 <ul className={`${menu ? 'h-[calc(100vh-120px)] bottom-0 left-0': 'left-[100%] h-0 opacity-0' } duration-200 flex fixed  md:static   md:h-auto  bg-black/90 md:bg-transparent  space-y-10 font-medium flex-col md:flex-row text-2xl border-b md:border-none w-full py-10 md:py-0 md:w-auto text-[#E4E4E7] md:text-lg md:space-y-0 md:space-x-9`}>
-                  <li className="flex items-center justify-center">
-                    <Link
-                      className="relative duration-700 after:w-full "
-                      href={"/"}
-                    >
-                      Главная
-                    </Link>
+                  {
+                    navItems.map(item => (
+                      <li className="flex items-center justify-center">
+                        <Link
+                          className="relative duration-700 after:w-full "
+                          href={item.link}
+                        >
+                          {t(item.navName)}
+                        </Link>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <Link
-                      className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                      href={"/about"}
-                    >
-                      О нас
-                    </Link>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Link
-                      className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                      href={"/service"}
-                    >
-                      {t('navbar.service')}
-                    </Link>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Link
-                      className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                      href={"/portfolio"}
-                    >
-                      Портфолио
-                    </Link>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Link
-                      className="duration-700 hover:text-white hover:underline-offset-8 hover:underline"
-                      href={"#"}
-                    >
-                      Язык
-                    </Link>
-                  </li>
+                    ))
+                  }
+                 
                   <li className="flex items-center ">
             <button
               type="button"
