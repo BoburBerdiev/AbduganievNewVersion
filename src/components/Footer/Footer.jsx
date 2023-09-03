@@ -7,7 +7,7 @@ import apiService from "@/service/api";
 
 const Footer = () => {
   const { data: contact } = useQuery("contact", () =>
-    apiService.getData("/contact/2")
+    apiService.getData("/contact")
   );
 
   const { lang } = useSelector((state) => state.LanguageSlice);
@@ -15,7 +15,7 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <>
-      <footer className="py-20 md:py-20 xl:py-24 bg-neutral-900">
+      <footer className="py-10 md:py-16 bg-neutral-900">
         <div className="container flex flex-col space-x-0 space-y-10 md:space-y-0 md:space-x-5 md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:items-start space-y-2.5  ">
             <p className="space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start">

@@ -19,6 +19,12 @@
       "client":"Mijozlarning sharhlari",
       "startProject": "Loyihangiz bormi? Boshlaylik"
     },
+    "form": {
+      "name":"Ismingiz",
+      "company": "Sizning kompaniyangiz nomi",
+      "email" : "Elektron pochtangiz",
+      "project" : "Loyihangiz haqida qisqacha yozing"
+    },
      "about": {
       "team": "Bizning jamoamiz",
       "trust":"Ular bizga ishonishadi "

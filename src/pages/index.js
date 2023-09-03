@@ -17,6 +17,7 @@ export default function Home({
   feedback,
   projects,
 }) {
+ 
   return (
     <>
       <Head>
@@ -67,10 +68,11 @@ export default function Home({
           content="/abduganiev-logoA.png"
         /> */}
         <link rel="icon" href="/abduganiev-logoA.png" />
-        <title>Abdug'aniev Technology</title>
+        <title>Abduganiev Technology</title>
       </Head>
+
       <main>
-        <HeaderBanner header={header} partners={partners} />
+        <HeaderBanner   header={header} partners={partners} />
         <AboutIndex about={about} numberCount={numberCount} />
         <ServicesIndex serviceIndex={serviceIndex} />
         <PortfolioIndex projects={projects} />

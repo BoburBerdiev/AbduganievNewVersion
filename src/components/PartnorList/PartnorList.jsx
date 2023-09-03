@@ -9,7 +9,8 @@ const PartnorList = ({partners}) => {
 
   return (
     <>
-      <Swiper
+    <div className="container overflow-hidden">
+    <Swiper
           breakpoints={{
             // when window width is >= 640px
             0: {
@@ -50,6 +51,8 @@ const PartnorList = ({partners}) => {
           }
          
         </Swiper>
+    </div>
+     
     </>
   )
 }

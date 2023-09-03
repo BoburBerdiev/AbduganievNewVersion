@@ -32,7 +32,11 @@ const Feedback = ({ feedback }) => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
+          loop={true}
           slidesPerView={"auto"}
+          autoplay={{
+            delay: 6000
+        }}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
@@ -44,9 +48,10 @@ const Feedback = ({ feedback }) => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          {feedback.map((item) => (
+          {feedback.map((item , id) => (
             <SwiperSlide key={item.id}>
               <FeedbackCard
+              id={id}
                 img={item.author_image}
                 title_ru={item?.title_ru}
                 title_uz={item?.title_uz}

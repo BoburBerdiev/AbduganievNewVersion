@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 SwiperCore.use([Autoplay]);
 
 const ServicesIndex = ({serviceIndex}) => {
-  const {t, i18n} = useTranslation()
+  const {t} = useTranslation()
 
   return (
     <>
@@ -30,11 +30,8 @@ const ServicesIndex = ({serviceIndex}) => {
             1024: {
               slidesPerView: 3.5,
             },
-            1100 :{ 
-              slidesPerView:4.5,
-            }
+            
           }}
-            slidesPerView={4.5}
             centeredSlides={false}
             spaceBetween={10}
             grabCursor={true}
@@ -48,9 +45,9 @@ const ServicesIndex = ({serviceIndex}) => {
             className="py-4 mySwiper"
           >
             {
-              serviceIndex?.map(item => (
-                <SwiperSlide key={item.id}>
-                <ServiceCard bg={item.image} title_ru={item.title_ru} title_uz={item.title_uz} description_uz={item.description_uz} description_ru={item.description_ru} />
+              serviceIndex?.map((item , id) => (
+              <SwiperSlide key={item.id}>
+                <ServiceCard id={id} bg={item.image} title_ru={item.title_ru} title_uz={item.title_uz} description_uz={item.description_uz} description_ru={item.description_ru} />
               </SwiperSlide>
               ))
             }

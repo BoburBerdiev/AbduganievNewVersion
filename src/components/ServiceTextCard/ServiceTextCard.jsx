@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-const ServiceTextCard = ({ description_ru ,description_uz , name_ru , name_uz }) => {
+const ServiceTextCard = ({ description_ru ,description_uz , name_ru , name_uz  , id}) => {
   const [hover, setHover] = useState(false);
   const {lang} = useSelector(state => state.LanguageSlice)
 
 
   return (
     <div
+    data-aos='fade-up' data-aos-delay={id * 10} 
       className="space-y-5 md:space-y-2.5"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -21,7 +22,7 @@ const ServiceTextCard = ({ description_ru ,description_uz , name_ru , name_uz })
                 lang === 'ru' ? name_ru : name_uz
         }
       </h2>
-      <p className="text-base lg:text-xl md:text-lg text-zinc-200">
+      <p className="text-base text-justify lg:text-xl md:text-lg text-zinc-200">
       {
                 lang === 'ru' ? description_ru : description_uz
         }

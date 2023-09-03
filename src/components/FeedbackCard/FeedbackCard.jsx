@@ -3,7 +3,7 @@ import {RiDoubleQuotesR} from 'react-icons/ri'
 import {  ImageUl } from "..";
 import { useSelector } from "react-redux";
 
-const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru , job_uz ,description_ru ,description_uz , }) => {
+const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru , job_uz ,description_ru ,description_uz ,id }) => {
 
   const {lang} = useSelector(state => state.LanguageSlice)
 
@@ -11,7 +11,7 @@ const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru
     <>
 
     
-      <div className="relative px-6 py-6 space-y-3 rounded-lg md:p-10 text-zinc-200 bg-neutral-900 md:space-y-7">
+      <div data-aos='fade-up' data-aos-delay={id*10} className="relative px-6 py-6 space-y-3 rounded-lg md:p-10 text-zinc-200 bg-neutral-900 md:space-y-7">
               <RiDoubleQuotesR  className="absolute gradient-background text-6xl md:text-8xl right-5 md:-top-[45px] -top-[25px]"/>
               <div>
                 <h6 className="mb-2 text-lg font-semibold md:mb-2.5 md:text-xl lg:text-2xl">

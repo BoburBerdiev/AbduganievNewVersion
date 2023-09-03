@@ -15,9 +15,10 @@ const AboutIndex = ({numberCount , about}) => {
           <div className="grid grid-cols-1  lg:grid-cols-2 gap-[50px] xl:gap-[100px]">
             <div className="text-center space-y-[70px] md:text-start text-zinc-200">
               <div className="space-y-5">
+                
               <SectionTitle text_uz={about[0]?.title_uz} text_ru={about[0]?.title_ru}/>
               
-              <p className="text-xl lg:text-2xl ">
+              <p className="text-xl text-justify lg:text-2xl " data-aos='fade-up' data-aos-delay='50'>
                 {
                   lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
@@ -37,7 +38,7 @@ const AboutIndex = ({numberCount , about}) => {
               </div>
             </div>
             <div>
-            <iframe className="w-full rounded-xl aspect-square md:h-full" src={about[0]?.link} title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" allowTransparency="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe data-aos='fade-up' data-aos-delay='100' className="w-full rounded-xl aspect-square md:h-full" src={about[0]?.link} title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" ></iframe>
             </div>
           </div>
         </div>

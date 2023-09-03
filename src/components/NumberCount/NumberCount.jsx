@@ -7,18 +7,20 @@ const NumberCount = ({ number, text_uz , text_ru}) => {
   const {lang} = useSelector(state => state.LanguageSlice)
 
   const [counterOn , setCounterOn] = useState(false)
-
+  // counterOn &&
+// CountUp ni oliga qoyiw kk  har safar ref resh
+  
   return (
-    <div className="space-y-5 text-center">
+    <div className="space-y-5 text-center" data-aos='fade-up'>
       <ScrollTrigger onEnter={() => (setCounterOn(true))} onExit={() => (setCounterOn(false))}>
-        <h5 className="font-extrabold text-7xl gradient-background">
+        <h5 className="text-6xl font-extrabold gradient-background">
           {
-            counterOn &&
+       
           <CountUp start={0} end={number} duration={5} delay={0} />  
           }
         </h5>
       </ScrollTrigger>
-    <p className="text-3xl font-bold text-zinc-200">
+    <p className="text-2xl font-bold text-zinc-200">
       {
         lang === 'ru' ? text_ru : text_uz
       }

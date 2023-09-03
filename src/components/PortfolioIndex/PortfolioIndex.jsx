@@ -13,7 +13,7 @@ const PortfolioIndex = ({projects}) => {
         </div>
         <div className="grid grid-cols-1 gap-3 py-5 md:py-10 md:grid-cols-2 ">
         {
-              projects?.map(item => (
+              projects?.map((item , id) => (
                 <PortfolioCard
                 key={item?.id}
                 img={item.image}
@@ -24,6 +24,7 @@ const PortfolioIndex = ({projects}) => {
                 description_ru={item.description_ru}
                 description_uz={item.description_uz}
                 href={item.link}
+                id={id}
               />
               ))
             }

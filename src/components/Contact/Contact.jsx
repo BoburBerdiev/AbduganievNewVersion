@@ -10,8 +10,10 @@ import { useQuery } from "react-query";
 
 const Contact = () => {
   const { data: contactData } = useQuery("contact", () =>
-  apiService.getData("/contact/2")
+  apiService.getData("/contact")
 );
+
+console.log(contactData);
   const { lang } = useSelector((state) => state.LanguageSlice);
   const {contact} = useSelector(state => state.contactSlice)
   const dispatch = useDispatch()
@@ -22,14 +24,17 @@ const Contact = () => {
       <div className="container relative py-[10%] md:px-[10%] ">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 gap-y-16 md:gap-y-20 xl:gap-20">
           <div className="relative space-y-[30px] md:space-y-[50px] col-span-1">
-            <h3 className="text-zinc-200 text-3xl  text-center md:text-start  font-extrabold md:text-[40px] lg:text-5xl">
+            <h3 data-aos='fade-up'   className="text-zinc-200 text-3xl  text-center md:text-start  font-extrabold md:text-[40px] lg:text-5xl">
               <span className="gradient-background">
                 {t('office')}
               </span>
             </h3>
             <CircleBg  bgStyle={'top-0 left-[20%] md:top-[80%] w-[40%]'}/>
-            <div className="flex flex-col items-center md:items-start space-y-2.5  ">
-              <p
+            <div 
+              data-aos='fade-up' data-aos-delay='20' 
+            
+            className="flex flex-col items-center md:items-start space-y-2.5  ">
+              <p 
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.workTime")}:</span>
@@ -49,7 +54,8 @@ const Contact = () => {
              
               <a
                 target="_blank"
-                href={contactData?.data?.email}
+                href={'mailo:' + contactData?.data?.email}
+
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.email")}:</span>
@@ -110,7 +116,7 @@ const Contact = () => {
           <button onClick={() => (dispatch(btnContact()))}  className="absolute right-[2%] md:right-0 p-1 text-3xl rounded-lg top-[1%] hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
                 <AiOutlineClose />
               </button>
-          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.000945559697!2d69.2642451755967!3d41.33059279951688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8be02d75a5cb%3A0x6fe69b8a266e8aa4!2sOOO%20%22MARSS%20TEAM%20%22!5e0!3m2!1suz!2s!4v1692872461280!5m2!1suz!2s"  allowFullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.000945559697!2d69.2642451755967!3d41.33059279951688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8be02d75a5cb%3A0x6fe69b8a266e8aa4!2sOOO%20%22MARSS%20TEAM%20%22!5e0!3m2!1suz!2s!4v1692872461280!5m2!1suz!2s"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

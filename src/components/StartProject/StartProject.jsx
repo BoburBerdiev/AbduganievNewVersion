@@ -21,7 +21,7 @@ const StartProject = () => {
           </div>
           <div className="relative z-10 grid grid-cols-5 mb-5 md:mb-10 lg:mb-16">
             <div className="col-span-5 space-y-10 md:space-y-20 md:col-span-4">
-              <h1 className="text-5xl font-extrabold text-center md:text-start md:text-7xl">
+              <h1 className="text-5xl font-extrabold text-center md:text-start md:text-7xl" data-aos='fade-up' >
                 <span className="gradient-background">
                  {
                   t('home.startProject')

@@ -1,26 +1,30 @@
 import "@/styles/globals.css";
 import Layout from "@/layout/layout";
-// import { HydrationProvider, Server, Client } from "react-hydration-provider";
 import store from "@/store";
 import { Provider } from "react-redux";
 import {QueryClientProvider , QueryClient} from 'react-query'
 
 import '../localization/i18n'
 
-
-// Import Swiper styles
+import 'aos/dist/aos.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Montserrat } from '@next/font/google'
+import { Montserrat  , Open_Sans} from '@next/font/google'
 
 const queryClient = new QueryClient()
 
 const montserrat = Montserrat({
-    subsets:['latin'],
+    subsets:['latin' , 'cyrillic'],
     weight:['400','500','700' , '600' , '800']
 })
+
+export const open_sans = Open_Sans({
+  subsets: ['latin' , 'cyrillic'],
+  display: 'swap',
+})
+
 export default function App({ Component, pageProps }) {
 
   return (

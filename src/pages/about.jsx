@@ -29,7 +29,6 @@ const {data: whyWe } = useQuery("get-whyWe", () =>
 apiService.getData("/why-we/1")
 );
 
-console.log(whyWe?.data);
 
 const {lang} = useSelector(state => state.LanguageSlice)
 const {t} = useTranslation()
@@ -54,12 +53,12 @@ const {t} = useTranslation()
         </section>
         <section className="text-zinc-200 my-20 md:my-[100px] lg:my-[150px]">
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
-            <h3 className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl">
+            <h3 data-aos='fade-up' className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl">
               {
                 lang === 'ru' ? whyWe?.data?.title_ru : whyWe?.data?.title_uz
               }
             </h3>
-            <p className="text-start md:text-md lg:text-lg xl:text-xl">
+            <p data-aos='fade-up' data-aos-delay='80' className="text-start md:text-md lg:text-lg xl:text-xl">
               {
                 lang === 'uz' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
               }
@@ -72,8 +71,8 @@ const {t} = useTranslation()
             </div>
             <div className="col-span-3 ">
               <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
-                {whyWe?.data?.why_we_childs?.map(item => (
-                    <li key={item.id} >
+                {whyWe?.data?.why_we_childs?.map((item ,id) => (
+                    <li key={item.id} data-aos='fade-up' data-aos-delay={id * 10} >
                       <span className="font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
                       {lang === 'ru' ? item.text_uz : item.text_uz}
                     </li>
@@ -99,14 +98,15 @@ const {t} = useTranslation()
                 1024: {
                   slidesPerView: 3.5,
                 },
-                1100: {
+                1536: {
                   slidesPerView: 4.5,
                 },
               }}
               slidesPerView={4.5}
-              centeredSlides={false}
+              centeredSlides={true}
               spaceBetween={10}
               grabCursor={true}
+              
               autoplay={{
                 delay: 3000,
               }}
@@ -117,9 +117,9 @@ const {t} = useTranslation()
               className="py-4 mySwiper"
             >
               {
-                team?.data.map(item => (
+                team?.data.map((item , id) => (
                 <SwiperSlide key={item.id}>
-                <TeamCard person={item} />
+                <TeamCard person={item} id={id} />
               </SwiperSlide>
                 ))
               }
@@ -132,8 +132,8 @@ const {t} = useTranslation()
           <SectionTitle text={t('about.trust')}  />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
           
-            {partnor?.data?.map((item) => (
-              <a href={item.link} target="_blank" key={item?.id} className="flex items-center justify-center block">
+            {partnor?.data?.map((item , id) => (
+              <a href={item.link} target="_blank" key={item?.id}  data-aos='fade-up' data-aos-delay={id} className="flex items-center justify-center ">
                 <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
                   <ImageUl
                     src={item?.image}

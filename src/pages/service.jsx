@@ -22,7 +22,7 @@ const service = ({ service , serviceTitle }) => {
         <>
          <div className="py-5 md:py-10 lg:py-13 xl:py-18">
           <div className="grid items-center grid-cols-1 md:grid-cols-2 xl:gap-x-20 lg:gap-x-18 md:gap-x-14 gap-x-0 gap-y-10">
-            <div className="order-2 md:order-1">
+            <div data-aos='fade-up' className="order-2 md:order-1">
               <ServiceTextCard
                 description_ru={item?.description_ru}
                 description_uz={item?.description_uz}
@@ -30,7 +30,7 @@ const service = ({ service , serviceTitle }) => {
                 name_uz={item?.name_uz}
               />
             </div>
-            <div className="relative order-1 w-full aspect-video md:order-2">
+            <div data-aos='fade-up' data-aos-delay='50' className="relative order-1 w-full aspect-video md:order-2">
               <ImageUl
                 src={item?.image}
                 alt={"UX/UI Design"}
@@ -43,7 +43,8 @@ const service = ({ service , serviceTitle }) => {
         <div className="py-5 md:py-10 lg:py-13 xl:py-18">
           <div className="grid items-center grid-cols-1 md:grid-cols-2 xl:gap-x-20 lg:gap-x-18 md:gap-x-14 gap-x-0 gap-y-10">
         {
-          item.service_child?.map(child => (
+          item.service_child?.map((child ,id) => (
+            
             <ServiceTextCard
                 description_ru={child?.description_ru}
                 description_uz={child?.description_uz}
