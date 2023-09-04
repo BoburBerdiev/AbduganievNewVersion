@@ -1,19 +1,21 @@
-import Link from "next/link"
 import { CircleBg } from ".."
 import {AiOutlineClose} from 'react-icons/ai'
-import { BsInstagram } from "react-icons/bs";
+import { BsInstagram , BsFacebook} from "react-icons/bs";
 import { btnContact } from "@/slice/contactSlice"
 
 import { useSelector ,useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
+import apiService from "@/service/api";
 
 const Contact = () => {
-  const { data: contactData } = useQuery("contact", () =>
+  const { data: contactData,isLoading } = useQuery("contact", () =>
   apiService.getData("/contact")
 );
 
-console.log(contactData);
+
+
+
   const { lang } = useSelector((state) => state.LanguageSlice);
   const {contact} = useSelector(state => state.contactSlice)
   const dispatch = useDispatch()
@@ -40,12 +42,12 @@ console.log(contactData);
                 <span className="font-bold ">{t("footer.workTime")}:</span>
                 <span className="font-thin">
                 {lang === "ru"
-                  ? contactData?.data?.working_hours_ru
-                  : contactData?.data?.working_hours_uz}
+                  ? contactData?.data[0]?.working_hours_ru
+                  : contactData?.data[0]?.working_hours_uz}
                 </span>
               </p>
               <a
-                 href={contactData?.data?.phone}
+                 href={`tel:${contactData?.data[0]?.phone}`}
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.phone")}:</span>
@@ -54,23 +56,24 @@ console.log(contactData);
              
               <a
                 target="_blank"
-                href={'mailo:' + contactData?.data?.email}
+                href={`mailto:${contactData?.data[0]?.email}`}
 
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.email")}:</span>
-                <span className="font-thin">{contactData?.data?.email}</span>
+                <span className="font-thin">{contactData?.data[0]?.email}</span>
               </a>
               <a
                 target="_blank"
-                href={contactData?.data?.map}
+                href={contactData?.data[0]?.map}
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.address")}:</span>
                 <span className="font-thin">
                 {lang === "ru"
-                  ? contactData?.data?.address_ru
-                  : contactData?.data?.address_uz}  
+                  ? contactData?.data[0]?.address_ru
+                  : contactData?.data[0]?.address_uz
+                  }  
                 </span>
               </a>
             </div>
@@ -83,32 +86,20 @@ console.log(contactData);
                 <div className="flex justify-center space-x-5 md:justify-start">
                   <a
                   target="_blank"
-                  href={"#"}
+                  href={contactData?.data[0]?.instagram}
                     className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                   >
                     <BsInstagram className="text-3xl " />
                   </a>
                   <a
                   target="_blank"
-                  href={"#"}
+                  href={contactData?.data[0]?.facebook}
                     className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                   >
-                    <BsInstagram className="text-3xl " />
+                    <BsFacebook className="text-3xl " />
                   </a>
-                  <a
-                  target="_blank"
-                  href={"#"}
-                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                  >
-                    <BsInstagram className="text-3xl " />
-                  </a>
-                  <a
-                  target="_blank"
-                  href={"#"}
-                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                  >
-                    <BsInstagram className="text-3xl " />
-                  </a>
+                
+                  
                 </div>
               </div>
           </div>

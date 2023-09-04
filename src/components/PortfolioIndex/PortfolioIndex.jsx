@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import {SectionTitle , PortfolioCard ,CurrentWhiteBtn } from '..'
+import Link from 'next/link'
 
 
 const PortfolioIndex = ({projects}) => {
@@ -30,7 +31,7 @@ const PortfolioIndex = ({projects}) => {
             }
         </div>
           <div className="flex items-center justify-center ">
-            <CurrentWhiteBtn text={t('button.project')}/>
+              <CurrentWhiteBtn text={t('button.project')}/>
           </div>
       </div>
     </section>

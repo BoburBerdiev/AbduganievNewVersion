@@ -6,11 +6,14 @@ import { useSelector ,useDispatch } from "react-redux";
 import { btnForm } from "@/slice/formSlice";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
+import apiService from "@/service/api";
 
 const ContactForm = ({}) => {
   const { data: contactData } = useQuery("contact", () =>
   apiService.getData("/contact/2")
 );
+
+
   const {form} = useSelector(state => state.formSlice)
   const dispatch = useDispatch()
   const {t, i18n} = useTranslation()

@@ -14,11 +14,12 @@ const ServiceCard = ({bg , id , title_uz , title_ru , description_uz ,descriptio
     data-aos-delay={id * 10}
       onMouseLeave={() => setHoverCard(!hoverCard)}
       onMouseEnter={() => setHoverCard(!hoverCard)}
-      className={`py-[67px] duration-300  h-[400px]  relative bg-gradient-to-r from-[#05498e]  to-[#10f56c] cursor-pointer md:py-[100px]   px-8  space-y-3  text-zinc-200 rounded-xl`}
+      className={`py-[67px]  h-[400px] duration-1000 hover:-top-5 relative bg-gradient-to-r from-[#05498e]  to-[#10f56c] cursor-pointer md:py-[100px]   px-8  space-y-3  text-zinc-200 rounded-xl`}
     >
       <Image
         src={bg}
-        fill
+        layout="fill"
+        
         className={`z-[9] rounded-xl transition ease-in-out duration-500 object-cover ${
           hoverCard ? "opacity-100" : "opacity-0"
         } `}

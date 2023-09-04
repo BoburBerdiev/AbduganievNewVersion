@@ -60,7 +60,7 @@ const {t} = useTranslation()
             </h3>
             <p data-aos='fade-up' data-aos-delay='80' className="text-start md:text-md lg:text-lg xl:text-xl">
               {
-                lang === 'uz' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
+                lang === 'ru' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
               }
              
             </p>
@@ -74,7 +74,7 @@ const {t} = useTranslation()
                 {whyWe?.data?.why_we_childs?.map((item ,id) => (
                     <li key={item.id} data-aos='fade-up' data-aos-delay={id * 10} >
                       <span className="font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
-                      {lang === 'ru' ? item.text_uz : item.text_uz}
+                      {lang === 'ru' ? item.text_ru : item.text_uz}
                     </li>
                   ))}
               </ol>

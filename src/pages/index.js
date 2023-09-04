@@ -72,7 +72,7 @@ export default function Home({
       </Head>
 
       <main>
-        <HeaderBanner   header={header} partners={partners} />
+        <HeaderBanner header={header} partners={partners} />
         <AboutIndex about={about} numberCount={numberCount} />
         <ServicesIndex serviceIndex={serviceIndex} />
         <PortfolioIndex projects={projects} />

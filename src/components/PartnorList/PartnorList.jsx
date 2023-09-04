@@ -30,19 +30,23 @@ const PartnorList = ({partners}) => {
 
           slidesPerView={4}
           centeredSlides={false}
+          loop={true}
           spaceBetween={40}
           grabCursor={true}
-         
-          freeMode={true}
-          speed={800}
-         
+          autoplay={{
+            delay: 3000
+        }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Autoplay]}
           className="mt-10 mySwiper partnor-swipper"
         >
 
           {
             partners?.map(item => (
               <SwiperSlide key={item.id}>
-                <a href={item.link}  className="block h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
+                <a href={item.link} target="_blank"  className="block h-[60px] relative duration-500  filter grayscale hover:filter-none hover:grayscale-0">
                   <ImageUl imgStyle={'object-contain'} alt={'partnor'} src={item.image} />
                 </a>
               </SwiperSlide>

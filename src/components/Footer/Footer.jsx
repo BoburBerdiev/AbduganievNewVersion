@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { BsInstagram } from "react-icons/bs";
+import { BsInstagram , BsFacebook } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import apiService from "@/service/api";
@@ -10,6 +10,7 @@ const Footer = () => {
     apiService.getData("/contact")
   );
 
+  
   const { lang } = useSelector((state) => state.LanguageSlice);
 
   const { t } = useTranslation();
@@ -22,12 +23,12 @@ const Footer = () => {
               <span className="font-bold ">{t("footer.workTime")}:</span>
               <span className="font-thin">
                 {lang === "ru"
-                  ? contact?.data?.working_hours_ru
-                  : contact?.data?.working_hours_uz}
+                  ? contact?.data[0]?.working_hours_ru
+                  : contact?.data[0]?.working_hours_uz}
               </span>
             </p>
             <a
-              href={contact?.data?.phone}
+              href={`${contact?.data[0]?.phone}`}
               target="_blank"
               className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
             >
@@ -36,22 +37,22 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              href={contact?.data?.email}
+              href={`${contact?.data[0]?.email}`}
               className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
             >
               <span className="font-bold ">{t("footer.email")}:</span>
-              <span className="font-thin">{contact?.data?.email}</span>
+              <span className="font-thin">{contact?.data[0]?.email}</span>
             </a>
             <a
               target="_blank"
-              href={contact?.data?.map}
+              href={`${contact?.data[0]?.map}`}
               className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
             >
               <span className="font-bold ">{t("footer.address")}:</span>
               <span className="font-thin">
                 {lang === "ru"
-                  ? contact?.data?.address_ru
-                  : contact?.data?.address_uz}
+                  ? contact?.data[0]?.address_ru
+                  : contact?.data[0]?.address_uz}
               </span>
             </a>
           </div>
@@ -73,22 +74,9 @@ const Footer = () => {
                   target="_blank"
                   className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                 >
-                  <BsInstagram className="text-3xl " />
+                  <BsFacebook className="text-3xl " />
                 </a>
-                <Link
-                  href={"#"}
-                  target="_blank"
-                  className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                >
-                  <BsInstagram className="text-3xl " />
-                </Link>
-                <Link
-                  href={"#"}
-                  target="_blank"
-                  className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                >
-                  <BsInstagram className="text-3xl " />
-                </Link>
+             
               </div>
             </div>
             <p className="lg:text-sm md:text-[11px] text-[10px] text-center md:text-end  text-zinc-200 ">

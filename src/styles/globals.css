@@ -1,15 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans&display=swap');
 
 
 html {
-  font-family: var(--font-inter);
+  font-family: 'Montserrat', sans-serif;
 }
  
 p {
-  font-family: var(--font-open_sans);
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -188,7 +188,7 @@ p {
 
 .card{
   height: 360px;
-  transition: background 1.2s ease-in;
+  transition: background 0.5s ease-in;
   overflow: hidden;
   box-shadow: 0 70px 63px -60px #000000;
 }
@@ -196,6 +196,7 @@ p {
 .card-img{ 
   background: center center no-repeat;
   background-size: 400px;
+
 }
 
 .card-img:hover{

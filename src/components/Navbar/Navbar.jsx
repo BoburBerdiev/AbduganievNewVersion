@@ -30,7 +30,6 @@ const Navbar = () => {
     if (isChangeLang) {
       i18n.changeLanguage(checkLang);
       dispatch(checkLanguageAction(checkLang));
-      // localStorage.setItem('langLeap', checkLang)
     }
   }, [checkLang]);
   const changLang = (lang) => {
@@ -44,16 +43,17 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 w-full bg-neutral-950 z-[100]">
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
-            <Link
+            <a
               className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0"
               href={"/"}
             >
               <Image
-                fill
-                className="object-contain w-full h-full "
+                layout="fill"
+                objectFit="contain"
+                className="w-full h-full "
                 src={logo}
               />
-            </Link>
+            </a>
             <aside className="flex space-x-9">
               <ul
                 className={`${
