@@ -5,18 +5,34 @@ import { useState } from "react";
 import { useSelector ,useDispatch } from "react-redux";
 import { btnForm } from "@/slice/formSlice";
 import { useTranslation } from "react-i18next";
-import { useQuery } from "react-query";
+import {useMutation, useQuery } from "react-query";
 import apiService from "@/service/api";
+
+import {useForm} from "react-hook-form";
 
 const ContactForm = ({}) => {
   const { data: contactData } = useQuery("contact", () =>
   apiService.getData("/contact/2")
 );
+const {
+  mutate: userPost, data: userPostData, isLoading: userPostLoading, isSuccess: userPostSuccess
+} = useMutation(({url, data}) => apiService.postData(url, data))
+
+const {register, handleSubmit, reset, formState: {errors}} = useForm()
 
 
   const {form} = useSelector(state => state.formSlice)
   const dispatch = useDispatch()
   const {t, i18n} = useTranslation()
+
+
+  console.log(userPostData);
+
+  const onSubmit = (data) => {
+
+    console.log(data);
+    userPost({url: '/submit-application/', data})
+}
   return (
 
     <main className={`fixed ${form ? 'flex' : 'hidden'}  top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
@@ -50,19 +66,29 @@ const ContactForm = ({}) => {
                 </a>
               </div>
             </div>
-            <form className="px-6 static md:relative py-10 lg:px-[70px] space-y-[23px] md:space-y-[30px]  rounded-xl md:py-[50px] bg-neutral-900">
+            <div  className="relative ">
               <button onClick={() => (dispatch(btnForm))} className="absolute right-0 p-1 text-3xl rounded-lg -top-10 hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
                 <AiOutlineClose />
               </button>
-              <InputUl type={"text"} placeholder={t('form.name')} />
-              <InputUl type={"text"} placeholder={t('form.company')} />
-              <InputUl type={"text"} placeholder={t('form.email')} />
-              <textarea
-                rows="10"
-                placeholder={t('form.project')}
-                className="w-full p-2 bg-transparent border rounded-lg outline-none md:p-4 text-zinc-200 placeholder:text-neutral-600 border-zinc-200"
-              ></textarea>
-            </form>
+              <form className="px-6 static md:relative py-10 lg:px-[70px] space-y-[23px] md:space-y-[30px]  rounded-xl md:py-[50px] bg-neutral-900" onSubmit={handleSubmit(onSubmit)}>
+                <InputUl name={{...register('name', {required: true})}} type={"text"} placeholder={t('form.name')} />
+                {errors.name && <span className={'text-xs text-red-600'}>Требуется имя</span>}
+                <InputUl name={{...register('company_name', {required: true})}} type={"text"} placeholder={t('form.company')} />
+                {errors.company_name && <span className={'text-xs text-red-600'}>Требуется название компании</span>}
+                <InputUl name={{...register('email', {required: true})}} type={"text"} placeholder={t('form.email')} />
+                {errors.email && <span className={'text-xs text-red-600'}>Требуется электронная почта</span>}
+                <textarea
+                {...register('message', {required: true})}
+                  rows="5"
+                  placeholder={t('form.project')}
+                  className="w-full p-2 bg-transparent border rounded-lg outline-none md:p-4 text-zinc-200 placeholder:text-neutral-600 border-zinc-200"
+                ></textarea>
+                {errors.message && <span className={'text-xs text-red-600'}>Требуется краткое описание</span>}
+                <button className="glow-on-hover py-3 px-7 rounded-[50px]"> Заявка</button>
+              
+                
+              </form>
+            </div>
           </div>
         </div>
       </section>

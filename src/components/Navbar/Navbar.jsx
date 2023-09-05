@@ -4,7 +4,6 @@ import logo from "public/abduganiev-min.png";
 import { Contact, CurrentBtn } from "@/components/";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { CiMenuFries } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { btnContact } from "@/slice/contactSlice";
@@ -18,6 +17,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [checkLang, setCheckLang] = useState("ru");
   const [isChangeLang, setIsChangeLang] = useState(false);
+  const [isActive, setIsActive] = useState(0);
+
   const openContact = () => {
     dispatch(btnContact());
   };
@@ -26,6 +27,11 @@ const Navbar = () => {
     setMenu(!menu);
   };
 
+  useEffect(()=>{
+    const ind=localStorage.getItem('mActive')
+    setIsActive(ind)
+  },[])
+  
   useEffect(() => {
     if (isChangeLang) {
       i18n.changeLanguage(checkLang);
@@ -37,6 +43,14 @@ const Navbar = () => {
     setCheckLang(lang);
   };
 
+  const handleLink=(menu,isActive)=>{
+    setMenu(menu)
+    setIsActive(isActive)
+    localStorage.setItem('mActive',isActive)
+  }
+
+  console.log(isActive);
+
   return (
     <>
       <Contact />
@@ -44,18 +58,14 @@ const Navbar = () => {
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
             <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
-            <Link
-              className=""
-              href={"/"}
-            >
-              <Image
-                layout="fill"
-                objectFit="contain"
-                className="w-full h-full "
-                src={logo}
-              />
-            </Link>
-              
+              <Link className="" href={"/"}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  className="w-full h-full "
+                  src={logo}
+                />
+              </Link>
             </div>
             <aside className="flex space-x-9">
               <ul
@@ -64,14 +74,15 @@ const Navbar = () => {
                 } h-[calc(100vh-90px)] top-[90px] duration-500 flex fixed  md:static   md:h-auto  bg-black/90 md:bg-transparent  space-y-10 font-medium flex-col md:flex-row text-2xl border-b md:border-none w-full py-10 md:py-0 md:w-auto text-[#E4E4E7] md:text-lg md:space-y-0 md:space-x-8`}
               >
                 {navItems.map((item, id) => (
-                  <li key={id} className="flex items-center justify-center "
-                  onClick={()=>setMenu(false)}
+                  <li
+                    key={id}
+                    className={`flex items-center justify-center ${
+                      isActive === id ? "gradient-background" : ""
+                    } relative cursor-pointer duration-700 whitespace-nowrap	 after:w-full `}
+                    onClick={() => handleLink(false,id)}
                   >
-                    <Link
-                      className="relative duration-700 after:w-full "
-                      href={item.link}
-                    >
-                      {t(item.navName)}
+                    <Link href={item.link}>
+                        {t(item.navName)}
                     </Link>
                   </li>
                 ))}

@@ -14,6 +14,7 @@ const apiService = {
         return data;
     },
     async postData(url,formData) {
+        console.log(JSON.stringify(formData));
         const {data} = await axios.post(url,formData)
         return data;
     },

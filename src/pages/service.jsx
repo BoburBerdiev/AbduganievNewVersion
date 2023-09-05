@@ -103,8 +103,8 @@ const service = ({ service , serviceTitle }) => {
           
         />
 
-        {service?.map((item) => 
-        <>
+        {service?.map((item,key) => 
+        <div key={item.id}>
          <div className="py-5 md:py-10 lg:py-13 xl:py-18">
              <div className={`grid items-center   grid-cols-1 md:grid-cols-2 xl:gap-x-20 lg:gap-x-18 md:gap-x-14 gap-x-0 gap-y-10`}>
              <div data-aos='fade-up' className={`${ item.id % 2 !== 0 ? 'order-2 md:order-1' :'order-1 md:order-2' }`}>
@@ -113,6 +113,7 @@ const service = ({ service , serviceTitle }) => {
                  description_uz={item?.description_uz}
                  name_ru={item?.name_ru}
                  name_uz={item?.name_uz}
+                 id={key}
                />
              </div>
              <div data-aos='fade-up' data-aos-delay='50' className={` ${ item.id % 2 !== 0 ? 'order-2 md:order-2' :'order-1 md:order-1' } relative  w-full aspect-video`}>
@@ -144,7 +145,7 @@ const service = ({ service , serviceTitle }) => {
             
           </div>
         </div>
-        </>
+        </div>
         )}
        
        
