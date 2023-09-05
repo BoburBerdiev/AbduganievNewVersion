@@ -1,11 +1,99 @@
 import { PortfolioCard ,PageSectionTItle } from "@/components";
 import axios from "axios";
+import Head from "next/head";
+import { useSelector } from "react-redux";
 
 
 const projects = ({projects , projectTitle}) => {
-
+  const {lang} = useSelector(state => state.LanguageSlice)
   return (
     <>
+     <Head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="icon" href="/abduganiev-logoA.png" />
+        <title>Abduganiev Technology - {lang === 'ru' ?  projectTitle[0]?.title_ru : projectTitle[0]?.title_uz} </title>
+        <meta
+          name="description"
+          content=" Мы уже 5 лет работаем в сфере IT и сотрудничали со многими
+          крупными компаниями включая зарубежных."
+        />
+        <meta
+          name="keywords"
+          content="
+          графический дизайн
+          разработка сайтов
+          веб сайт
+          IT
+          UX
+          UI
+          техническая поддержка сайтов
+          смм
+          медиа услуги
+          разработка сайтов в ташкенте
+          графический дизайнер ташкент
+          смм специалист ташкент
+          агенство смм ташкент
+          услуги разработки сайтов
+          SMM
+          CRM
+          веб дизайнер
+          системная безопасность
+          абдуганиев.уз
+          сайт
+          веб сайт
+          технологии
+          новые технологии
+          реклама
+          таргет
+          таргетин
+          медиа
+          мобилография
+          копирайтинг"
+        />
+        <meta name="author" content="Abdug'aniev Team" />
+
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content=" И имеем свою крупную базу
+          постоянных клиентов."
+        />
+        <meta
+          property="og:description"
+          content="Мы уже 5 лет работаем в сфере IT и сотрудничали со многими
+          крупными компаниями включая зарубежных."
+        />
+        
+        <meta
+          property="og:image"
+          content="/public/abduganiev-min.png"
+        />
+        <meta
+          property="og:url"
+          content="https://abduganiev.uz/"
+        />
+        <meta property="og:site_name" content="Abduganiev Technology" />
+
+        <meta name="twitter:card" content="/public/abduganiev-min.png" />
+        <meta name="twitter:site" content="@AbduganievTechnology" />
+        <meta
+          name="twitter:title"
+          content="И имеем свою крупную базу
+          постоянных клиентов."
+        />
+        <meta
+          name="twitter:description"
+          content="Мы уже 5 лет работаем в сфере IT и сотрудничали со многими
+          крупными компаниями включая зарубежных."
+        />
+        <meta
+          name="twitter:image"
+          content="/abduganiev-logoA.png"
+        /> 
+      </Head>
       <main className="py-10 md:py-14 xl:py-24 bg-neutral-950">
         <div className="container">
          <PageSectionTItle

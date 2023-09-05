@@ -27,8 +27,8 @@ const {t} = useTranslation()
             
           </div>
         </div>
-        <div data-aos="zoom-in" className="order-1 relative md:h-full md:order-2 aspect-video flex items-center justify-center  rotate-[60deg] hover:rotate-0 duration-500">
-                <ImageUl src={header[0]?.image} imgStyle={'object-contain'} alt={'Abduganiev icon'} />
+        <div data-aos="zoom-in" className="relative flex items-center justify-center order-1 duration-500 md:h-full md:order-2 aspect-video group ">
+                <ImageUl src={header[0]?.image} imgStyle={'object-contain rotate-[60deg] group-hover:rotate-0'} alt={'Abduganiev icon'} />
         </div>
       </div>
       <div className=" pt-8 md:pt-[100px]">

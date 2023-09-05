@@ -11,6 +11,7 @@ import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 
 
 SwiperCore.use([Autoplay]);
@@ -34,6 +35,87 @@ const {lang} = useSelector(state => state.LanguageSlice)
 const {t} = useTranslation()
   return (
     <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
+       <Head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="icon" href="/abduganiev-logoA.png" />
+        <title>Abduganiev Technology - {lang === 'ru' ?  about[0]?.title_ru : about[0]?.title_uz} </title>
+        <meta
+          name="description"
+          content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне."
+        />
+        <meta
+          name="keywords"
+          content="
+          графический дизайн
+          разработка сайтов
+          веб сайт
+          IT
+          UX
+          UI
+          техническая поддержка сайтов
+          смм
+          медиа услуги
+          разработка сайтов в ташкенте
+          графический дизайнер ташкент
+          смм специалист ташкент
+          агенство смм ташкент
+          услуги разработки сайтов
+          SMM
+          CRM
+          веб дизайнер
+          системная безопасность
+          абдуганиев.уз
+          сайт
+          веб сайт
+          технологии
+          новые технологии
+          реклама
+          таргет
+          таргетин
+          медиа
+          мобилография
+          копирайтинг"
+        />
+        <meta name="author" content="Abdug'aniev Team" />
+
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Разработка сайтов различных сложностей"
+        />
+        <meta
+          property="og:description"
+          content="Мы разработаем индивидуальный план разработки для каждого клиента."
+        />
+        
+        <meta
+          property="og:image"
+          content="/public/abduganiev-min.png"
+        />
+        <meta
+          property="og:url"
+          content="https://abduganiev.uz/"
+        />
+        <meta property="og:site_name" content="Abduganiev Technology" />
+
+        <meta name="twitter:card" content="/public/abduganiev-min.png" />
+        <meta name="twitter:site" content="@AbduganievTechnology" />
+        <meta
+          name="twitter:title"
+          content="Разработка сайтов различных сложностей"
+        />
+        <meta
+          name="twitter:description"
+          content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне.."
+        />
+        <meta
+          name="twitter:image"
+          content="/abduganiev-logoA.png"
+        /> 
+      </Head>
       <div className="container ">
         <PageSectionTItle
           title_ru={about[0]?.title_ru}
@@ -73,7 +155,7 @@ const {t} = useTranslation()
               <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
                 {whyWe?.data?.why_we_childs?.map((item ,id) => (
                     <li key={item.id} data-aos='fade-up' data-aos-delay={id * 10} >
-                      <span className="font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
+                      <span className="mr-2 font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
                       {lang === 'ru' ? item.text_ru : item.text_uz}
                     </li>
                   ))}
@@ -85,7 +167,7 @@ const {t} = useTranslation()
           <SectionTitle text={t('about.team')}  />
 
           <div className=" lg:pt-[60px] md:pt-10 pt-5">
-            <Swiper
+            {/* <Swiper
               breakpoints={{
                 // when window width is >= 640px
                 0: {
@@ -125,7 +207,17 @@ const {t} = useTranslation()
               }
               
               
-            </Swiper>
+            </Swiper> */}
+                <div className="grid grid-cols-1 gap-5 md:gap-5 md:grid-cols-3 lg:grid-cols-4">
+                {
+                team?.data.map((item , id) => (
+                <div key={item.id}>
+                  <TeamCard person={item} id={id} />
+                </div>
+                ))
+               }
+                  
+                </div>
           </div>
         </section>
         <section>

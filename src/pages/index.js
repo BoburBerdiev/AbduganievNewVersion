@@ -17,19 +17,52 @@ export default function Home({
   feedback,
   projects,
 }) {
+
  
   return (
     <>
       <Head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <meta
+        
+        <link rel="icon" href="/abduganiev-logoA.png" />
+        <title>Abduganiev Technology</title>
+        <meta
           name="description"
-          content="Explore breathtaking travel destinations around the world."
+          content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне."
         />
         <meta
           name="keywords"
-          content="travel, destinations, explore, adventure"
+          content="
+          графический дизайн
+          разработка сайтов
+          веб сайт
+          IT
+          UX
+          UI
+          техническая поддержка сайтов
+          смм
+          медиа услуги
+          разработка сайтов в ташкенте
+          графический дизайнер ташкент
+          смм специалист ташкент
+          агенство смм ташкент
+          услуги разработки сайтов
+          SMM
+          CRM
+          веб дизайнер
+          системная безопасность
+          абдуганиев.уз
+          сайт
+          веб сайт
+          технологии
+          новые технологии
+          реклама
+          таргет
+          таргетин
+          медиа
+          мобилография
+          копирайтинг"
         />
         <meta name="author" content="Abdug'aniev Team" />
 
@@ -37,38 +70,37 @@ export default function Home({
 
         <meta
           property="og:title"
-          content="Discover Amazing Travel Destinations"
+          content="Разработка сайтов различных сложностей"
         />
         <meta
           property="og:description"
-          content="Explore breathtaking travel destinations around the world."
+          content="Мы разработаем индивидуальный план разработки для каждого клиента."
         />
+        
         <meta
           property="og:image"
-          content="https://example.com/images/travel.jpg"
+          content="/public/abduganiev-min.png"
         />
         <meta
           property="og:url"
-          content="https://example.com/travel-destinations"
+          content="https://abduganiev.uz/"
         />
-        <meta property="og:site_name" content="Travel Explorer" />
+        <meta property="og:site_name" content="Abduganiev Technology" />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@TravelExplorer" />
+        <meta name="twitter:card" content="/public/abduganiev-min.png" />
+        <meta name="twitter:site" content="@AbduganievTechnology" />
         <meta
           name="twitter:title"
-          content="Discover Amazing Travel Destinations"
+          content="Разработка сайтов различных сложностей"
         />
         <meta
           name="twitter:description"
-          content="Explore breathtaking travel destinations around the world."
+          content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне.."
         />
         <meta
           name="twitter:image"
           content="/abduganiev-logoA.png"
-        /> */}
-        <link rel="icon" href="/abduganiev-logoA.png" />
-        <title>Abduganiev Technology</title>
+        /> 
       </Head>
 
       <main>

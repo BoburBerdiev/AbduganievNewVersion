@@ -16,11 +16,16 @@ const NumberCount = ({ number, text_uz , text_ru}) => {
         <h5 className="text-6xl font-extrabold gradient-background">
           {
        
-          <CountUp start={0} end={number} duration={5} delay={0} />  
+          <CountUp start={0} end={number} duration={5} delay={0} /> 
           }
+          {
+            'Лет Опыта' === text_ru ? ' +' : ''
+          }
+
+          
         </h5>
       </ScrollTrigger>
-    <p className="text-2xl font-bold text-zinc-200">
+    <p className="text-xl font-bold md:text-2xl text-zinc-200">
       {
         lang === 'ru' ? text_ru : text_uz
       }

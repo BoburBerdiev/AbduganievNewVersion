@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { CircleBg } from ".."
 
 const PageSectionTItle = ({title_ru , title_uz, subTitle_ru , subTitle_uz , row}) => {
-const {lang} = useSelector(state => state.LanguageSlice)
+  const {lang} = useSelector(state => state.LanguageSlice)
 
   return (
     <>
@@ -15,7 +15,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
         lang === 'ru' ? title_ru : title_uz
       }
       </h1>      
-      <p data-aos='fade-up' data-aos-delay='80' className="text-base md:text-lg lg:text-xl xl:text-2xl  text-center  md:text-left w-full md:w-[50%]">
+      <p data-aos='fade-up' data-aos-delay='80' className="text-base md:text-lg lg:text-xl   text-center  md:text-justify w-full md:w-[50%]">
       {
         lang === 'ru' ? subTitle_ru : subTitle_uz
       }
@@ -28,7 +28,7 @@ const {lang} = useSelector(state => state.LanguageSlice)
         lang === 'ru' ? title_ru : title_uz
       }
       </h1>      
-      <p data-aos='fade-up' data-aos-delay='80' className="text-base md:text-lg lg:text-xl xl:text-2xl  text-center  md:text-left w-full md:w-[60%]">
+      <p data-aos='fade-up' data-aos-delay='80' className="text-base md:text-lg lg:text-xl   text-center  md:text-justify w-full md:w-[60%]">
       {
         lang === 'ru' ? subTitle_ru : subTitle_uz
       }

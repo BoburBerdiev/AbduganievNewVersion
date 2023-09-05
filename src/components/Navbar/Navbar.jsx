@@ -43,8 +43,9 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 w-full bg-neutral-950 z-[100]">
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
-            <a
-              className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0"
+            <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
+            <Link
+              className=""
               href={"/"}
             >
               <Image
@@ -53,7 +54,9 @@ const Navbar = () => {
                 className="w-full h-full "
                 src={logo}
               />
-            </a>
+            </Link>
+              
+            </div>
             <aside className="flex space-x-9">
               <ul
                 className={`${
@@ -61,7 +64,7 @@ const Navbar = () => {
                 } h-[calc(100vh-90px)] top-[90px] duration-500 flex fixed  md:static   md:h-auto  bg-black/90 md:bg-transparent  space-y-10 font-medium flex-col md:flex-row text-2xl border-b md:border-none w-full py-10 md:py-0 md:w-auto text-[#E4E4E7] md:text-lg md:space-y-0 md:space-x-8`}
               >
                 {navItems.map((item, id) => (
-                  <li key={id} className="flex items-center justify-center"
+                  <li key={id} className="flex items-center justify-center "
                   onClick={()=>setMenu(false)}
                   >
                     <Link

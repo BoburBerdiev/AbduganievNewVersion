@@ -31,7 +31,7 @@ const PortfolioIndex = ({projects}) => {
             }
         </div>
           <div className="flex items-center justify-center ">
-              <CurrentWhiteBtn text={t('button.project')}/>
+              <CurrentWhiteBtn href={'/portfolio'} text={t('button.project')}/>
           </div>
       </div>
     </section>

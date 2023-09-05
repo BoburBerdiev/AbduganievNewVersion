@@ -14,7 +14,7 @@ const ServiceCard = ({bg , id , title_uz , title_ru , description_uz ,descriptio
     data-aos-delay={id * 10}
       onMouseLeave={() => setHoverCard(!hoverCard)}
       onMouseEnter={() => setHoverCard(!hoverCard)}
-      className={`py-[67px]  h-[400px] duration-1000 hover:-top-5 relative bg-gradient-to-r from-[#05498e]  to-[#10f56c] cursor-pointer md:py-[100px]   px-8  space-y-3  text-zinc-200 rounded-xl`}
+      className={`py-[67px]  h-[400px] hover:duration-500 hover:-top-3 relative bg-gradient-to-r from-[#05498e]  to-[#10f56c] cursor-pointer md:py-[100px]   px-8  space-y-3  text-zinc-200 rounded-xl`}
     >
       <Image
         src={bg}
@@ -33,7 +33,7 @@ const ServiceCard = ({bg , id , title_uz , title_ru , description_uz ,descriptio
           
         }
         </h3>
-        <p className="text-base text-justify">
+        <p className="text-base text-start md:text-justify">
           {
           
           lang === 'ru'? description_ru : description_uz
