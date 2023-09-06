@@ -35,7 +35,9 @@ const Feedback = ({ feedback }) => {
           loop={true}
           slidesPerView={"auto"}
           autoplay={{
-            delay: 6000
+            delay: 6000,
+              disableOnInteraction:false
+
         }}
           coverflowEffect={{
             rotate: 50,

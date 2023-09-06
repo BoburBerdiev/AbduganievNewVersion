@@ -1,9 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay  } from "swiper";
-
+// import { Virtual } from 'swiper/modules';
 import { ImageUl } from "..";
 
 
+import 'swiper/css/virtual';
 
 const PartnorList = ({partners}) => {
 
@@ -34,7 +35,8 @@ const PartnorList = ({partners}) => {
           spaceBetween={40}
           grabCursor={true}
           autoplay={{
-            delay: 3000
+            delay: 3000,
+              disableOnInteraction:false
         }}
           pagination={{
             clickable: true,

@@ -6,8 +6,8 @@ const contactSlice = createSlice({
     contact: false
   },
   reducers: {
-    btnContact: (state ) =>{
-      state.contact = !state.contact
+    btnContact: (state,{payload} ) =>{
+      state.contact = payload
     }
   }
 })
