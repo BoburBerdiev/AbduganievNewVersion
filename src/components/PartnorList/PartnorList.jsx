@@ -12,6 +12,7 @@ const PartnorList = ({partners}) => {
     <>
     <div className="container overflow-hidden">
     <Swiper
+        id={'mySwiper2'}
           breakpoints={{
             // when window width is >= 640px
             0: {
@@ -29,20 +30,13 @@ const PartnorList = ({partners}) => {
             }
           }}
 
-          slidesPerView={4}
-          centeredSlides={false}
           loop={true}
           spaceBetween={40}
-          grabCursor={true}
           autoplay={{
             delay: 3000,
-              disableOnInteraction:false
         }}
-          pagination={{
-            clickable: true,
-          }}
           modules={[Autoplay]}
-          className="mt-10 mySwiper partnor-swipper"
+          className="mt-10 mySwiper2 "
         >
 
           {

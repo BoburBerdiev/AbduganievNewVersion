@@ -38,7 +38,7 @@ const AboutIndex = ({numberCount , about}) => {
               </div>
             </div>
             <div className="relative">
-              <ImageUl src={'/abduganiev-logoA.png'} imgStyle={'object-contain'} />
+              <ImageUl src={'/office 1-min.jpg'} imgStyle={'object-contain'} />
             {/* <iframe data-aos='fade-up' data-aos-delay='100' className="w-full rounded-xl aspect-square md:h-full" src={about[0]?.link} title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" ></iframe> */}
             </div>
           </div>

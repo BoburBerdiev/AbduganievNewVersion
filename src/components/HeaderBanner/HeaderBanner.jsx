@@ -6,7 +6,7 @@ const HeaderBanner = ({header, partners }) => {
 const {lang} = useSelector(state => state.LanguageSlice)
 const dispatch = useDispatch()
 const openForm = () => {
-  dispatch(btnForm())
+  dispatch(btnForm(true))
 }
 const {t} = useTranslation()
   return (  

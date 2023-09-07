@@ -10,6 +10,8 @@ import apiService from "@/service/api";
 import {LuLoader2} from "react-icons/lu";
 import {useForm} from "react-hook-form";
 
+
+
 const ContactForm = ({}) => {
   const { data: contactData } = useQuery("contact", () =>
   apiService.getData("/contact")
@@ -19,6 +21,7 @@ const {
 } = useMutation(({url, data}) => apiService.postData(url, data))
 
 const {register, handleSubmit, reset, formState: {errors}} = useForm()
+
 
 
 
