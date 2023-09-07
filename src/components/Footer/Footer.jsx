@@ -33,7 +33,7 @@ const Footer = () => {
               className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
             >
               <span className="font-bold ">{t("footer.phone")}:</span>
-              <span className="font-thin">+998 90 707 07 07</span>
+              <span className="font-thin">+998 99 807 07 08</span>
             </a>
             <a
               target="_blank"
@@ -63,14 +63,14 @@ const Footer = () => {
               </span>
               <div className="flex justify-center space-x-5 md:justify-end">
                 <a
+                 href={contact?.data[0]?.instagram}
                   target="_blank"
-                  href={"#"}
                   className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                 >
                   <BsInstagram className="text-3xl " />
                 </a>
                 <a
-                  href={"#"}
+                href={contact?.data[0]?.facebook}
                   target="_blank"
                   className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                 >

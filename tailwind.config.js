@@ -20,7 +20,7 @@ module.exports = {
         padding: {
           DEFAULT: '20px',
         md: '3%',
-        lg: '10%'
+        lg: '5%',
         },
         
       }

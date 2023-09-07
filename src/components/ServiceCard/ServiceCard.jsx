@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
@@ -29,7 +28,7 @@ const ServiceCard = ({
           <h3 className="text-xl font-semibold md:text-2xl">
             {lang === "ru" ? title_ru : title_uz}
           </h3>
-          <p className="text-base text-start md:text-justify">
+          <p className="text-base text-start">
             {lang === "ru" ? description_ru : description_uz}
           </p>
         </div>

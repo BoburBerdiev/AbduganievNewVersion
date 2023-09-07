@@ -21,6 +21,9 @@ const NumberCount = ({ number, text_uz , text_ru}) => {
           {
             'Лет Опыта' === text_ru ? ' +' : ''
           }
+          {
+            'Проектов' === text_ru ? ' +' : ''
+          }
 
           
         </h5>

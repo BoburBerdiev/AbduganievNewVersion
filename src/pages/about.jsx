@@ -163,11 +163,7 @@ const {t} = useTranslation()
             </div>
           </div>
         </section>
-        <section className="my-20 md:my-[100px] lg:my-[150px] service">
-          <SectionTitle text={t('about.team')}  />
-
-          <div className=" lg:pt-[60px] md:pt-10 pt-5">
-            {/* <Swiper
+        {/* <Swiper
               breakpoints={{
                 // when window width is >= 640px
                 0: {
@@ -208,6 +204,11 @@ const {t} = useTranslation()
               
               
             </Swiper> */}
+        {/* <section className="my-20 md:my-[100px] lg:my-[150px] service">
+          <SectionTitle text={t('about.team')}  />
+
+          <div className=" lg:pt-[60px] md:pt-10 pt-5">
+            
                 <div className="grid grid-cols-1 gap-5 md:gap-5 md:grid-cols-3 lg:grid-cols-4">
                 {
                 team?.data.map((item , id) => (
@@ -219,7 +220,7 @@ const {t} = useTranslation()
                   
                 </div>
           </div>
-        </section>
+        </section> */}
         <section>
           <SectionTitle text={t('about.trust')}  />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">

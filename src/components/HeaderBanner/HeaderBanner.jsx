@@ -1,10 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { CurrentWhiteBtn, ImageUl , PartnorList } from "..";
-import { useSelector } from "react-redux";
-
+import { CurrentWhiteBtn, ImageUl , PartnorList ,ContactForm } from "..";
+import { useDispatch, useSelector } from "react-redux";
+import { btnForm } from "@/slice/formSlice";
 const HeaderBanner = ({header, partners }) => {
 const {lang} = useSelector(state => state.LanguageSlice)
-
+const dispatch = useDispatch()
+const openForm = () => {
+  dispatch(btnForm())
+}
 const {t} = useTranslation()
   return (  
     <header className="py-8 md:pt-20 pb-[150px] bg-neutral-950 ">
@@ -23,7 +26,7 @@ const {t} = useTranslation()
             
           </p>
           <div  data-aos='fade-up' data-aos-delay='70'>
-            <CurrentWhiteBtn  text={t('button.start')} />
+            <CurrentWhiteBtn onClick={openForm} text={t('button.start')} />
             
           </div>
         </div>

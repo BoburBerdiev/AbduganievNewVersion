@@ -12,7 +12,7 @@ import {useForm} from "react-hook-form";
 
 const ContactForm = ({}) => {
   const { data: contactData } = useQuery("contact", () =>
-  apiService.getData("/contact/2")
+  apiService.getData("/contact")
 );
 const {
   mutate: userPost, data: userPostData, isLoading: userPostLoading, isSuccess: userPostSuccess
@@ -26,11 +26,10 @@ const {register, handleSubmit, reset, formState: {errors}} = useForm()
   const {t, i18n} = useTranslation()
 
 
-  console.log(userPostData);
+console.log(contactData?.data[0].email);
 
   const onSubmit = (data) => {
 
-    console.log(data);
     userPost({url: '/submit-application/', data})
 }
   return (
@@ -40,8 +39,10 @@ const {register, handleSubmit, reset, formState: {errors}} = useForm()
         <div className="container relative ">
           <div className="grid items-center grid-cols-1 md:grid-cols-2 space-y-[70px] md:space-y-[90px] xl:gap-20">
             <div className="relative">
-              <h3 className="text-zinc-200 text-3xl mb-5 text-center md:text-start md:mb-10 lg:mb-[60px] font-extrabold md:text-[40px] lg:text-5xl">
+              <h3 className="text-zinc-200 space-x-1 text-3xl mb-5 text-center md:text-start md:mb-10 lg:mb-[60px] font-extrabold md:text-[40px] lg:text-5xl">
+               <span>
                 Заполните анкету и мы
+               </span>
                 <span className="gradient-background">
                   скоро свяжемся с вами
                 </span>
@@ -49,20 +50,18 @@ const {register, handleSubmit, reset, formState: {errors}} = useForm()
               <CircleBg  bgStyle={'top-0 left-[20%] md:top-[80%] w-[40%]'}/>
               <div className="flex flex-col items-center md:items-start space-y-2.5  ">
                 <a
-                  target="_blank"
-                  href={contactData?.data?.phone}
+                  href={'tel'+ contactData?.data[0].phone}
                   className="space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
                 >
-                  <span className="font-bold ">{'footer.phone'} :</span>
-                  <span className="font-thin">+998 90 707 07 07</span>
+                  <span className="font-bold ">{t('footer.phone')} :</span>
+                  <span className="font-thin">+998 99 807 07 08</span>
                 </a>
                 <a
-                  href={'mailo:' + contactData?.data?.email}
-                  target="_blank"
+                  href={'mailo:' + contactData?.data[0].email}
                   className="space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
                 >
                   <span className="font-bold ">{t("footer.email")}:</span>
-                  <span className="font-thin">{contactData?.data?.email}</span>
+                  <span className="font-thin">{contactData?.data[0].email}</span>
                 </a>
               </div>
             </div>
@@ -73,10 +72,8 @@ const {register, handleSubmit, reset, formState: {errors}} = useForm()
               <form className="px-6 static md:relative py-10 lg:px-[70px] space-y-[23px] md:space-y-[30px]  rounded-xl md:py-[50px] bg-neutral-900" onSubmit={handleSubmit(onSubmit)}>
                 <InputUl name={{...register('name', {required: true})}} type={"text"} placeholder={t('form.name')} />
                 {errors.name && <span className={'text-xs text-red-600'}>Требуется имя</span>}
-                <InputUl name={{...register('company_name', {required: true})}} type={"text"} placeholder={t('form.company')} />
+                <InputUl name={{...register('company_name', {required: true})}} type={"number"} placeholder={t('form.number')} />
                 {errors.company_name && <span className={'text-xs text-red-600'}>Требуется название компании</span>}
-                <InputUl name={{...register('email', {required: true})}} type={"text"} placeholder={t('form.email')} />
-                {errors.email && <span className={'text-xs text-red-600'}>Требуется электронная почта</span>}
                 <textarea
                 {...register('message', {required: true})}
                   rows="5"
@@ -85,8 +82,6 @@ const {register, handleSubmit, reset, formState: {errors}} = useForm()
                 ></textarea>
                 {errors.message && <span className={'text-xs text-red-600'}>Требуется краткое описание</span>}
                 <button className="glow-on-hover py-3 px-7 rounded-[50px]"> Заявка</button>
-              
-                
               </form>
             </div>
           </div>

@@ -51,7 +51,7 @@ const Contact = () => {
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
                 <span className="font-bold ">{t("footer.phone")}:</span>
-                <span className="font-thin">+998 90 707 07 07</span>
+                <span className="font-thin">+998 99 807 07 08</span>
               </a>
              
               <a
@@ -107,7 +107,7 @@ const Contact = () => {
           <button onClick={() => (dispatch(btnContact()))}  className="absolute right-[2%] md:right-0 p-1 text-3xl rounded-lg top-[1%] hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
                 <AiOutlineClose />
               </button>
-          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.000945559697!2d69.2642451755967!3d41.33059279951688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8be02d75a5cb%3A0x6fe69b8a266e8aa4!2sOOO%20%22MARSS%20TEAM%20%22!5e0!3m2!1suz!2s!4v1692872461280!5m2!1suz!2s"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d187.34917578352434!2d69.24770658233086!3d41.296096212281626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1694051771744!5m2!1suz!2s"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
