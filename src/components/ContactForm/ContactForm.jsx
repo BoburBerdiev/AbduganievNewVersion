@@ -7,7 +7,7 @@ import {btnForm} from "@/slice/formSlice";
 import {useTranslation} from "react-i18next";
 import {useMutation, useQuery} from "react-query";
 import apiService from "@/service/api";
-
+import {LuLoader2} from "react-icons/lu";
 import {useForm} from "react-hook-form";
 
 const ContactForm = ({}) => {
@@ -19,7 +19,6 @@ const {
 } = useMutation(({url, data}) => apiService.postData(url, data))
 
 const {register, handleSubmit, reset, formState: {errors}} = useForm()
-import {LuLoader2} from "react-icons/lu";
 
 
 
@@ -138,5 +137,5 @@ const ContactForm = () => {
         </main>
     );
 };
-
-export default ContactForm;
+}
+export default ContactForm
