@@ -26,8 +26,8 @@ const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru
                 </p>
               </div>
               <div className='flex items-center space-x-7'>
-                <div className="relative rounded-full md:w-20  w-[60px] aspect-square ">
-                  <ImageUl src={img}   alt={'feedback'} imgStyle={'object-cover rounded-full'} />
+                <div className="relative rounded-full md:w-20  w-[60px] aspect-square flex-shrink-0">
+                  <ImageUl src={img}   alt={'feedback'} imgStyle={'object-cover rounded-full '} />
                 </div>
                 <div className="space-y-2 font-semibold">
                   <h6 className="text-sm md:text-base lg:text-xl ">

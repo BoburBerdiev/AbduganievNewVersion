@@ -37,7 +37,7 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              href={`${contact?.data[0]?.email}`}
+              href={`mailto:${contact?.data[0]?.email}`}
               className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
             >
               <span className="font-bold ">{t("footer.email")}:</span>
