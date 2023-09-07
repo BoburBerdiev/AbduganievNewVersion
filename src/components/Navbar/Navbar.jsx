@@ -10,8 +10,10 @@ import { btnContact } from "@/slice/contactSlice";
 import { useTranslation } from "react-i18next";
 import { checkLanguageAction } from "@/slice/LanguageSlice";
 import { navItems } from "@/config/routerConfig";
+import {useRouter} from "next/router";
 
 const Navbar = () => {
+  const {pathname}=useRouter()
   const [menu, setMenu] = useState(false);
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
@@ -19,8 +21,9 @@ const Navbar = () => {
   const [isChangeLang, setIsChangeLang] = useState(false);
   const [isActive, setIsActive] = useState(0);
 
-  const openContact = () => {
-    dispatch(btnContact());
+  const openContact = (e) => {
+    e.stopPropagation()
+    dispatch(btnContact(true));
   };
 
   const openMenu = () => {
@@ -28,8 +31,11 @@ const Navbar = () => {
   };
 
   useEffect(()=>{
-    const ind=localStorage.getItem('mActive')
-    setIsActive(ind)
+    navItems.map((nav,ind)=>{
+      if (nav.link===pathname){
+        setIsActive(ind)
+      }
+    })
   },[])
   
   useEffect(() => {
@@ -46,10 +52,8 @@ const Navbar = () => {
   const handleLink=(menu,isActive)=>{
     setMenu(menu)
     setIsActive(isActive)
-    localStorage.setItem('mActive',isActive)
   }
 
-  console.log(isActive);
 
   return (
     <>
@@ -58,13 +62,15 @@ const Navbar = () => {
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
             <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
-              <Link className="" href={"/"}>
+              <Link className="" href={"/"} passHref>
+                <a>
                 <Image
                   layout="fill"
                   objectFit="contain"
                   className="w-full h-full "
                   src={logo}
                 />
+                </a>
               </Link>
             </div>
             <aside className="flex space-x-9">
@@ -118,7 +124,7 @@ const Navbar = () => {
                 </li> */}
                 <li className="flex items-center justify-center">
                   <CurrentBtn
-                    onClick={openContact}
+                    onClick={(e)=>openContact(e)}
                     style={"py-3 px-7 rounded-[50px]"}
                     text={t("navbar.contact")}
                   />

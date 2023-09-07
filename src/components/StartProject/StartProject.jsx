@@ -7,7 +7,7 @@ const StartProject = () => {
   const dispatch = useDispatch()
   
       const openForm = () => {
-        dispatch(btnForm())
+        dispatch(btnForm(true))
       }
       const {t} = useTranslation()
       return (

@@ -3,6 +3,7 @@ import Layout from "@/layout/layout";
 import store from "@/store";
 import { Provider } from "react-redux";
 import {QueryClientProvider , QueryClient} from 'react-query'
+import NextNProgress from 'nextjs-progressbar'
 
 import '../localization/i18n'
 
@@ -34,6 +35,7 @@ export default function App({ Component, pageProps }) {
 
           <Provider store={store} >
             <Layout>
+                <NextNProgress />
               <Component {...pageProps} />
             </Layout>
 

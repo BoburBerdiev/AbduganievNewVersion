@@ -8,8 +8,8 @@ const formSlice = createSlice({
   },
 
   reducers : {
-    btnForm : (state)=> {
-      state.form =!state.form;
+    btnForm : (state,{payload})=> {
+      state.form =payload;
     }
   }
 })

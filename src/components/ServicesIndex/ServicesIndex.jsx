@@ -36,7 +36,8 @@ const ServicesIndex = ({serviceIndex}) => {
             spaceBetween={10}
             grabCursor={true}
             autoplay={{
-              delay: 3000
+              delay: 3000,
+                disableOnInteraction:false
           }}
             pagination={{
               clickable: true,

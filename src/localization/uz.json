@@ -37,6 +37,10 @@
       "phone": "Telfon",
       "reserved":"Barcha huquqlar himoyalangan"
     },
-    "office": "Bizning ofisimiz"
+    "office": "Bizning ofisimiz",
+    "startProject": {
+      "send": "Ariza",
+      "success": "Sizning arizangiz qabul qilindi"
+    }
   }
 }
