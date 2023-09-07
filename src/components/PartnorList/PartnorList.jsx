@@ -12,31 +12,35 @@ const PartnorList = ({partners}) => {
     <>
     <div className="container overflow-hidden">
     <Swiper
-        id={'mySwiper2'}
+        id={'mySwiper1'}
           breakpoints={{
             // when window width is >= 640px
             0: {
               slidesPerView: 2,
+              spaceBetween:40
             },
             // when window width is >= 768px
             768: {
               slidesPerView: 3,
+              spaceBetween:40
             },
             1024: {
               slidesPerView: 4,
+              spaceBetween:40
             },
             1200: {
-              slidesPerView: 5
+              slidesPerView: 5,
+              spaceBetween:40
             }
           }}
 
           loop={true}
-          spaceBetween={40}
+          
           autoplay={{
             delay: 3000,
         }}
-          modules={[Autoplay]}
-          className="mt-10 mySwiper2 "
+
+          className="mt-10 mySwiper "
         >
 
           {

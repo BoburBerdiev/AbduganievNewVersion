@@ -13,34 +13,34 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
 
-
 SwiperCore.use([Autoplay]);
 
-const about = ({about}) => {
+const about = ({ about }) => {
   const { data: partnor } = useQuery("get-partnor", () =>
     apiService.getData("/partners/")
   );
 
+  const { data: team } = useQuery("get-team", () =>
+    apiService.getData("/team/")
+  );
 
-  const {data: team } = useQuery("get-team", () =>
-  apiService.getData("/team/")
-);
+  const { data: whyWe } = useQuery("get-whyWe", () =>
+    apiService.getData("/why-we/1")
+  );
 
-const {data: whyWe } = useQuery("get-whyWe", () =>
-apiService.getData("/why-we/1")
-);
-
-
-const {lang} = useSelector(state => state.LanguageSlice)
-const {t} = useTranslation()
+  const { lang } = useSelector((state) => state.LanguageSlice);
+  const { t } = useTranslation();
   return (
-    <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
-       <Head>
+    <>
+     <Head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
         <link rel="icon" href="/abduganiev-logoA.png" />
-        <title>Abduganiev Technology - {lang === 'ru' ?  about[0]?.title_ru : about[0]?.title_uz} </title>
+        <title>
+          Abduganiev Technology -{" "}
+          {lang === "ru" ? about[0]?.title_ru : about[0]?.title_uz}{" "}
+        </title>
         <meta
           name="description"
           content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне."
@@ -90,15 +90,9 @@ const {t} = useTranslation()
           property="og:description"
           content="Мы разработаем индивидуальный план разработки для каждого клиента."
         />
-        
-        <meta
-          property="og:image"
-          content="/public/abduganiev-min.png"
-        />
-        <meta
-          property="og:url"
-          content="https://abduganiev.uz/"
-        />
+
+        <meta property="og:image" content="/public/abduganiev-min.png" />
+        <meta property="og:url" content="https://abduganiev.uz/" />
         <meta property="og:site_name" content="Abduganiev Technology" />
 
         <meta name="twitter:card" content="/public/abduganiev-min.png" />
@@ -111,11 +105,10 @@ const {t} = useTranslation()
           name="twitter:description"
           content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне.."
         />
-        <meta
-          name="twitter:image"
-          content="/abduganiev-logoA.png"
-        /> 
+        <meta name="twitter:image" content="/abduganiev-logoA.png" />
       </Head>
+    <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
+     
       <div className="container ">
         <PageSectionTItle
           title_ru={about[0]?.title_ru}
@@ -123,11 +116,10 @@ const {t} = useTranslation()
           subTitle_ru={about[0]?.description_ru}
           subTitle_uz={about[0]?.description_uz}
           row={true}
-          
         />
         <section className="relative w-full  aspect-video my-20 md:my-[100px] lg:my-[150px]">
           <ImageUl
-          priority={true}
+            priority={true}
             src={about[0]?.image}
             alt={"team"}
             imgStyle={"object-cover"}
@@ -135,16 +127,20 @@ const {t} = useTranslation()
         </section>
         <section className="text-zinc-200 my-20 md:my-[100px] lg:my-[150px]">
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
-            <h3 data-aos='fade-up' className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl">
-              {
-                lang === 'ru' ? whyWe?.data?.title_ru : whyWe?.data?.title_uz
-              }
+            <h3
+              data-aos="fade-up"
+              className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl"
+            >
+              {lang === "ru" ? whyWe?.data?.title_ru : whyWe?.data?.title_uz}
             </h3>
-            <p data-aos='fade-up' data-aos-delay='80' className="text-start md:text-md lg:text-lg xl:text-xl">
-              {
-                lang === 'ru' ? whyWe?.data?.short_text_ru : whyWe?.data?.short_text_uz
-              }
-             
+            <p
+              data-aos="fade-up"
+              data-aos-delay="80"
+              className="text-start md:text-md lg:text-lg xl:text-xl"
+            >
+              {lang === "ru"
+                ? whyWe?.data?.short_text_ru
+                : whyWe?.data?.short_text_uz}
             </p>
           </div>
           <div className="grid grid-cols-3 gap-5 md:grid-cols-5">
@@ -153,12 +149,14 @@ const {t} = useTranslation()
             </div>
             <div className="col-span-3 ">
               <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
-                {whyWe?.data?.why_we_childs?.map((item ,id) => (
-                    <li key={item.id} data-aos='fade-up' data-aos-delay={id * 10} >
-                      <span className="mr-2 font-semibold">{lang === 'ru' ? item.title_ru : item.title_uz}</span>
-                      {lang === 'ru' ? item.text_ru : item.text_uz}
-                    </li>
-                  ))}
+                {whyWe?.data?.why_we_childs?.map((item, id) => (
+                  <li key={item.id} data-aos="fade-up" data-aos-delay={id * 10}>
+                    <span className="mr-2 font-semibold">
+                      {lang === "ru" ? item.title_ru : item.title_uz}
+                    </span>
+                    {lang === "ru" ? item.text_ru : item.text_uz}
+                  </li>
+                ))}
               </ol>
             </div>
           </div>
@@ -222,11 +220,17 @@ const {t} = useTranslation()
           </div>
         </section> */}
         <section>
-          <SectionTitle text={t('about.trust')}  />
+          <SectionTitle text={t("about.trust")} />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
-          
-            {partnor?.data?.map((item , id) => (
-              <a href={item.link} target="_blank" key={item?.id}  data-aos='fade-up' data-aos-delay={id} className="flex items-center justify-center ">
+            {partnor?.data?.map((item, id) => (
+              <a
+                href={item.link}
+                target="_blank"
+                key={item?.id}
+                data-aos="fade-up"
+                data-aos-delay={id}
+                className="flex items-center justify-center "
+              >
                 <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
                   <ImageUl
                     src={item?.image}
@@ -236,17 +240,15 @@ const {t} = useTranslation()
                 </div>
               </a>
             ))}
-
-           
           </div>
         </section>
       </div>
     </main>
+    </>
   );
 };
 
 export default about;
-
 
 export async function getServerSideProps({ req, res }) {
   res.setHeader(
@@ -256,7 +258,7 @@ export async function getServerSideProps({ req, res }) {
   // Fetch data from external API
   const [about] = await Promise.all([
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/about`),
-])
+  ]);
 
   // Pass data to the page via props
   return {

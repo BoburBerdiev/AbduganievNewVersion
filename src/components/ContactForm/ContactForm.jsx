@@ -12,15 +12,6 @@ import {useForm} from "react-hook-form";
 
 
 
-const ContactForm = ({}) => {
-  const { data: contactData } = useQuery("contact", () =>
-  apiService.getData("/contact")
-);
-const {
-  mutate: userPost, data: userPostData, isLoading: userPostLoading, isSuccess: userPostSuccess
-} = useMutation(({url, data}) => apiService.postData(url, data))
-
-const {register, handleSubmit, reset, formState: {errors}} = useForm()
 
 
 
@@ -140,5 +131,5 @@ const ContactForm = () => {
         </main>
     );
 };
-}
+
 export default ContactForm

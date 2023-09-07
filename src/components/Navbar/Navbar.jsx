@@ -21,8 +21,7 @@ const Navbar = () => {
   const [isChangeLang, setIsChangeLang] = useState(false);
   const [isActive, setIsActive] = useState(0);
 
-  const openContact = (e) => {
-    e.stopPropagation()
+  const openContact = () => {
     dispatch(btnContact(true));
   };
 
@@ -124,7 +123,7 @@ const Navbar = () => {
                 </li> */}
                 <li className="flex items-center justify-center">
                   <CurrentBtn
-                    onClick={(e)=>openContact(e)}
+                    onClick={openContact}
                     style={"py-3 px-7 rounded-[50px]"}
                     text={t("navbar.contact")}
                   />
