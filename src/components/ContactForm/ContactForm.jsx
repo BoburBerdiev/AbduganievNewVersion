@@ -9,7 +9,7 @@ import {useMutation, useQuery} from "react-query";
 import apiService from "@/service/api";
 import {LuLoader2} from "react-icons/lu";
 import {useForm} from "react-hook-form";
-
+import InputMask from 'react-input-mask';
 
 
 
@@ -102,18 +102,29 @@ const ContactForm = () => {
                                         <span className={'text-xs text-red-600 block mt-3 '}>Требуется имя</span>}
                                 </div>
                                 <div>
-                                    <InputUl name={{...register('company_name', {required: true})}} type={"number"}
-                                             placeholder={t('form.number')}/>
-                                    {errors.company_name && <span className={'text-xs text-red-600 block mt-3 '}>Требуется название компании</span>}
+                                <InputMask
+                                                // mask options
+                                                mask="+\9\98 (99) 999-99-99"
+                                                alwaysShowMask={false}
+                                                // input options
+                                                id={'tel'}
+                                                type={'text'}
+                                                
+                                                className="w-full pb-2.5 bg-transparent border-b outline-none checked:outline-b text-zinc-200 placeholder:text-neutral-600 border-b-zinc-200"
+                                                placeholder={t('form.number')}
+                                                // react hook form register
+                                                {...register("phone", {required: true})}
+                                            />
+        
+                                    {errors.phone && <span className={'text-xs text-red-600 block mt-3 '}>Требуется название компании</span>}
                                 </div>
                                 <div>
                                     <textarea
-                                        {...register('message', {required: true})}
+                                        {...register('message')}
                                         rows="5"
                                         placeholder={t('form.project')}
                                         className="w-full p-2 bg-transparent border rounded-lg outline-none md:p-4 text-zinc-200 placeholder:text-neutral-600 border-zinc-200"
                                     ></textarea>
-                                    {errors.message && <span className={'text-xs text-red-600 block'}>Требуется краткое описание</span>}
                                 </div>
                                 <button disabled={userPostLoading} className="glow-on-hover py-3 px-7 rounded-[50px]">
                                     {userPostLoading ? <span><LuLoader2 className={'animate-spin'}/></span> :
