@@ -91,7 +91,8 @@ const service = ({ service , serviceTitle }) => {
         <meta
           name="twitter:image"
           content="/abduganiev-logoA.png"
-        /> 
+        />
+
       </Head>
     <main className="py-10 md:py-14 xl:py-24 bg-neutral-950">
       <div className="container">

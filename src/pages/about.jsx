@@ -106,6 +106,7 @@ const about = ({ about }) => {
           content="Изменение функций и другие услуги. Мы реализуем все ваши планы на высшем уровне.."
         />
         <meta name="twitter:image" content="/abduganiev-logoA.png" />
+
       </Head>
     <main className="py-10 md:py-[60px] lg:py-[100px] xl:py-[150px] bg-neutral-950">
      

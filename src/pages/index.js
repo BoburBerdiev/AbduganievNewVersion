@@ -100,7 +100,9 @@ export default function Home({
         <meta
           name="twitter:image"
           content="/abduganiev-logoA.png"
-        /> 
+        />
+
+
       </Head>
 
       <main>
