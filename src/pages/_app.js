@@ -42,14 +42,14 @@ export default function App({Component, pageProps}) {
                                 src={`https://www.googletagmanager.com/gtag/js?id=G-VQDW7KM0N1`}
                             />
 
-                            <Script id="ga-script" strategy="lazyOnload">
+                            <Script  strategy="lazyOnload">
                                 {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-VQDW7KM0N1', {
-                          page_path: window.location.pathname,
-                        });
+                                    window.dataLayer = window.dataLayer || [];
+                                    function gtag(){dataLayer.push(arguments);}
+                                    gtag('js', new Date());
+                                    gtag('config', 'G-VQDW7KM0N1', {
+                                      page_path: window.location.pathname,
+                                    });
             `}
                             </Script>
                             <Component {...pageProps} />
