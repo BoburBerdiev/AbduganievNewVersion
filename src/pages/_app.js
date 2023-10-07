@@ -52,7 +52,23 @@ export default function App({Component, pageProps}) {
                                     });
             `}
                             </Script>
+
+
                             <Component {...pageProps} />
+                            <Script language="javascript" type="text/javascript">
+                            </Script>
+                            <Script language="javascript1.1" type="text/javascript">
+
+                            </Script>
+                            <Script language="javascript1.2" type="text/javascript">
+
+                            </Script>
+                            <Script language="javascript1.3" type="text/javascript">
+
+                            </Script>
+                            <Script language="JavaScript" type="text/javascript">
+
+                            </Script>
                         </Layout>
 
                     </Provider>

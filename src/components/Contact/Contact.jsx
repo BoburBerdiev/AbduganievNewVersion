@@ -109,7 +109,7 @@ const Contact = () => {
           <button onClick={() => (dispatch(btnContact(false)))}  className="absolute right-[2%] md:right-0 p-1 text-3xl rounded-lg top-[1%] hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
                 <AiOutlineClose />
               </button>
-          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d187.34917578352434!2d69.24770658233086!3d41.296096212281626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1694051771744!5m2!1suz!2s"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.3962746691914!2d69.24697526962493!3d41.29613350579074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b749be55555%3A0x1afb789ee32b6ccf!2sAbduganiev%20Technology!5e0!3m2!1suz!2sus!4v1696681359013!5m2!1suz!2sus"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
