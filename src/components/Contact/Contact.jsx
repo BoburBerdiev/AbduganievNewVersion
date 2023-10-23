@@ -13,7 +13,7 @@ const Contact = () => {
   apiService.getData("/contact")
 );
 
-
+  // console.log('render')
 
 
   const { lang } = useSelector((state) => state.LanguageSlice);
