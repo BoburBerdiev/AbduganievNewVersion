@@ -62,21 +62,20 @@ const Navbar = () => {
           <div className="container flex items-center justify-between bg-neutral-950 ">
             <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
               <Link className="" href={"/"} passHref>
-                <a>
                 <Image
                   layout="fill"
                   objectFit="contain"
                   className="w-full h-full "
                   src={logo}
                 />
-                </a>
               </Link>
             </div>
             <aside className="flex space-x-9">
               <ul
                 className={`${
                   menu ? "left-0" : "-left-[100%]"
-                } h-[calc(100vh-90px)] top-[90px] duration-500 flex fixed  md:static   md:h-auto  bg-black/90 md:bg-transparent  space-y-10 font-medium flex-col md:flex-row text-2xl border-b md:border-none w-full py-10 md:py-0 md:w-auto text-[#E4E4E7] md:text-lg md:space-y-0 md:space-x-8`}
+                  
+                } font-openSans h-[calc(100vh-90px)] top-[90px] duration-500 flex fixed  md:static   md:h-auto  bg-black/90 md:bg-transparent  space-y-10 font-medium flex-col md:flex-row text-2xl border-b md:border-none w-full py-10 md:py-0 md:w-auto text-[#E4E4E7] md:text-lg md:space-y-0 md:space-x-8`}
               >
                 {navItems.map((item, id) => (
                   <li

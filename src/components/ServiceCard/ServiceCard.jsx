@@ -24,7 +24,7 @@ const ServiceCard = ({
           layout="fill"
           className={`z-[9] rounded-xl transition ease-in-out duration-500 object-cover group-hover:opacity-100 opacity-0`}
         />
-        <div className="relative z-10">
+        <div className="relative z-10 font-openSans">
           <h3 className="text-xl font-semibold md:text-2xl">
             {lang === "ru" ? title_ru : title_uz}
           </h3>

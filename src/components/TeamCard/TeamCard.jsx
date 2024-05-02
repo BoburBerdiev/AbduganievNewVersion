@@ -15,7 +15,7 @@ const TeamCard = ({person , id}) => {
           {lang === 'ru' ? person?.name_ru : person?.name_uz}
             
             </h5>
-          <p className="text-sm ">
+          <p className="text-sm font-openSans">
             {lang === 'ru' ? person?.profession_ru : person?.profession_uz}
           </p>
           {/* <div className="absolute flex flex-col items-center space-y-3 text-xl icons bottom-5">

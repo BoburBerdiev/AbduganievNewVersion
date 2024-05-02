@@ -7,6 +7,7 @@ import { useSelector ,useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import apiService from "@/service/api";
+import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 
 const Contact = () => {
   const { data: contactData,isLoading } = useQuery("contact", () =>
@@ -37,7 +38,7 @@ const Contact = () => {
             <div 
               data-aos='fade-up' data-aos-delay='20' 
             
-            className="flex flex-col items-center md:items-start space-y-2.5  ">
+            className="flex flex-col font-openSans items-center md:items-start space-y-2.5  ">
               <p 
                 className="block space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start"
               >
@@ -85,36 +86,60 @@ const Contact = () => {
                     {t("footer.messenger")}
                   </p>
                 </div>
-                <div className="flex justify-center space-x-5 md:justify-start">
-                  <a
-                  target="_blank"
-                  href={contactData?.data[0]?.instagram}
+              <div className="flex justify-center space-x-5 md:justify-start">
+                <a
+                    href={contactData?.data[0]?.telegram}
+                    target="_blank"
                     className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                  >
-                    <BsInstagram className="text-3xl " />
-                  </a>
-                  <a
-                  target="_blank"
-                  href={contactData?.data[0]?.facebook}
+                >
+                  <FaTelegram className="text-3xl "/>
+                </a>
+                <a
+                    href={contactData?.data[0]?.linkedin}
+                    target="_blank"
                     className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
-                  >
-                    <BsFacebook className="text-3xl " />
-                  </a>
-                
-                  
-                </div>
+                >
+                  <FaLinkedin className="text-3xl "/>
+                </a>
+                <a
+                    href={contactData?.data[0]?.youtube}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <FaYoutube className="text-3xl "/>
+                </a>
+                <a
+                    href={contactData?.data[0]?.instagram}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <BsInstagram className="text-3xl "/>
+                </a>
+                <a
+                    href={contactData?.data[0]?.facebook}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <BsFacebook className="text-3xl "/>
+                </a>
+
+
               </div>
+            </div>
           </div>
           <div className="static w-full col-span-1 md:relative ">
-          <button onClick={() => (dispatch(btnContact(false)))}  className="absolute right-[2%] md:right-0 p-1 text-3xl rounded-lg top-[1%] hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
-                <AiOutlineClose />
-              </button>
-          <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.3962746691914!2d69.24697526962493!3d41.29613350579074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b749be55555%3A0x1afb789ee32b6ccf!2sAbduganiev%20Technology!5e0!3m2!1suz!2sus!4v1696681359013!5m2!1suz!2sus"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <button onClick={() => (dispatch(btnContact(false)))}
+                    className="absolute right-[2%] md:right-0 p-1 text-3xl rounded-lg top-[1%] hover:bg-zinc-200 hover:text-neutral-950 md:-top-20 text-zinc-200 ">
+              <AiOutlineClose/>
+            </button>
+            <iframe className="w-full  h-[30vh] lg:min-h-[60vh]  rounded-lg"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.3962746691914!2d69.24697526962493!3d41.29613350579074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b749be55555%3A0x1afb789ee32b6ccf!2sAbduganiev%20Technology!5e0!3m2!1suz!2sus!4v1696681359013!5m2!1suz!2sus"
+                    allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </section>
-  </main>
+    </main>
   )
 }
 

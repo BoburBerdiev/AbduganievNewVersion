@@ -7,7 +7,6 @@ import {
 } from "@/components";
 import axios from "axios";
 import Head from "next/head";
-
 export default function Home({
   header,
   partners,

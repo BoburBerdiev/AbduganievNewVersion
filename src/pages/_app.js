@@ -14,24 +14,26 @@ import 'swiper/css/navigation';
 import Script from "next/script";
 
 const queryClient = new QueryClient()
-// import { Montserrat  , Open_Sans} from '@next/font/google'
+import { Roboto , Open_Sans } from '@next/font/google'
 
 
-// const montserrat = Montserrat({
-//     subsets:['latin' , 'cyrillic'],
-//     weight:['400','500','700' , '600' , '800']
-// })
+const roboto = Roboto({
+    subsets:['latin' , 'cyrillic'],
+    weight:['400','500','700' ,'900' ],
+    variable: "--font-roboto"
+})
+const open_sans = Open_Sans({
+    subsets:['latin' , 'cyrillic'],
+    variable: "--font-open_sans"
 
-// export const open_sans = Open_Sans({
-//   subsets: ['latin' , 'cyrillic'],
-//   display: 'swap',
-// })
+})
+
 
 export default function App({Component, pageProps}) {
 
     return (
         <div>
-            <main>
+            <main className={`[ ${open_sans.variable} , ${roboto.variable} ]`}>
                 <QueryClientProvider client={queryClient}>
 
                     <Provider store={store}>

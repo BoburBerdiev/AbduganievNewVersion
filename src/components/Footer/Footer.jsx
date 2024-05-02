@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { BsInstagram , BsFacebook } from "react-icons/bs";
+import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import apiService from "@/service/api";
@@ -9,7 +10,7 @@ const Footer = () => {
   const { data: contact } = useQuery("contact", () =>
     apiService.getData("/contact")
   );
-
+  console.log(contact?.data)
   
   const { lang } = useSelector((state) => state.LanguageSlice);
 
@@ -19,7 +20,7 @@ const Footer = () => {
       <footer className="py-10 md:py-16 bg-neutral-900">
         <div className="container flex flex-col space-x-0 space-y-10 md:space-y-0 md:space-x-5 md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:items-start space-y-2.5  ">
-            <p className="space-x-2 text-sm text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start">
+            <p className="space-x-2 text-sm font-openSans text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start">
               <span className="font-bold ">{t("footer.workTime")}:</span>
               <span className="font-thin">
                 {lang === "ru"
@@ -63,24 +64,45 @@ const Footer = () => {
               </span>
               <div className="flex justify-center space-x-5 md:justify-end">
                 <a
-                 href={contact?.data[0]?.instagram}
-                  target="_blank"
-                  className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                    href={contact?.data[0]?.telegram}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                 >
-                  <BsInstagram className="text-3xl " />
+                  <FaTelegram className="text-3xl "/>
                 </a>
                 <a
-                href={contact?.data[0]?.facebook}
-                  target="_blank"
-                  className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                    href={contact?.data[0]?.linkedin}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                 >
-                  <BsFacebook className="text-3xl " />
+                  <FaLinkedin className="text-3xl "/>
                 </a>
-             
+                <a
+                    href={contact?.data[0]?.youtube}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <FaYoutube  className="text-3xl "/>
+                </a>
+                <a
+                    href={contact?.data[0]?.instagram}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <BsInstagram className="text-3xl "/>
+                </a>
+                <a
+                    href={contact?.data[0]?.facebook}
+                    target="_blank"
+                    className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
+                >
+                  <BsFacebook className="text-3xl "/>
+                </a>
+
               </div>
             </div>
-            <p className="lg:text-sm md:text-[11px] text-[10px] text-center md:text-end  text-zinc-200 ">
-              © Abduganiev technology 2023. {t("footer.reserved")}
+            <p className="lg:text-sm md:text-[11px] text-[10px] text-center md:text-end  text-zinc-200 font-openSans">
+              © Abduganiev technology  {new Date().getFullYear()} {t("footer.reserved")}
             </p>
           </div>
         </div>

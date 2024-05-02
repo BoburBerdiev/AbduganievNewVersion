@@ -18,7 +18,7 @@ const AboutIndex = ({numberCount , about}) => {
                 
               <SectionTitle text_uz={about[0]?.title_uz} text_ru={about[0]?.title_ru}/>
               
-              <p className="text-lg text-justify lg:text-xl " data-aos='fade-up' data-aos-delay='50'>
+              <p className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
                 {
                   lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
@@ -28,7 +28,7 @@ const AboutIndex = ({numberCount , about}) => {
 
   
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px] ">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px]  ">
                 {
                   numberCount?.map(item => (
                     
@@ -37,8 +37,8 @@ const AboutIndex = ({numberCount , about}) => {
                 }
               </div>
             </div>
-            <div className="relative">
-              <ImageUl src={'/office 1-min.jpg'} imgStyle={'object-contain'} />
+            <div className="relative ">
+              <ImageUl src={'/office 1-min.jpg'} imgStyle={'object-contain rounded-[5%] overflow-hidden'} />
             {/* <iframe data-aos='fade-up' data-aos-delay='100' className="w-full rounded-xl aspect-square md:h-full" src={about[0]?.link} title="Abduganiev Otabek. Maqsadlar yanada kengaymoqda. HUAWEI dan o&#39;zbek bolaga taklif" ></iframe> */}
             </div>
           </div>

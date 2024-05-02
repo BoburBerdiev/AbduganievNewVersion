@@ -130,14 +130,14 @@ const about = ({ about }) => {
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
             <h3
               data-aos="fade-up"
-              className="text-2xl mb-2.5 font-semibold text-center md:text-start md:text-3xl lg:text-4xl"
+              className="text-2xl mb-2.5 font-roboto font-bold text-center md:text-start md:text-3xl lg:text-4xl"
             >
               {lang === "ru" ? whyWe?.data?.title_ru : whyWe?.data?.title_uz}
             </h3>
             <p
               data-aos="fade-up"
               data-aos-delay="80"
-              className="text-start md:text-md lg:text-lg xl:text-xl"
+              className="font-openSans text-start md:text-md lg:text-lg xl:text-xl"
             >
               {lang === "ru"
                 ? whyWe?.data?.short_text_ru
@@ -149,7 +149,7 @@ const about = ({ about }) => {
               <div className="w-[60%] aspect-square rounded-full animate-spin-slow bg-gradient-to-r from-[rgba(0,255,126,0.50)] blur-3xl to-[rgba(0,30,255,0.50)] "></div>
             </div>
             <div className="col-span-3 ">
-              <ol className="space-y-4 text-base font-normal list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
+              <ol className="space-y-4 text-base font-openSans list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
                 {whyWe?.data?.why_we_childs?.map((item, id) => (
                   <li key={item.id} data-aos="fade-up" data-aos-delay={id * 10}>
                     <span className="mr-2 font-semibold">
