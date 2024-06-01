@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import logo from "public/abduganiev-min.png";
-import { Contact, CurrentBtn } from "@/components/";
+import {  CurrentBtn } from "@/components/";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
@@ -11,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { checkLanguageAction } from "@/slice/LanguageSlice";
 import { navItems } from "@/config/routerConfig";
 import {useRouter} from "next/router";
+import {ImageUl} from "@/components";
 
 const Navbar = () => {
   const {pathname}=useRouter()
@@ -56,13 +56,13 @@ const Navbar = () => {
 
   return (
     <>
-      <Contact />
       <nav className="fixed top-0 left-0 w-full bg-neutral-950 z-[100]">
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
             <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
               <Link className="" href={"/"} passHref>
-                <Image
+                <ImageUl
+                    alt={"Abdug'aniev Technology"}
                   layout="fill"
                   objectFit="contain"
                   className="w-full h-full "

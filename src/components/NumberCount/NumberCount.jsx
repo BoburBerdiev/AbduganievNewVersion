@@ -11,12 +11,12 @@ const NumberCount = ({ number, text_uz , text_ru}) => {
 // CountUp ni oliga qoyiw kk  har safar ref resh
   
   return (
-    <div className="space-y-5 text-center" data-aos='fade-up'>
+    <div className="space-y-5 text-center" data-aos='fade-up' >
       <ScrollTrigger onEnter={() => (setCounterOn(true))} onExit={() => (setCounterOn(false))}>
         <h5 className="text-6xl font-extrabold gradient-background">
           {
        
-          <CountUp start={0} end={number} duration={5} delay={0} /> 
+          <CountUp start={0} end={number} duration={10} delay={0} />
           }
           {
             'Лет Опыта' === text_ru ? ' +' : ''

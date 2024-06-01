@@ -1,69 +1,58 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore,  {Pagination,   Autoplay} from "swiper";
-import { SectionTitle , ServiceCard } from "..";
+import { SectionTitle, ServiceCard } from "..";
 import { useTranslation } from "react-i18next";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
 
+const ServicesIndex = ({ serviceIndex }) => {
+  gsap.registerPlugin(ScrollTrigger)
+  const { t } = useTranslation();
+  const component = useRef();
+  const slider = useRef();
 
-//
-
-// import required modules
-SwiperCore.use([Autoplay]);
-
-const ServicesIndex = ({serviceIndex}) => {
-  const {t} = useTranslation()
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let panels = gsap.utils.toArray(".panel");
+      gsap.to(panels, {
+        xPercent: -120 * (panels.length-1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: component.current ,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (panels.length - 1),
+          end: () => "+=" + slider.current.offsetWidth
+        }
+      });
+    }, component );
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <>
-      <section className="pt-20 md:pt-[100px] lg:pt-[150px] pb-10 md:pb-[50px] lg:pb-[75px] bg-neutral-950 service">
-        <div className="container">
-        <div className="mb-5 md:mb-10 lg:mb-14">
-            <SectionTitle text={t('home.service')}  />
-            </div>
-          <Swiper
-          breakpoints={{
-            0: {
-              slidesPerView: 1.5,
-            },
-            768: {
-              slidesPerView: 2.5,
-            },
-            1024: {
-              slidesPerView: 3.5,
-            },
-            
-          }}
-            centeredSlides={false}
-            spaceBetween={10}
-            grabCursor={true}
-            autoplay={{
-              delay: 3000,
-                disableOnInteraction:false
-          }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className="py-4 mySwiper"
-          >
-            {
-              serviceIndex?.map((item , id) => (
-              <SwiperSlide key={item.id}>
-                <ServiceCard id={id} bg={item.image} title_ru={item.title_ru} title_uz={item.title_uz} description_uz={item.description_uz} description_ru={item.description_ru} />
-              </SwiperSlide>
-              ))
-            }
-
-
-
-
-
-
-
-
-          </Swiper>
+      <section
+          className="pt-20 md:pt-[100px] lg:pt-[150px] pb-10 md:pb-[50px] lg:pb-[75px] bg-neutral-950 service"
+          ref={component}
+      >
+        <div className="container" >
+          <div className="mb-5 md:mb-10 lg:mb-14">
+            <SectionTitle text={t('home.service')} />
+          </div>
+          <div className="flex gap-x-5" ref={slider}>
+            {serviceIndex?.map((item, id) => (
+                <div className="shrink-0 w-[300px] panel" key={item?.id}>
+                  <ServiceCard
+                      id={id}
+                      bg={item.image}
+                      title_ru={item.title_ru}
+                      title_uz={item.title_uz}
+                      description_uz={item.description_uz}
+                      description_ru={item.description_ru}
+                  />
+                </div>
+            ))}
+          </div>
         </div>
       </section>
-    </>
   );
 };
 

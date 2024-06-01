@@ -10,8 +10,7 @@ const Footer = () => {
   const { data: contact } = useQuery("contact", () =>
     apiService.getData("/contact")
   );
-  console.log(contact?.data)
-  
+
   const { lang } = useSelector((state) => state.LanguageSlice);
 
   const { t } = useTranslation();

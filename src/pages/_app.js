@@ -4,7 +4,6 @@ import store from "@/store";
 import {Provider} from "react-redux";
 import {QueryClientProvider, QueryClient} from 'react-query'
 import NextNProgress from 'nextjs-progressbar'
-
 import '../localization/i18n'
 
 import 'aos/dist/aos.css';

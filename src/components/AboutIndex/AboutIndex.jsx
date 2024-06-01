@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { ImageUl, NumberCount, SectionTitle } from "..";
+import { motion } from "framer-motion";
 
 const AboutIndex = ({numberCount , about}) => {
   const {lang} = useSelector(state => state.LanguageSlice)
@@ -18,11 +19,14 @@ const AboutIndex = ({numberCount , about}) => {
                 
               <SectionTitle text_uz={about[0]?.title_uz} text_ru={about[0]?.title_ru}/>
               
-              <p className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
+              <motion.p
+                  initial={{ opacity: 0  }}
+                  whileInView={{ opacity: 1 }}
+                  className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
                 {
                   lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
-              </p>
+              </motion.p>
                 
               </div>
 
@@ -30,9 +34,13 @@ const AboutIndex = ({numberCount , about}) => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px]  ">
                 {
-                  numberCount?.map(item => (
-                    
-                    <NumberCount key={item.id} number={item.number} text_uz={item.name_uz} text_ru={item.name_ru}/>
+                  numberCount?.map((item , key) => (
+                    <motion.div initial={{ opacity: 0  , y:'50px'}}
+                         whileInView={{ opacity: 1  , y:0}}
+                         viewport={{ once: true }} key={item.id}>
+                    <NumberCount  number={item.number} text_uz={item.name_uz} text_ru={item.name_ru}/>
+
+                    </motion.div>
                   ))
                 }
               </div>
