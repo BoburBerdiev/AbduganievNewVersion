@@ -52,6 +52,9 @@ const ServicesIndex = ({serviceIndex}) => {
               </SwiperSlide>
               ))
             }
+
+
+
           </Swiper>
         </div>
       </section>
