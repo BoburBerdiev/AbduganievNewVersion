@@ -66,6 +66,7 @@ const ServiceCard = ({
   );
 };
 
+
 export default ServiceCard;
 
 export const Icon = ({ gradientCenter }) => {
