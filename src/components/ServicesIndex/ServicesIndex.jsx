@@ -14,12 +14,12 @@ const ServicesIndex = ({ serviceIndex }) => {
     let ctx = gsap.context(() => {
       let panels = gsap.utils.toArray(".panel");
       gsap.to(panels, {
-        xPercent: -120 * (panels.length-1),
+        xPercent: -120 * (panels.length-2),
         ease: "none",
         scrollTrigger: {
           trigger: component.current ,
           pin: true,
-          scrub: 1,
+          scrub: true,
           snap: 1 / (panels.length - 1),
           end: () => "+=" + slider.current.offsetWidth
         }
@@ -39,7 +39,7 @@ const ServicesIndex = ({ serviceIndex }) => {
           </div>
           <div className="flex gap-x-5" ref={slider}>
             {serviceIndex?.map((item, id) => (
-                <div className="shrink-0 w-[300px] panel" key={item?.id}>
+                <div className="shrink-0 w-full md:w-[500px] panel" key={item?.id}>
                   <ServiceCard
                       id={id}
                       bg={item.image}

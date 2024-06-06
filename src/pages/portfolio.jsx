@@ -106,8 +106,7 @@ const projects = ({projects , projectTitle}) => {
           
         /> 
           <div className="md:py-[100px] py-10">
-            <div className="grid grid-cols-1 gap-3 py-5 md:py-10 md:grid-cols-2 ">
-
+            <div className="grid grid-cols-1 gap-3 md:gap-5 py-5 md:py-10 md:grid-cols-3  ">
             {
               projects?.map(item => (
                 <PortfolioCard
@@ -123,9 +122,7 @@ const projects = ({projects , projectTitle}) => {
               />
               ))
             }
-             
             </div>
-            
           </div>
         </div>
       </main>

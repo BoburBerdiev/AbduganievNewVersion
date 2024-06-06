@@ -8,8 +8,6 @@ const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,description_
       <a
         href={href}
         target='_blank'
-        data-aos='zoom-in'
-        data-aos-delay={id * 10}
         className="relative block duration-500 rounded-lg overflow-clip aspect-square md:aspect-video group "
       >
         <div className="border-2 rounded-lg ">

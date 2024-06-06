@@ -69,6 +69,7 @@ const Feedback = ({ feedback }) => {
         </Swiper>
       </div>
     </section>
+
   );
 };
 

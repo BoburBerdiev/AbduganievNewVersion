@@ -5,15 +5,13 @@ import {Provider} from "react-redux";
 import {QueryClientProvider, QueryClient} from 'react-query'
 import NextNProgress from 'nextjs-progressbar'
 import '../localization/i18n'
-
 import 'aos/dist/aos.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Script from "next/script";
-
 const queryClient = new QueryClient()
-import { Roboto , Open_Sans } from '@next/font/google'
+import { Roboto , Open_Sans } from 'next/font/google'
 
 
 const roboto = Roboto({
