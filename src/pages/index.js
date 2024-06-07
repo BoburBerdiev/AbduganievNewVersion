@@ -4,6 +4,7 @@ import {
   ServicesIndex,
   PortfolioIndex,
   Feedback, ImageUl,
+    Loader
 } from "@/components";
 import axios from "axios";
 import Head from "next/head";
@@ -236,7 +237,7 @@ export default function Home({
               </svg>
             </div>
           </div>
-
+          <Loader/>
           <HeaderBanner header={header} partners={partners}/>
           <AboutIndex about={about} numberCount={numberCount}/>
           <ServicesIndex serviceIndex={serviceIndex}/>
