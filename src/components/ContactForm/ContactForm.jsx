@@ -10,11 +10,25 @@ import apiService from "@/service/api";
 import {LuLoader2} from "react-icons/lu";
 import {useForm} from "react-hook-form";
 import InputMask from 'react-input-mask';
-
-
-
-
-
+import {AnimatePresence ,motion} from "framer-motion";
+const overlayVariants = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      duration: 0.3,
+      delayChildren: 0.4
+    }
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+      duration: 0.3,
+      delay: 0.4
+    }
+  }
+};
 
 const ContactForm = () => {
     const {form} = useSelector(state => state.formSlice)
@@ -40,7 +54,7 @@ const ContactForm = () => {
             setTimeout(() => {
                 setModal(false)
                 dispatch(btnForm())
-            }, 2000)
+            }, 2500)
         }
 
     }, [userPostData])
@@ -53,9 +67,20 @@ const ContactForm = () => {
     }
     return (
 
-        <main
-            className={`fixed ${form ? 'flex' : 'hidden'} top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
-            <section className="relative ">
+        <AnimatePresence>
+          {
+              form &&
+
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={overlayVariants}
+            className={`fixed flex top-0   py-14 md:py-0  justify-center items-center left-0 z-[101] w-full h-fit md:min-h-screen bg-neutral-950`}>
+            <motion.div initial={{ y: "100vh" ,scaleY: 0 }}
+                        animate={{ y: 0 , scaleY: 1 }}
+                        exit={{  y: "100vh" , scaleY:0 }}
+                        transition={{ duration: 0.4 }} className="relative ">
                 <div className="container relative " >
                     <div
                         className="grid items-center grid-cols-1 md:grid-cols-2 space-y-[70px] md:space-y-[90px] xl:gap-20"
@@ -134,12 +159,21 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-            <div
-                className={`${isModal ? 'block' : 'hidden'} fixed  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-[999] min-h-screen backdrop_filter`}>
+            </motion.div>
+          {
+            isModal &&
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={overlayVariants}
+                className={`block fixed  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-[999] min-h-screen backdrop_filter`}>
                 <ModalSuccess text={t('startProject.success')}/>
-            </div>
-        </main>
+            </motion.div>
+          }
+        </motion.div>
+          }
+          </AnimatePresence>
     );
 };
 

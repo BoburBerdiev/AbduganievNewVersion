@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import React, { useEffect, useRef, useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import {ServiceIcon} from "@/components";
 
 const ServiceCard = ({id,
@@ -36,11 +36,11 @@ const ServiceCard = ({id,
               className={'p-[1px] glow-on-hover group bg-transparent w-full h-full col-span-1 relative rounded-xl overflow-hidden'}
           >
             <div  id={id} ref={cardsRef}
-                   className='w-full h-full bg-black  shadow-xl  rounded-lg flex flex-row p-8 justify-between '>
+                   className='w-full h-full bg-black  shadow-xl  rounded-lg flex flex-row p-4 md:p-8 justify-between '>
               <div  className='flex flex-col w-full items-center stroke-1'>
                 <ServiceIcon id={id}  gradientCenter={gradientCenter} />
                 <div  className='flex flex-col gap-5 text-center items-center mt-4'>
-                  <h2  className='font-notoSans text-neutral-200 tracking-wide text-2xl'>
+                  <h2  className='font-notoSans text-neutral-200 tracking-wide text-2xl md:text-3xl font-roboto font-bold'>
                     {lang === 'ru' ? title_ru : title_uz}
                   </h2>
                   <p  className='-mt-2 font-notoSans text-neutral-500 tracking-wide'>
