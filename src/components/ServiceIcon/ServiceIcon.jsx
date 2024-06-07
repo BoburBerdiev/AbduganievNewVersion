@@ -5,15 +5,15 @@
             0 === id ?
                 <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-40 h-40 duration-200 transition-all">
             <defs>
-            <radialGradient
-            id='emeraldGradient'
-            gradientUnits='userSpaceOnUse'
-            cx={`${gradientCenter.cx}%`}
-            cy={`${gradientCenter.cy}%`}
-            >
-            <stop stopColor='#10b981'/>
-            <stop offset={90} stopColor='#404040'/>
-            </radialGradient>
+            {/*<radialGradient*/}
+            {/*id='emeraldGradient'*/}
+            {/*gradientUnits='userSpaceOnUse'*/}
+            {/*cx={`${gradientCenter.cx}%`}*/}
+            {/*cy={`${gradientCenter.cy}%`}*/}
+            {/*>*/}
+            {/*<stop stopColor='#10b981'/>*/}
+            {/*<stop offset={90} stopColor='#404040'/>*/}
+            {/*</radialGradient>*/}
             </defs>
             <path
             strokeLinecap="round"
