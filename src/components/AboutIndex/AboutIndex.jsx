@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import { ImageUl, NumberCount, SectionTitle } from "..";
 import { motion } from "framer-motion";
+import i18next from "i18next";
 
 const AboutIndex = ({numberCount , about}) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
-
   return (
     <>
 
@@ -24,7 +23,7 @@ const AboutIndex = ({numberCount , about}) => {
                   whileInView={{ opacity: 1 }}
                   className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
                 {
-                  lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
+                  i18next.language === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
               </motion.p>
                 

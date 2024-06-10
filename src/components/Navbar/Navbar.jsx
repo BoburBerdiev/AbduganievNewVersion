@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { btnContact } from "@/slice/contactSlice";
 import { useTranslation } from "react-i18next";
-import { checkLanguageAction } from "@/slice/LanguageSlice";
 import { navItems } from "@/config/routerConfig";
 import {useRouter} from "next/router";
 import {ImageUl} from "@/components";
@@ -40,7 +39,7 @@ const Navbar = () => {
   useEffect(() => {
     if (isChangeLang) {
       i18n.changeLanguage(checkLang);
-      dispatch(checkLanguageAction(checkLang));
+
     }
   }, [checkLang]);
   const changLang = (lang) => {

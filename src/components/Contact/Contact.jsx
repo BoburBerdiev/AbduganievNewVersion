@@ -9,12 +9,12 @@ import {useQuery} from "react-query";
 import apiService from "@/service/api";
 import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
+import i18next from "i18next";
 
 const Contact = () => {
   const {data: contactData} = useQuery("contact", () =>
       apiService.getData("/contact")
   );
-  const {lang} = useSelector((state) => state.LanguageSlice);
   const {contact} = useSelector(state => state.contactSlice)
   const dispatch = useDispatch()
   const {t} = useTranslation();
@@ -74,7 +74,7 @@ const Contact = () => {
                         >
                           <span className="font-bold ">{t("footer.workTime")}:</span>
                           <span className="font-thin">
-                {lang === "ru"
+                {i18next.language === "ru"
                     ? contactData?.data[0]?.working_hours_ru
                     : contactData?.data[0]?.working_hours_uz}
                 </span>
@@ -103,7 +103,7 @@ const Contact = () => {
                         >
                           <span className="font-bold ">{t("footer.address")}:</span>
                           <span className="font-thin">
-                {lang === "ru"
+                {i18next.language === "ru"
                     ? contactData?.data[0]?.address_ru
                     : contactData?.data[0]?.address_uz
                 }

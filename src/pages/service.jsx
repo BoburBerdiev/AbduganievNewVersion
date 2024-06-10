@@ -2,10 +2,10 @@ import { PageSectionTItle, ImageUl, ServiceTextCard } from "@/components";
 import axios from "axios";
 import Head from "next/head";
 import { useSelector } from "react-redux";
+import i18next from "i18next";
 
 
 const service = ({ service , serviceTitle }) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
 
 
   return (
@@ -16,7 +16,7 @@ const service = ({ service , serviceTitle }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         <link rel="icon" href="/abduganiev-logoA.png" />
-        <title>Abduganiev Technology - {lang === 'ru' ?  serviceTitle[0]?.title_ru : serviceTitle[0]?.title_uz} </title>
+        <title>Abduganiev Technology - {i18next.language === 'ru' ?  serviceTitle[0]?.title_ru : serviceTitle[0]?.title_uz} </title>
         <meta
           name="description"
           content="Все наши услуги доступны по отдельности, а также внутри пакета услуг"

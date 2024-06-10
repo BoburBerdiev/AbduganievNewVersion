@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import React, {  useRef, useState } from 'react';
 import {ServiceIcon} from "@/components";
+import i18next from "i18next";
 
 const ServiceCard = ({id,
                        title_uz,
@@ -9,7 +10,6 @@ const ServiceCard = ({id,
                        description_ru,
                      }) => {
 
-  const { lang } = useSelector((state) => state.LanguageSlice);
   const cardsRef = useRef(
       null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -41,10 +41,10 @@ const ServiceCard = ({id,
                 <ServiceIcon id={id}  gradientCenter={gradientCenter} />
                 <div  className='flex flex-col gap-5 text-center items-center mt-4'>
                   <h2  className='font-notoSans text-neutral-200 tracking-wide text-2xl md:text-3xl font-roboto font-bold'>
-                    {lang === 'ru' ? title_ru : title_uz}
+                    {i18next.language === 'ru' ? title_ru : title_uz}
                   </h2>
                   <p  className='-mt-2 font-notoSans text-neutral-500 tracking-wide'>
-                    {lang === 'ru' ? description_ru : description_uz}
+                    {i18next.language === 'ru' ? description_ru : description_uz}
                   </p>
                 </div>
               </div>

@@ -2,10 +2,9 @@ import React from 'react'
 import {RiDoubleQuotesR} from 'react-icons/ri'
 import {  ImageUl } from "..";
 import { useSelector } from "react-redux";
+import i18next from "i18next";
 
 const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru , job_uz ,description_ru ,description_uz ,id }) => {
-
-  const {lang} = useSelector(state => state.LanguageSlice)
 
   return (
     <>
@@ -16,12 +15,12 @@ const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru
               <div>
                 <h6 className="mb-2 text-lg font-semibold md:mb-2.5 md:text-xl font-roboto lg:text-2xl">
                 {
-                lang === 'ru' ? title_ru : title_uz
+                i18next.language === 'ru' ? title_ru : title_uz
                 }
                 </h6>
                 <p className="text-sm md:text-base lg:text-xl font-thin font-openSans">
                   {
-                lang === 'ru' ? description_ru : description_uz
+                i18next.language === 'ru' ? description_ru : description_uz
                 }
                 </p>
               </div>
@@ -32,12 +31,12 @@ const FeedbackCard = ({img , title_ru , title_uz , author_ru ,author_uz , job_ru
                 <div className="space-y-2 font-semibold">
                   <h6 className="text-sm md:text-base lg:text-xl font-roboto">
                   {
-                lang === 'ru' ? author_ru : author_uz
+                i18next.language === 'ru' ? author_ru : author_uz
                 }
                   </h6>
                   <p className="text-xs font-openSans gradient-background md:text-sm lg:text-base">
                   {
-                lang === 'ru' ? job_ru : job_uz
+                i18next.language === 'ru' ? job_ru : job_uz
                 }
                   </p>
                 </div>

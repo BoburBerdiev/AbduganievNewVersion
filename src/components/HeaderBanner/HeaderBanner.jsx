@@ -4,9 +4,9 @@ import { CurrentWhiteBtn, ImageUl, PartnorList, ContactForm } from "..";
 import { useDispatch, useSelector } from "react-redux";
 import { btnForm } from "@/slice/formSlice";
 import { motion } from "framer-motion";
+import i18next from "i18next";
 
 const HeaderBanner = ({ header, partners }) => {
-  const { lang } = useSelector((state) => state.LanguageSlice);
   const dispatch = useDispatch();
   const openForm = () => {
     dispatch(btnForm(true));
@@ -17,7 +17,7 @@ const HeaderBanner = ({ header, partners }) => {
   const frameSize = 1; // Number of lines to display in each frame
 
   const textLines =
-      lang === "ru"
+      i18next.language === "ru"
           ? header[0]?.content_ru.split("\n")
           : header[0]?.content_uz.split("\n");
 
@@ -41,7 +41,7 @@ const HeaderBanner = ({ header, partners }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
             >
-              {lang === "ru" ? header[0]?.title_ru : header[0]?.title_uz}
+              {i18next.language === "ru" ? header[0]?.title_ru : header[0]?.title_uz}
             </motion.h1>
             <motion.p
                 className="text-sm font-thin lg:text-lg font-openSans"

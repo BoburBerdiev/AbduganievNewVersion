@@ -223,3 +223,17 @@
     height: 280px;
   }
 }
+
+
+/* Add these to your CSS file */
+.clip-circle-150 {
+  clip-path: circle(150px at 80% 20%);
+}
+
+@layer utilities {
+
+  .clip-circle-300 {
+    clip-path: circle(300px at 80% -20%);
+  }
+
+}

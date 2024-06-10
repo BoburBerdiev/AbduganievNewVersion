@@ -1,17 +1,15 @@
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { BsInstagram , BsFacebook } from "react-icons/bs";
 import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 import { useQuery } from "react-query";
-import { useSelector } from "react-redux";
 import apiService from "@/service/api";
+import i18next from "i18next";
 
 const Footer = () => {
   const { data: contact } = useQuery("contact", () =>
     apiService.getData("/contact")
   );
 
-  const { lang } = useSelector((state) => state.LanguageSlice);
 
   const { t } = useTranslation();
   return (
@@ -22,7 +20,7 @@ const Footer = () => {
             <p className="space-x-2 text-sm font-openSans text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start">
               <span className="font-bold ">{t("footer.workTime")}:</span>
               <span className="font-thin">
-                {lang === "ru"
+                {i18next.language === "ru"
                   ? contact?.data[0]?.working_hours_ru
                   : contact?.data[0]?.working_hours_uz}
               </span>
@@ -50,7 +48,7 @@ const Footer = () => {
             >
               <span className="font-bold ">{t("footer.address")}:</span>
               <span className="font-thin">
-                {lang === "ru"
+                {i18next.language === "ru"
                   ? contact?.data[0]?.address_ru
                   : contact?.data[0]?.address_uz}
               </span>
