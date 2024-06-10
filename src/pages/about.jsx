@@ -118,7 +118,7 @@ const about = ({ about }) => {
           subTitle_uz={about[0]?.description_uz}
           row={true}
         />
-        <section className="relative w-full  aspect-video my-20 md:my-[100px] lg:my-[150px]">
+        <section className="relative w-full  aspect-video md:aspect-[16/6] my-20 md:my-[100px] lg:my-[150px]">
           <ImageUl
             priority={true}
             src={about[0]?.image}
@@ -222,24 +222,15 @@ const about = ({ about }) => {
         </section> */}
         <section>
           <SectionTitle text={t("about.trust")} />
-          <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 xl:grid-cols-4 lg:grid-cols-3 lg:pt-[60px] md:pt-10 pt-5">
-            {partnor?.data?.map((item, id) => (
-              <a
-                href={item.link}
-                target="_blank"
-                key={item?.id}
-                data-aos="fade-up"
-                data-aos-delay={id}
-                className="flex items-center justify-center "
-              >
-                <div className=" relative w-[80%] md:w-[280px] aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-500">
+          <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 md:grid-cols-5 lg:pt-[60px] md:pt-10 pt-5">
+            {partnor?.data?.map((item) => (
+                <div className=" relative w-[80%]  aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-200">
                   <ImageUl
                     src={item?.image}
                     imgStyle={"object-contain"}
-                    alt={item?.image}
+                    alt={'abduganiev partnor'}
                   />
                 </div>
-              </a>
             ))}
           </div>
         </section>
