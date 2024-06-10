@@ -11,6 +11,7 @@ import { navItems } from "@/config/routerConfig";
 import {useRouter} from "next/router";
 import {ImageUl} from "@/components";
 
+
 const Navbar = () => {
   const {pathname}=useRouter()
   const [menu, setMenu] = useState(false);
