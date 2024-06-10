@@ -2,13 +2,10 @@ import {
   ImageUl,
   PageSectionTItle,
   SectionTitle,
-  TeamCard,
 } from "@/components";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay } from "swiper";
+import SwiperCore, {  Autoplay } from "swiper";
 import apiService from "@/service/api";
 import { useQuery } from "react-query";
-import { useSelector } from "react-redux";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
@@ -250,7 +247,7 @@ const about = ({ about }) => {
 
 export default about;
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({  res }) {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"

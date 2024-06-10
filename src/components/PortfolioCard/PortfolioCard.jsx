@@ -1,7 +1,7 @@
 import { ImageUl } from "..";
 import {useTranslation} from "react-i18next";
 
-const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,description_ru ,description_uz  ,id ,  href }) => {
+const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,description_ru ,description_uz  ,  href }) => {
   const {i18n} = useTranslation()
   return (
     <>
