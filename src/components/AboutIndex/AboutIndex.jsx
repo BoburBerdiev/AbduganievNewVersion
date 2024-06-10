@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
 import { ImageUl, NumberCount, SectionTitle } from "..";
 import { motion } from "framer-motion";
-import i18next from "i18next";
+import {useTranslation} from "react-i18next";
 
 const AboutIndex = ({numberCount , about}) => {
+  const {i18n} = useTranslation()
   return (
     <>
 
@@ -23,7 +23,7 @@ const AboutIndex = ({numberCount , about}) => {
                   whileInView={{ opacity: 1 }}
                   className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
                 {
-                  i18next.language === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
+                  i18n.language === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
               </motion.p>
                 
@@ -33,7 +33,7 @@ const AboutIndex = ({numberCount , about}) => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px]  ">
                 {
-                  numberCount?.map((item , key) => (
+                  numberCount?.map((item ) => (
                     <motion.div initial={{ opacity: 0  , y:'50px'}}
                          whileInView={{ opacity: 1  , y:0}}
                          viewport={{ once: true }} key={item.id}>

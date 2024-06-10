@@ -1,10 +1,10 @@
 import { useState } from "react"
 import CountUp from "react-countup"
 import ScrollTrigger from "react-scroll-trigger"
-import i18next from "i18next";
+import {useTranslation} from "react-i18next";
 
 const NumberCount = ({ number, text_uz , text_ru}) => {
-
+    const {i18n} = useTranslation()
   const [counterOn , setCounterOn] = useState(false)
   // counterOn &&
 // CountUp ni oliga qoyiw kk  har safar ref resh
@@ -29,7 +29,7 @@ const NumberCount = ({ number, text_uz , text_ru}) => {
       </ScrollTrigger>
     <p className="text-xl font-bold md:text-2xl text-zinc-200">
       {
-        i18next.language === 'ru' ? text_ru : text_uz
+        i18n.language === 'ru' ? text_ru : text_uz
       }
     </p>
   </div>

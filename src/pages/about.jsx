@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
-import i18next from "i18next";
 
 SwiperCore.use([Autoplay]);
 
@@ -20,7 +19,7 @@ const about = ({ about }) => {
   const { data: partnor } = useQuery("get-partnor", () =>
     apiService.getData("/partners/")
   );
-
+  const {i18n} = useTranslation()
   const { data: team } = useQuery("get-team", () =>
     apiService.getData("/team/")
   );
@@ -39,7 +38,7 @@ const about = ({ about }) => {
         <link rel="icon" href="/abduganiev-logoA.png" />
         <title>
           Abduganiev Technology -{" "}
-          {i18next.language === "ru" ? about[0]?.title_ru : about[0]?.title_uz}{" "}
+          {i18n.language === "ru" ? about[0]?.title_ru : about[0]?.title_uz}{" "}
         </title>
         <meta
           name="description"
@@ -132,14 +131,14 @@ const about = ({ about }) => {
               data-aos="fade-up"
               className="text-2xl mb-2.5 font-roboto font-bold text-center md:text-start md:text-3xl lg:text-4xl"
             >
-              {i18next.language === "ru" ? whyWe?.data?.title_ru : whyWe?.data?.title_uz}
+              {i18n.language === "ru" ? whyWe?.data?.title_ru : whyWe?.data?.title_uz}
             </h3>
             <p
               data-aos="fade-up"
               data-aos-delay="80"
               className="font-openSans text-start md:text-md lg:text-lg xl:text-xl"
             >
-              {i18next.language === "ru"
+              {i18n.language === "ru"
                 ? whyWe?.data?.short_text_ru
                 : whyWe?.data?.short_text_uz}
             </p>
@@ -153,9 +152,9 @@ const about = ({ about }) => {
                 {whyWe?.data?.why_we_childs?.map((item, id) => (
                   <li key={item.id} data-aos="fade-up" data-aos-delay={id * 10}>
                     <span className="mr-2 font-semibold">
-                      {i18next.language === "ru" ? item.title_ru : item.title_uz}
+                      {i18n.language === "ru" ? item.title_ru : item.title_uz}
                     </span>
-                    {i18next.language === "ru" ? item.text_ru : item.text_uz}
+                    {i18n.language === "ru" ? item.text_ru : item.text_uz}
                   </li>
                 ))}
               </ol>

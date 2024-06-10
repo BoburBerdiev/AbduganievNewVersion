@@ -3,7 +3,6 @@ import { BsInstagram , BsFacebook } from "react-icons/bs";
 import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 import { useQuery } from "react-query";
 import apiService from "@/service/api";
-import i18next from "i18next";
 
 const Footer = () => {
   const { data: contact } = useQuery("contact", () =>
@@ -11,7 +10,7 @@ const Footer = () => {
   );
 
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <>
       <footer className="py-10 md:py-16 bg-neutral-900">
@@ -20,7 +19,7 @@ const Footer = () => {
             <p className="space-x-2 text-sm font-openSans text-center md:text-base lg:text-lg text-zinc-200 hover:text-zinc-300 md:text-start">
               <span className="font-bold ">{t("footer.workTime")}:</span>
               <span className="font-thin">
-                {i18next.language === "ru"
+                {i18n.language === "ru"
                   ? contact?.data[0]?.working_hours_ru
                   : contact?.data[0]?.working_hours_uz}
               </span>
@@ -48,7 +47,7 @@ const Footer = () => {
             >
               <span className="font-bold ">{t("footer.address")}:</span>
               <span className="font-thin">
-                {i18next.language === "ru"
+                {i18n.language === "ru"
                   ? contact?.data[0]?.address_ru
                   : contact?.data[0]?.address_uz}
               </span>
