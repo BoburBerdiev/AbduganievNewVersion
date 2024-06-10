@@ -3,7 +3,7 @@
     <>
         {
             0 === id ?
-                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
             <defs>
             {/*<radialGradient*/}
             {/*id='emeraldGradient'*/}
@@ -24,7 +24,7 @@
             />
             </svg>
             :  1 === id  ?
-                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                     <defs>
                         <radialGradient
                             id='emeraldGradient'
@@ -46,7 +46,7 @@
                 </svg>
 
             : 2 === id  ?
-                        <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                        <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                             <defs>
                                 <radialGradient
                                     id='emeraldGradient'
@@ -71,7 +71,7 @@
 
 
             : 3 === id  ?
-                            <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                            <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                                 <defs>
                                     <radialGradient
                                         id='emeraldGradient'
@@ -92,7 +92,7 @@
                                 />
                             </svg>
             : 4 === id  ?
-                                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                                <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                                     <defs>
                                         <radialGradient
                                             id='emeraldGradient'
@@ -113,7 +113,7 @@
                                     />
                                 </svg>
             : 5 === id  ?
-                                    <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                                    <svg id={id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                                         <defs>
                                             <radialGradient
                                                 id='emeraldGradient'
@@ -134,7 +134,7 @@
 
                                     </svg>
             : 6 === id  ?
-                                        <svg id={id} xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 98 122.5"  viewBox="0 0 24 24" className="w-20 h-20 md:w-40 md:h-40 duration-200 transition-all">
+                                        <svg id={id} xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 98 122.5"  viewBox="0 0 24 24" className="w-20 h-20 md:w-[6rem] md:h-[6rem] duration-200 transition-all">
                                             <defs>
                                                 <radialGradient
                                                     id='emeraldGradient'

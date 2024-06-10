@@ -106,7 +106,7 @@ const projects = ({projects , projectTitle}) => {
           
         /> 
           <div className="md:py-[100px] py-10">
-            <div className="grid grid-cols-1 gap-4 md:gap-5 py-5 md:py-10 md:grid-cols-3  ">
+            <div className="grid grid-cols-1 gap-4 md:gap-5 py-5 md:py-10 md:grid-cols-2  ">
             {
               projects?.map(item => (
                 <PortfolioCard
@@ -116,8 +116,6 @@ const projects = ({projects , projectTitle}) => {
                 name_ru={item.name_ru}
                 type_ru={item.type_ru}
                 type_uz={item.type_uz}
-                description_ru={item.description_ru}
-                description_uz={item.description_uz}
                 href={item.link}
               />
               ))

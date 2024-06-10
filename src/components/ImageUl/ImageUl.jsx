@@ -16,7 +16,7 @@ const ImageUl = ({src , alt , imgStyle ,priority}) => {
         'scale-100  blur-0 grayscale-0'
       } `}
       priority={priority || false}
-      onLoadingComplete={() => setLoading(false)}
+      onLoad={() => setLoading(false)}
       />
     </>
   )

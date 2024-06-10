@@ -18,14 +18,12 @@ const AboutIndex = ({numberCount , about}) => {
                 
               <SectionTitle text_uz={about[0]?.title_uz} text_ru={about[0]?.title_ru}/>
               
-              <motion.p
-                  initial={{ opacity: 0  }}
-                  whileInView={{ opacity: 1 }}
-                  className="text-lg text-justify lg:text-xl  font-openSans" data-aos='fade-up' data-aos-delay='50'>
+              <p
+                  className="text-lg text-justify lg:text-xl  font-openSans">
                 {
                   i18n.language === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
-              </motion.p>
+              </p>
                 
               </div>
 
@@ -33,13 +31,11 @@ const AboutIndex = ({numberCount , about}) => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[40px]  ">
                 {
-                  numberCount?.map((item ) => (
-                    <motion.div initial={{ opacity: 0  , y:'50px'}}
-                         whileInView={{ opacity: 1  , y:0}}
-                         viewport={{ once: true }} key={item.id}>
+                  numberCount?.map((item , key) => (
+                    <div key={item.id}>
                     <NumberCount  number={item.number} text_uz={item.name_uz} text_ru={item.name_ru}/>
 
-                    </motion.div>
+                    </div>
                   ))
                 }
               </div>
