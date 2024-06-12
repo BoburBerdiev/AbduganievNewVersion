@@ -7,7 +7,6 @@ import {
 } from "@/components";
 import axios from "axios";
 import Head from "next/head";
-import NewProjectCard from "@/components/newPrpject-card/newProject-card";
 
 export default function Home({
   header,
@@ -160,7 +159,6 @@ export default function Home({
           <ServicesIndex serviceIndex={serviceIndex}/>
           <PortfolioIndex projects={projects}/>
           <Feedback feedback={feedback}/>
-          <NewProjectCard/>
         </main>
       </>
   );
