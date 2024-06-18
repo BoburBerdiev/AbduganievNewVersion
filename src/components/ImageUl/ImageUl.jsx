@@ -9,8 +9,8 @@ const ImageUl = ({src , alt , imgStyle ,priority}) => {
     <>
       <Image   
       src={src} 
-      alt={alt} 
-      layout={"fill"}
+      alt={alt}
+      fill={true}
       className={` w-full h-full ${imgStyle} duration-200 ease-in-out  ${
         loading ? 'scale-110 blur-2xl grayscale':
         'scale-100  blur-0 grayscale-0'
