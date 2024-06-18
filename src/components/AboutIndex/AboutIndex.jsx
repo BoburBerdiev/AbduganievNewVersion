@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
 import { ImageUl, NumberCount, SectionTitle } from "..";
+import { motion } from "framer-motion";
+import {useTranslation} from "react-i18next";
 
 const AboutIndex = ({numberCount , about}) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
-
+  const {i18n} = useTranslation()
   return (
     <>
 
@@ -21,7 +21,7 @@ const AboutIndex = ({numberCount , about}) => {
               <p
                   className="text-lg text-justify lg:text-xl  font-openSans">
                 {
-                  lang === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
+                  i18n.language === 'ru' ? about[0]?.description_ru : about[0]?.description_uz
                 }
               </p>
                 

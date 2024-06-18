@@ -1,8 +1,8 @@
 import { ImageUl } from "..";
-import { useSelector } from "react-redux";
+import {useTranslation} from "react-i18next";
 
-const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,id ,  href }) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
+const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,  href }) => {
+  const {i18n} = useTranslation()
   return (
     <>
       <a
@@ -15,12 +15,12 @@ const PortfolioCard = ({ img, name_uz ,name_ru , type_ru , type_uz ,id ,  href }
           <div className="absolute group-hover:bg-neutral-900/80 duration-500 ease-in-out bg-neutral-900/60 space-y-2 bottom-0  left-0 right-0 p-3 z-[3] text-zinc-200">
             <h6 className="text-lg md:text-xl lg:text-2xl font-roboto font-semibold">
               {
-                lang === 'ru' ? name_uz : name_ru
+                i18n.language === 'ru' ? name_uz : name_ru
               }
             </h6>
             <p className={'font-roboto text-sm font-thin'}>
             {
-                lang === 'ru' ? type_ru : type_uz
+                i18n.language === 'ru' ? type_ru : type_uz
               }
               </p>
 

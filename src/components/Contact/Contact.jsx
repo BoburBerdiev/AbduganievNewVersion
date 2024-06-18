@@ -14,10 +14,9 @@ const Contact = () => {
   const {data: contactData} = useQuery("contact", () =>
       apiService.getData("/contact")
   );
-  const {lang} = useSelector((state) => state.LanguageSlice);
   const {contact} = useSelector(state => state.contactSlice)
   const dispatch = useDispatch()
-  const {t} = useTranslation();
+  const {t, i18n} = useTranslation();
 
 
   const overlayVariants = {
@@ -74,7 +73,7 @@ const Contact = () => {
                         >
                           <span className="font-bold ">{t("footer.workTime")}:</span>
                           <span className="font-thin">
-                {lang === "ru"
+                {i18n.language === "ru"
                     ? contactData?.data[0]?.working_hours_ru
                     : contactData?.data[0]?.working_hours_uz}
                 </span>
@@ -103,7 +102,7 @@ const Contact = () => {
                         >
                           <span className="font-bold ">{t("footer.address")}:</span>
                           <span className="font-thin">
-                {lang === "ru"
+                {i18n.language === "ru"
                     ? contactData?.data[0]?.address_ru
                     : contactData?.data[0]?.address_uz
                 }

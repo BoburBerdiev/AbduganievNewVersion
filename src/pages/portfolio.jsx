@@ -1,11 +1,11 @@
 import { PortfolioCard ,PageSectionTItle } from "@/components";
 import axios from "axios";
 import Head from "next/head";
-import { useSelector } from "react-redux";
+import {useTranslation} from "react-i18next";
 
 
 const projects = ({projects , projectTitle}) => {
-  const {lang} = useSelector(state => state.LanguageSlice)
+    const {i18n} = useTranslation()
   return (
     <>
      <Head>
@@ -13,7 +13,7 @@ const projects = ({projects , projectTitle}) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         <link rel="icon" href="/abduganiev-logoA.png" />
-        <title>Abduganiev Technology - {lang === 'ru' ?  projectTitle[0]?.title_ru : projectTitle[0]?.title_uz} </title>
+        <title>Abduganiev Technology - {i18n.language === 'ru' ?  projectTitle[0]?.title_ru : projectTitle[0]?.title_uz} </title>
         <meta
           name="description"
           content=" Мы уже 5 лет работаем в сфере IT и сотрудничали со многими
