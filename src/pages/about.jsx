@@ -17,9 +17,9 @@ const about = ({ about }) => {
     apiService.getData("/partners/")
   );
   const {i18n} = useTranslation()
-  const { data: team } = useQuery("get-team", () =>
-    apiService.getData("/team/")
-  );
+  // const { data: team } = useQuery("get-team", () =>
+  //   apiService.getData("/team/")
+  // );
 
   const { data: whyWe } = useQuery("get-whyWe", () =>
     apiService.getData("/why-we/1")

@@ -7,7 +7,7 @@ import {
 } from "@/components";
 import axios from "axios";
 import Head from "next/head";
-import NewProjectCard from "@/components/newPrpject-card/newProject-card";
+// import NewProjectCard from "@/components/newPrpject-card/newProject-card";
 
 export default function Home({
   header,
@@ -165,7 +165,7 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps({req, res}) {
+export async function getServerSideProps({ res}) {
   res.setHeader(
       "Cache-Control",
       "public, s-maxage=10, stale-while-revalidate=59"
