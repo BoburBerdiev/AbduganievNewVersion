@@ -116,41 +116,46 @@ const Contact = () => {
                           </p>
                         </div>
                         <div className="flex justify-center space-x-5 md:justify-start">
-                          <a
+                          <motion.a
+                    whileTap={{opacity:0.9 , scale:0.95}}
                               href={contactData?.data[0]?.telegram}
                               target="_blank"
                               className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                           >
                             <FaTelegram className="text-3xl "/>
-                          </a>
-                          <a
+                          </motion.a>
+                          <motion.a
+                    whileTap={{opacity:0.9 , scale:0.95}}
                               href={contactData?.data[0]?.linkedin}
                               target="_blank"
                               className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                           >
                             <FaLinkedin className="text-3xl "/>
-                          </a>
-                          <a
+                          </motion.a>
+                          <motion.a
+                    whileTap={{opacity:0.9 , scale:0.95}}
                               href={contactData?.data[0]?.youtube}
                               target="_blank"
                               className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                           >
                             <FaYoutube className="text-3xl "/>
-                          </a>
-                          <a
+                          </motion.a>
+                          <motion.a
+                    whileTap={{opacity:0.9 , scale:0.95}}
                               href={contactData?.data[0]?.instagram}
                               target="_blank"
                               className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                           >
                             <BsInstagram className="text-3xl "/>
-                          </a>
-                          <a
+                          </motion.a>
+                          <motion.a
+                    whileTap={{opacity:0.9 , scale:0.95}}
                               href={contactData?.data[0]?.facebook}
                               target="_blank"
                               className="block space-x-2 text-lg text-zinc-200 hover:text-zinc-300"
                           >
                             <BsFacebook className="text-3xl "/>
-                          </a>
+                          </motion.a>
 
 
                         </div>

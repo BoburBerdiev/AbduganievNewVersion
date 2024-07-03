@@ -9,7 +9,7 @@ const projects = ({projects , projectTitle}) => {
   return (
     <>
      <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         <link rel="icon" href="/abduganiev-logoA.png" />
@@ -131,7 +131,7 @@ const projects = ({projects , projectTitle}) => {
 export default projects;
 
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({  res }) {
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"

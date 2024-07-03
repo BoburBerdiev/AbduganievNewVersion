@@ -7,6 +7,7 @@ import {
 } from "@/components";
 import axios from "axios";
 import Head from "next/head";
+// import NewProjectCard from "@/components/newPrpject-card/newProject-card";
 
 export default function Home({
   header,
@@ -70,7 +71,7 @@ export default function Home({
   return (
       <>
         <Head>
-          <meta charset="UTF-8"/>
+          <meta charSet="UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
           <link rel="icon" href="/abduganiev-logoA.png"/>
@@ -164,7 +165,7 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps({req, res}) {
+export async function getServerSideProps({ res}) {
   res.setHeader(
       "Cache-Control",
       "public, s-maxage=10, stale-while-revalidate=59"

@@ -1,16 +1,15 @@
 import { ImageUl } from "..";
 import { motion } from "framer-motion";
-import {useEffect} from "react";
 
 const PartnorList = ({ partners }) => {
   const marqueeVariants = (direction) => ({
     animate: {
-      x: direction === "left" ? ["0%", "-100%"] : ["-100%", "0%"],
+      x: direction === "left" ? ["0%", "-100%"] : ["0%", "100%"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 45,
+          duration: 95,
           ease: "linear",
         },
       },
@@ -26,7 +25,6 @@ const PartnorList = ({ partners }) => {
   }
 
   const [array1, array2] = divideArray(partners);
-
   return (
       <div className="container overflow-hidden">
         <motion.div className="flex gap-x-10 items-center" variants={marqueeVariants("left")} animate="animate">
