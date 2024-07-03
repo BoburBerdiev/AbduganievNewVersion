@@ -237,3 +237,14 @@
   }
 
 }
+
+.project-card.group:hover .rotate-3d{
+  transform: rotate3d(0, 1, 0, -180deg) !important;
+}
+.project-card .rotate-video {
+  transform: rotate3d(0, 1, 0, -360deg) !important;
+}
+.project-card.group:hover .rotate-video{
+  transform: rotate3d(0, 1, 0, -180deg) !important;
+  opacity: 1;
+}

@@ -6,7 +6,6 @@ import {useTranslation} from "react-i18next";
 
 const NewPartfolio = ({projects , projectTitle}) => {
     const {i18n} = useTranslation()
-    console.log(projects)
     return (
         <>
             <Head>
