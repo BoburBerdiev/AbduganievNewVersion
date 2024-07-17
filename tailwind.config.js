@@ -9,13 +9,11 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: ['var(--font-roboto)'],
-
         openSans: ['var(--font-open_sans)'],
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
       },
-
       container: {
         center: true,
         padding: {
