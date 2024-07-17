@@ -121,7 +121,19 @@ const projects = ({projects , projectTitle}) => {
               />
               ))
             }
-              <NewProjectCard/>
+              {/*{*/}
+              {/*  projects?.map(item => (*/}
+              {/*      <NewProjectCard*/}
+              {/*          key={item.id}*/}
+              {/*          img={item.image}*/}
+              {/*          name_uz={item.name_uz}*/}
+              {/*          name_ru={item.name_ru}*/}
+              {/*          type_ru={item.type_ru}*/}
+              {/*          type_uz={item.type_uz}*/}
+              {/*          href={item.link}*/}
+              {/*      />*/}
+              {/*  ))*/}
+              {/*}*/}
             </div>
           </div>
         </div>

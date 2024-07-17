@@ -28,7 +28,7 @@ const NewProjectCard = ({img,  name_uz, name_ru, href, type_uz, type_ru, text_uz
             >
                 <div className={' w-[100%] aspect-[16/10] translate-x-0 rotate-3d duration-700 delay-[5ms]'}>
                     <ImageUl src={img} imgStyle={''}/>
-                    <div className={`!w-full !h-full `}>
+                    <div className={`!w-full !h-full scale-[1.5]`}>
                         <ProjectCardVideo videoSrc={videoSrc} isHovered={isHovered}  />
                     </div>
 
