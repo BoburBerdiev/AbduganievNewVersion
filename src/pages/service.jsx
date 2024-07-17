@@ -142,7 +142,6 @@ const service = ({ service , serviceTitle }) => {
             
           ))
         }
-            
           </div>
         </div>
         </div>

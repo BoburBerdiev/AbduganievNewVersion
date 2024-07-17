@@ -2,32 +2,43 @@ import { ImageUl } from "..";
 import { motion } from "framer-motion";
 
 const PartnorList = ({ partners }) => {
-  const marqueeVariants = (direction) => ({
+  const marqueeVariantRight = () => ({
     animate: {
-      x: direction === "left" ? ["0%", "-100%"] : ["0%", "100%"],
+      x: ["-100%", "0"] ,
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 95,
+          duration: 100,
           ease: "linear",
         },
       },
     },
   });
 
+  const marqueeVariantLeft = () => ({
+    animate: {
+      x:  ["0%", "-100%"],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 100,
+          ease: "linear",
+        },
+      },
+    },
+  });
   function divideArray(array) {
-    const shuffledArray = array.sort(() => Math.random() - 0.5);
-    const middleIndex = Math.ceil(shuffledArray.length / 2);
-    const firstHalf = shuffledArray.slice(0, middleIndex);
-    const secondHalf = shuffledArray.slice(middleIndex);
+    const firstHalf = array
+    const secondHalf = array.reverse();
     return [firstHalf, secondHalf];
   }
 
   const [array1, array2] = divideArray(partners);
   return (
       <div className="container overflow-hidden">
-        <motion.div className="flex gap-x-10 items-center" variants={marqueeVariants("left")} animate="animate">
+        <motion.div className="flex gap-x-10 items-center" variants={marqueeVariantRight()} animate="animate">
           {array1.map((item, index) => (
               <div
                   key={index}
@@ -37,7 +48,7 @@ const PartnorList = ({ partners }) => {
               </div>
           ))}
         </motion.div>
-        <motion.div className="flex gap-x-10 items-center mt-10" variants={marqueeVariants("right")} animate="animate">
+        <motion.div className="flex gap-x-10 items-center mt-5" variants={marqueeVariantLeft()} animate="animate">
           {array2.map((item, index) => (
               <div
                   key={index}

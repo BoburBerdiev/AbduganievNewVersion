@@ -2,6 +2,7 @@ import { PortfolioCard ,PageSectionTItle } from "@/components";
 import axios from "axios";
 import Head from "next/head";
 import {useTranslation} from "react-i18next";
+import NewProjectCard from "@/components/newPrpject-card/newProject-card";
 
 
 const projects = ({projects , projectTitle}) => {
@@ -120,6 +121,7 @@ const projects = ({projects , projectTitle}) => {
               />
               ))
             }
+              <NewProjectCard/>
             </div>
           </div>
         </div>
