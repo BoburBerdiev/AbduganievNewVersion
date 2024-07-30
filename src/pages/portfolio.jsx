@@ -110,15 +110,26 @@ const projects = ({projects , projectTitle}) => {
             <div className="grid grid-cols-1 gap-4 md:gap-5 py-5 md:py-10 md:grid-cols-2  ">
             {
               projects?.map(item => (
-                <PortfolioCard
-                key={item.id}
-                img={item.image}
-                name_uz={item.name_uz}
-                name_ru={item.name_ru}
-                type_ru={item.type_ru}
-                type_uz={item.type_uz}
-                href={item.link}
-              />
+                  <NewProjectCard
+                      key={item.id}
+                      img={item.image}
+                      name_uz={item.name_uz}
+                      name_ru={item.name_ru}
+                      type_ru={item.type_ru}
+                      type_uz={item.type_uz}
+                      text_uz={item?.description_uz}
+                      text_ru={item?.description_ru}
+                      href={item.link}
+                  />
+              //   <PortfolioCard
+              //   key={item.id}
+              //   img={item.image}
+              //   name_uz={item.name_uz}
+              //   name_ru={item.name_ru}
+              //   type_ru={item.type_ru}
+              //   type_uz={item.type_uz}
+              //   href={item.link}
+              // />
               ))
             }
               {/*{*/}
@@ -131,7 +142,7 @@ const projects = ({projects , projectTitle}) => {
               {/*          type_ru={item.type_ru}*/}
               {/*          type_uz={item.type_uz}*/}
               {/*          href={item.link}*/}
-              {/*      />*/}
+np              {/*      />*/}
               {/*  ))*/}
               {/*}*/}
             </div>

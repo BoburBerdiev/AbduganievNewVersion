@@ -9,23 +9,39 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
-
+import {useEffect} from "react";
+import {motion} from 'framer-motion'
 SwiperCore.use([Autoplay]);
 
 const about = ({ about }) => {
-  const { data: partnor } = useQuery("get-partnor", () =>
-    apiService.getData("/partners/")
+  const { data: partnor , refetch: refetchPartnor  , remove: removePartnor } = useQuery("get-partnor", () =>
+    apiService.getData("/partners/"), {
+        enabled: false
+      }
   );
-  const {i18n} = useTranslation()
+
   // const { data: team } = useQuery("get-team", () =>
   //   apiService.getData("/team/")
   // );
 
-  const { data: whyWe } = useQuery("get-whyWe", () =>
-    apiService.getData("/why-we/1")
+  const { data: whyWe , refetch: refetchWhyWe , remove: removeWhyWe  } = useQuery("get-whyWe", () =>
+    apiService.getData("/why-we/1"), {
+        enabled: false
+      }
   );
 
-  const { t } = useTranslation();
+  useEffect(() => {
+    refetchWhyWe()
+    refetchPartnor()
+
+    return () => {
+      removePartnor()
+      removeWhyWe()
+    }
+  } , [])
+  const list = { hidden: { opacity: 0 } }
+  const item = { hidden: { x: -10, opacity: 0 } }
+  const { t ,i18n } = useTranslation();
   return (
     <>
      <Head>
@@ -114,47 +130,47 @@ const about = ({ about }) => {
           subTitle_uz={about[0]?.description_uz}
           row={true}
         />
-        <section className="relative w-full  aspect-video md:aspect-[16/6] my-20 md:my-[100px] lg:my-[150px]">
+        <motion.section initial={{scaleY:0 , y:-20 , opacity:0}}   whileInView={{ opacity: 1 , scaleY:1  , y:0 }}   viewport={{ once: true }}  className="relative w-full  aspect-video md:aspect-[16/6] my-20 md:my-[100px] lg:my-[150px]">
           <ImageUl
             priority={true}
             src={about[0]?.image}
             alt={"team"}
             imgStyle={"object-cover"}
           />
-        </section>
+        </motion.section>
         <section className="text-zinc-200 my-20 md:my-[100px] lg:my-[150px]">
           <div className="w-full  md:w-[50%] mb-5 md:mb-10 lg:mb-[60px]">
-            <h3
-              data-aos="fade-up"
+            <motion.h3  initial={{ opacity: 0  , y:50}}
+                        whileInView={{ opacity: 1  , y:0}} viewport={{ once: true }}
               className="text-2xl mb-2.5 font-roboto font-bold text-center md:text-start md:text-3xl lg:text-4xl"
             >
               {i18n.language === "ru" ? whyWe?.data?.title_ru : whyWe?.data?.title_uz}
-            </h3>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="80"
+            </motion.h3>
+            <motion.p   initial={{ opacity: 0  , y:50}}
+                        whileInView={{ opacity: 1  , y:0}}  viewport={{ once: true }}
               className="font-openSans text-start md:text-md lg:text-lg xl:text-xl"
             >
               {i18n.language === "ru"
                 ? whyWe?.data?.short_text_ru
                 : whyWe?.data?.short_text_uz}
-            </p>
+            </motion.p>
           </div>
           <div className="grid grid-cols-3 gap-5 md:grid-cols-5">
             <div className="items-center justify-center hidden col-span-2 md:flex">
               <div className="w-[60%] aspect-square rounded-full animate-spin-slow bg-gradient-to-r from-[rgba(0,255,126,0.50)] blur-3xl to-[rgba(0,30,255,0.50)] "></div>
             </div>
             <div className="col-span-3 ">
-              <ol className="space-y-4 text-base font-openSans list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
-                {whyWe?.data?.why_we_childs?.map((item, id) => (
-                  <li key={item.id} data-aos="fade-up" data-aos-delay={id * 10}>
+              <ol  className="space-y-4 text-base font-openSans list-decimal list-inside md:space-y-5 lg:space-y-7 md:text-md lg:text-lg xl:text-xl">
+                {whyWe?.data?.why_we_childs?.map((item) => (
+                  <motion.li key={item.id}   initial={{ opacity: 0  , y:30}}
+                             whileInView={{ opacity: 1  , y:0}}  viewport={{ once: true }} >
                     <span className="mr-2 font-semibold">
                       {i18n.language === "ru" ? item.title_ru : item.title_uz}
                     </span>
                     {i18n.language === "ru" ? item.text_ru : item.text_uz}
-                  </li>
+                  </motion.li>
                 ))}
-              </ol>
+              </ol >
             </div>
           </div>
         </section>
@@ -220,13 +236,14 @@ const about = ({ about }) => {
           <SectionTitle text={t("about.trust")} />
           <div className="grid grid-cols-2 xl:gap-14 lg:gap-10 md:gap-8 gap-3 md:grid-cols-5 lg:pt-[60px] md:pt-10 pt-5">
             {partnor?.data?.map((item) => (
-                <div className=" relative w-[80%]  aspect-video filter grayscale hover:filter-none hover:grayscale-0 duration-200">
+                <motion.div initial={{ opacity: 0  , scale:0}}
+                            whileInView={{ opacity: 1  ,scale:1}} viewport={{ once: true }}  key={item?.id} className=" relative w-[80%]  aspect-video filter grayscale rounded-sm hover:filter-none hover:grayscale-0 duration-200 bg-">
                   <ImageUl
                     src={item?.image}
                     imgStyle={"object-contain"}
                     alt={'abduganiev partnor'}
                   />
-                </div>
+                </motion.div>
             ))}
           </div>
         </section>

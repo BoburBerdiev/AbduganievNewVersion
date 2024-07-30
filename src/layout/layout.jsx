@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
     Aos.init({
       once: true
     });
+
   }, []);
 
   useEffect(() => {

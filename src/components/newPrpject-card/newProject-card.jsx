@@ -28,16 +28,16 @@ const NewProjectCard = ({img,  name_uz, name_ru, href, type_uz, type_ru, text_uz
             >
                 <div className={' w-[100%] aspect-[16/10] translate-x-0 rotate-3d duration-700 delay-[5ms]'}>
                     <ImageUl src={img} imgStyle={''}/>
-                    <div className={`!w-full !h-full scale-[1.5]`}>
-                        <ProjectCardVideo videoSrc={videoSrc} isHovered={isHovered}  />
-                    </div>
+                    {/*<div className={`!w-full !h-full scale-[1.5]`}>*/}
+                    {/*    <ProjectCardVideo videoSrc={videoSrc} isHovered={isHovered}  />*/}
+                    {/*</div>*/}
 
                 </div>
                 <div
                     className={'w-full bg-[linear-gradient(0deg,rgba(12,13,13,1)0%,rgba(33,33,33,1)43%,rgba(75,75,75,1)100%)] -mt-4 relative z-10  -bottom-0 duration-300 group-hover:bottom-0 rounded-t-lg p-5'}>
                     <h2 className="relative font-bold tracking-wide mb-3 text-white text-2xl">{i18n.language === 'ru'? name_ru : name_uz}</h2>
                     <p className={'text-white line-clamp-5 font-openSans duration-500'}>{i18n.language === 'ru' ? text_ru : text_uz}</p>
-                    <a href={href} className={'text-white text-sm mt-2 block  font-openSans'}>Подробнее</a>
+                    {/*<a href={href} className={'text-white text-sm mt-2 block  font-openSans'}>Подробнее</a>*/}
                 </div>
             </div>
             {/*<a target={'_blank'} href={href && href}*/}

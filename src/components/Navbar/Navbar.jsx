@@ -40,7 +40,6 @@ const Navbar = () => {
   useEffect(() => {
     if (isChangeLang) {
       i18n.changeLanguage(checkLang);
-
     }
   }, [checkLang]);
   const changLang = (lang) => {
@@ -60,7 +59,7 @@ const Navbar = () => {
         <div className="h-full py-5 border-line bg-neutral-950">
           <div className="container flex items-center justify-between bg-neutral-950 ">
             <div className="relative md:w-[120px] w-[90px]  md:h-[60px]  h-[50px] block flex-shrink-0 cursor-pointer">
-              <Link className="" href={"/"} passHref>
+              <Link className="" href={"/"}  prefetch={false}>
                 <ImageUl
                     alt={"Abdug'aniev Technology"}
                   layout="fill"
@@ -85,7 +84,7 @@ const Navbar = () => {
                     } relative cursor-pointer duration-700 whitespace-nowrap	 after:w-full `}
                     onClick={() => handleLink(false,id)}
                   >
-                    <Link href={item.link}>
+                    <Link href={item.link} prefetch={false} >
                         {t(item.navName)}
                     </Link>
                   </li>

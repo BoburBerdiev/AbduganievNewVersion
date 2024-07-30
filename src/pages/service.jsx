@@ -13,7 +13,7 @@ const service = ({ service , serviceTitle }) => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        <link rel="icon" href="/abduganiev-logoA.png" />
+        <link rel="icon" href="/abduganiev-logoA.png"  prefetch={false} />
         <title>Abduganiev Technology - {i18n.language === 'ru' ?  serviceTitle[0]?.title_ru : serviceTitle[0]?.title_uz} </title>
         <meta
           name="description"

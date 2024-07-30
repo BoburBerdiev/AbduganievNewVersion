@@ -9,14 +9,27 @@ import {useQuery} from "react-query";
 import apiService from "@/service/api";
 import {FaLinkedin, FaTelegram, FaYoutube} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
+import {useEffect} from "react";
 
 const Contact = () => {
-  const {data: contactData} = useQuery("contact", () =>
-      apiService.getData("/contact")
+  const {data: contactData, refetch , remove} = useQuery("contact", () =>
+      apiService.getData("/contact") , {
+        enabled: false
+      }
   );
   const {contact} = useSelector(state => state.contactSlice)
   const dispatch = useDispatch()
   const {t, i18n} = useTranslation();
+
+  useEffect(() => {
+    if(contact) {
+      refetch()
+      return () => {
+        remove()
+      }
+    }
+
+  }, [contact]);
 
 
   const overlayVariants = {
