@@ -39,8 +39,8 @@ const about = ({ about }) => {
       removeWhyWe()
     }
   } , [])
-  const list = { hidden: { opacity: 0 } }
-  const item = { hidden: { x: -10, opacity: 0 } }
+  // const list = { hidden: { opacity: 0 } }
+  // const item = { hidden: { x: -10, opacity: 0 } }
   const { t ,i18n } = useTranslation();
   return (
     <>

@@ -42,10 +42,10 @@ const Navbar = () => {
       i18n.changeLanguage(checkLang);
     }
   }, [checkLang]);
-  const changLang = (lang) => {
-    setIsChangeLang(!isChangeLang);
-    setCheckLang(lang);
-  };
+  // const changLang = (lang) => {
+  //   setIsChangeLang(!isChangeLang);
+  //   setCheckLang(lang);
+  // };
 
   const handleLink=(menu,isActive)=>{
     setMenu(menu)

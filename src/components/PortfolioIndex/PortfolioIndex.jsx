@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import {SectionTitle , PortfolioCard ,CurrentWhiteBtn } from '..'
+import {SectionTitle ,  CurrentWhiteBtn } from '..'
 import NewProjectCard from "../newPrpject-card/newProject-card";
-
+// PortfolioCard
 
 const PortfolioIndex = ({projects}) => {
   const {t} = useTranslation()
@@ -15,7 +15,7 @@ const PortfolioIndex = ({projects}) => {
         </div>
         <div className="grid  grid-cols-2 md:grid-cols-3 gap-5" >
         {
-              projects?.map((item , id) => (
+              projects?.map((item) => (
                   <div className={'portfolio shrink-0  '}>
                     <NewProjectCard
                         key={item.id}

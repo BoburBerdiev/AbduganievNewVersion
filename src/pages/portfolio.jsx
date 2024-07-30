@@ -1,4 +1,5 @@
-import { PortfolioCard ,PageSectionTItle } from "@/components";
+import {PageSectionTItle } from "@/components";
+// PortfolioCard
 import axios from "axios";
 import Head from "next/head";
 import {useTranslation} from "react-i18next";
