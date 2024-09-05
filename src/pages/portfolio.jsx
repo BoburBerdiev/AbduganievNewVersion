@@ -112,6 +112,7 @@ const projects = ({projects , projectTitle}) => {
             {
               projects?.results?.map(item => (
                   <NewProjectCard
+
                       key={item.id}
                       img={item.image}
                       name_uz={item.name_uz}
