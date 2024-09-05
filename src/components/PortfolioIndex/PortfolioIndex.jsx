@@ -15,7 +15,7 @@ const PortfolioIndex = ({projects}) => {
         </div>
         <div className="grid  grid-cols-2 md:grid-cols-3 gap-5" >
         {
-              projects?.map((item) => (
+              projects?.results?.map((item) => (
                   <div className={'portfolio shrink-0  '}>
                     <NewProjectCard
                         key={item.id}

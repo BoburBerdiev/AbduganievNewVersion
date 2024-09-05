@@ -1,6 +1,6 @@
-import {CurrentBtn, ImageUl, } from "@/components"
+import { ImageUl, } from "@/components"
 import {useTranslation} from "react-i18next";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import dynamic from "next/dynamic";
 
 
@@ -31,7 +31,6 @@ const NewProjectCard = ({img,  name_uz, name_ru, href, type_uz, type_ru, text_uz
                     {/*<div className={`!w-full !h-full scale-[1.5]`}>*/}
                     {/*    <ProjectCardVideo videoSrc={videoSrc} isHovered={isHovered}  />*/}
                     {/*</div>*/}
-
                 </div>
                 <div
                     className={'w-full bg-[linear-gradient(0deg,rgba(12,13,13,1)0%,rgba(33,33,33,1)43%,rgba(75,75,75,1)100%)] -mt-4 relative z-10  -bottom-0 duration-300 group-hover:bottom-0 rounded-t-lg p-5'}>

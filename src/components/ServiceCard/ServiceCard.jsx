@@ -7,6 +7,7 @@ const ServiceCard = ({id,
                        title_ru,
                        description_uz,
                        description_ru,
+                       src , item
                      }) => {
   const {i18n} = useTranslation()
   const cardsRef = useRef(
@@ -30,14 +31,13 @@ const ServiceCard = ({id,
   //   }
   // };
   return (
-
           <div
               className={'p-[1px] glow-on-hover group bg-transparent w-full h-full col-span-1 relative rounded-xl overflow-hidden'}
           >
             <div  id={id} ref={cardsRef}
                    className='w-full h-full bg-black  shadow-xl  rounded-lg flex flex-row p-4 md:p-8 justify-between '>
               <div  className='flex flex-col w-full items-center stroke-1'>
-                <ServiceIcon id={id}  gradientCenter={gradientCenter} />
+                <ServiceIcon id={id} src={src}  gradientCenter={gradientCenter} />
                 <div  className='flex flex-col gap-5 text-center items-center mt-4'>
                   <h2  className='font-notoSans text-neutral-200 tracking-wide text-2xl md:text-3xl font-roboto font-bold'>
                     {i18n.language === 'ru' ? title_ru : title_uz}

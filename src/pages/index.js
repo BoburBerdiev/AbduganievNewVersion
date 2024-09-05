@@ -188,7 +188,7 @@ export async function getServerSideProps({ res}) {
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/index-service`),
   ]);
   const [projects] = await Promise.all([
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/portfolio/?digit=4`),
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/portfolio?is_index=1`),
   ]);
   const [feedback] = await Promise.all([
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/v1/feedback`),

@@ -17,7 +17,7 @@ const ServicesIndex = ({ serviceIndex }) => {
         xPercent: -100 * (panels.length-1),
         ease: "none",
         scrollTrigger: {
-          trigger: component.current ,
+          trigger: component.current,
           pin: true,
           scrub: 2,
           snap: 1 / (panels.length - 1),
@@ -41,6 +41,7 @@ const ServicesIndex = ({ serviceIndex }) => {
             {serviceIndex?.map((item, id) => (
                 <div className="shrink-0  w-[300px] md:w-[500px] panel" key={item?.id}>
                   <ServiceCard
+                      src={item?.image}
                       id={id}
                       bg={item.image}
                       title_ru={item.title_ru}

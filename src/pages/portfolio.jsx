@@ -110,7 +110,7 @@ const projects = ({projects , projectTitle}) => {
           <div className="md:py-[100px] py-10">
             <div className="grid grid-cols-1 gap-4 md:gap-5 py-5 md:py-10 md:grid-cols-2  ">
             {
-              projects?.map(item => (
+              projects?.results?.map(item => (
                   <NewProjectCard
                       key={item.id}
                       img={item.image}
