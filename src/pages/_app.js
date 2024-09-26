@@ -38,20 +38,20 @@ export default function App({ Component, pageProps }) {
                     <Provider store={store}>
                         <Layout>
                             <LazyNextNProgress />
-                            <Script
-                                strategy="lazyOnload"
-                                src="https://www.googletagmanager.com/gtag/js?id=G-VQDW7KM0N1"
-                            />
-                            <Script strategy="lazyOnload">
-                                {`
-                                    window.dataLayer = window.dataLayer || [];
-                                    function gtag(){dataLayer.push(arguments);}
-                                    gtag('js', new Date());
-                                    gtag('config', 'G-VQDW7KM0N1', {
-                                        page_path: window.location.pathname,
-                                    });
-                                `}
-                            </Script>
+                            {/*<Script*/}
+                            {/*    strategy="lazyOnload"*/}
+                            {/*    src="https://www.googletagmanager.com/gtag/js?id=G-VQDW7KM0N1"*/}
+                            {/*/>*/}
+                            {/*<Script strategy="lazyOnload">*/}
+                            {/*    {`*/}
+                            {/*        window.dataLayer = window.dataLayer || [];*/}
+                            {/*        function gtag(){dataLayer.push(arguments);}*/}
+                            {/*        gtag('js', new Date());*/}
+                            {/*        gtag('config', 'G-VQDW7KM0N1', {*/}
+                            {/*            page_path: window.location.pathname,*/}
+                            {/*        });*/}
+                            {/*    `}*/}
+                            {/*</Script>*/}
                             <Component {...pageProps} />
                         </Layout>
                     </Provider>
